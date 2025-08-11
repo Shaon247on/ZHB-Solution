@@ -56,13 +56,13 @@ const MarqueeRow = ({
 
 export default function BrandMarquee() {
   return (
-    <section className="pt-20 relative">
+    <section className="pt-20 relative overflow-hidden">
       <h2 className="text-center pb-10 text-2xl font-semibold text-[#181818CC] mb-8">
         Trusted By 200+ Global Brands
       </h2>
       <div className="space-y-12">
-        <div className="absolute rotate-45 top-16 -left-32 size-[340px] bg-white z-50 blur-lg"/>
-        <div className="absolute rotate-45 top-16 -right-32 size-[340px] bg-white z-50 blur-lg"/>
+        <div className="absolute rotate-45 top-16 -left-32 size-[340px] bg-white z-10 blur-lg"/>
+        <div className="absolute rotate-45 top-16 -right-32 size-[340px] bg-white z-10 blur-lg"/>
         <MarqueeRow reverse={false} />
         <MarqueeRow reverse />
       </div>

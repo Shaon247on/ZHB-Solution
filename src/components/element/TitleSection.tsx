@@ -1,0 +1,79 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+interface TitleSectionProps {
+  tag?: string;
+  title: string;
+  subtitle?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  width?: string;
+}
+
+export default function TitleSection({
+  tag,
+  title,
+  subtitle,
+  buttonText,
+  buttonHref,
+  width="max-w-150px"
+}: TitleSectionProps) {
+  return (
+    <section className="text-center py-12 bg-none">
+      {/* Tag */}
+      {tag && (
+        <motion.span
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+          className="inline-block border border-primary text-sm px-3 py-1 rounded-full text-primary"
+        >
+          {tag}
+        </motion.span>
+      )}
+
+      {/* Title */}
+      <motion.p
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className={`my-4 text-base border mx-auto border-sky-700 rounded-full font-medium ${width ? width : 'w-40'}`}
+      >
+        {title}
+      </motion.p>
+
+      {/* Subtitle */}
+      {subtitle && (
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl font-orbitron font-bold max-w-[659px] leading-12 mx-auto"
+        >
+          {subtitle}
+        </motion.p>
+      )}
+
+      {/* Optional Button */}
+      {buttonText && buttonHref && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="mt-6"
+        >
+          <Button size={"lg"} asChild className="rounded-full">
+            <Link href={buttonHref}>{buttonText}</Link>
+          </Button>
+        </motion.div>
+      )}
+    </section>
+  );
+}
