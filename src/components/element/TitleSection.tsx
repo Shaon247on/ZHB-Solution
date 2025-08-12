@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { text } from "stream/consumers";
 
 interface TitleSectionProps {
   tag?: string;

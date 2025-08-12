@@ -105,24 +105,24 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               }
             }
           },
-          exit: {
-            y: "-100%",
-            opacity: 0,
-            transition: {
-              y: {
-                duration: 0.8, // Slower exit for position
-                ease: [0.4, 0, 0.6, 1],
-                delay: 0
-              },
-              opacity: {
-                duration: 0.6, // Slower exit for opacity
-                ease: [0.4, 0, 0.6, 1],
-                delay: 0
-              }
-            }
-          }
+          // exit: {
+          //   y: "-100%",
+          //   opacity: 0,
+          //   transition: {
+          //     y: {
+          //       duration: 0.8, // Slower exit for position
+          //       ease: [0.4, 0, 0.6, 1],
+          //       delay: 0
+          //     },
+          //     opacity: {
+          //       duration: 0.6, // Slower exit for opacity
+          //       ease: [0.4, 0, 0.6, 1],
+          //       delay: 0
+          //     }
+          //   }
+          // }
         }}
-        exit="exit"
+        // exit="exit"
       >
         <motion.div 
           className="max-w-md"
@@ -137,16 +137,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                 delay: 0.2
               }
             },
-            exit: {
-              opacity: 0,
-              transition: {
-                duration: 0.7, // Slower exit
-                ease: [0.4, 0, 0.6, 1],
-                delay: 0
-              }
-            }
+            // exit: {
+            //   opacity: 0,
+            //   transition: {
+            //     duration: 0.7, // Slower exit
+            //     ease: [0.4, 0, 0.6, 1],
+            //     delay: 0
+            //   }
+            // }
           }}
-          exit="exit"
+          // exit="exit"
         >
           <motion.p 
             className="text-white mb-4 leading-relaxed"
@@ -163,16 +163,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                   delay: 0
                 }
               },
-              exit: {
-                opacity: 0,
-                transition: {
-                  duration: 0.5, // Slower exit
-                  ease: [0.4, 0, 0.6, 1],
-                  delay: 0.1
-                }
-              }
+              // exit: {
+              //   opacity: 0,
+              //   transition: {
+              //     duration: 0.5, // Slower exit
+              //     ease: [0.4, 0, 0.6, 1],
+              //     delay: 0.1
+              //   }
+              // }
             }}
-            exit="exit"
+            // exit="exit"
           >
             {description}
           </motion.p>
@@ -191,18 +191,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                   delay: 0.3
                 }
               },
-              exit: {
-                opacity: 0,
-                transition: {
-                  duration: 0.4, // Slower exit
-                  ease: [0.4, 0, 0.6, 1],
-                  delay: 0.2
-                }
-              }
+              // exit: {
+              //   opacity: 0,
+              //   transition: {
+              //     duration: 0.4, // Slower exit
+              //     ease: [0.4, 0, 0.6, 1],
+              //     delay: 0.2
+              //   }
+              // }
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            exit="exit"
+            // exit="exit"
           >
             {buttonText}
           </motion.button>

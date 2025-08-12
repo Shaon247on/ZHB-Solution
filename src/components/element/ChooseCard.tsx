@@ -53,7 +53,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       viewport={{ once: true, amount: 0.3 }}
       className={`bg-white rounded-lg border border-gray-200 shadow-lg p-6 max-w-[580px] ${className}`}
     >
-      <div className="space-y-4 flex gap-6 items-start">
+      <div className="space-y-4 flex gap-6 items-start ">
         <div className={`p-3 rounded-lg ${iconBgColor} flex items-center justify-center shadow-lg`}>
           <Image
             src={url}
