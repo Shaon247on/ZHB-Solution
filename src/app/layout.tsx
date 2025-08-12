@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Parkinsans, Orbitron } from "next/font/google";
+import { Plus_Jakarta_Sans, Parkinsans, Orbitron } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 
@@ -11,6 +11,10 @@ const parkinsans = Parkinsans({
 
 const orbitron = Orbitron({
   variable: "--font-orbitron",
+  subsets: ["latin"],
+});
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus_Jakarta_Sans",
   subsets: ["latin"],
 });
 
@@ -27,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${parkinsans.variable} ${orbitron.variable} font-parkinsans antialiased`}
+        className={`${jakarta.variable} ${parkinsans.variable} ${orbitron.variable} font-parkinsans antialiased`}
       >
         <Navbar/>
         {children}

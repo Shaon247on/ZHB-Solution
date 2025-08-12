@@ -57,7 +57,7 @@ export default function TitleSection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className={`text-4xl font-orbitron font-bold max-w-[630px] leading-12 mx-auto ${textColor}`}
+          className={`text-2xl lg:text-4xl font-orbitron font-bold ${title === "SERVICE" ? "max-w-[620px]":"max-w-[545px]"} lg:leading-12 mx-auto ${textColor}`}
         >
           {subtitle}
         </motion.p>

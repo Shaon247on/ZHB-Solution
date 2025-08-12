@@ -28,14 +28,14 @@ import FeatureCard from '../element/ChooseCard';
 
 function ChooseSection() {
   return (
-    <div className='flex items-center lg:px-[300px] lg:gap-[175px]'>
+    <div className='flex flex-col lg:flex-row items-center lg:px-[300px] lg:gap-[175px]'>
         <TitleSection
         title='Why Choose Us'
         subtitle='Top industry leaders rely on us - heres why!'
         textColor='text-black'
         width='w-[145px]'
         />
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-4">
           {cards.map((card, index) => (
             <FeatureCard
               key={index}

@@ -86,7 +86,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         initial={{ y: "-100%", opacity: 0 }}
         variants={{
           initial: { 
-            y: "-110%", 
+            y: "-100%", 
             opacity: 0 
           },
           hover: { 
@@ -106,7 +106,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             }
           },
           exit: {
-            y: "-110%",
+            y: "-100%",
             opacity: 0,
             transition: {
               y: {

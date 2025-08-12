@@ -108,7 +108,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
           >
             <div className="flex items-baseline space-x-2">
               <motion.span
-                className={`text-5xl font-bold ${defaultTextColor} group-hover:${hoverTextColor} transition-colors duration-400`}
+                className={`text-4xl font-bold ${defaultTextColor} group-hover:${hoverTextColor} transition-colors duration-400`}
                 variants={{
                   initial: { scale: 1 },
                   hover: { scale: 1.05 }
@@ -118,7 +118,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
                 {subtitle}
               </motion.span>
               <motion.span
-                className={`text-xl font-medium ${defaultTextColor} group-hover:${hoverTextColor} transition-colors duration-400`}
+                className={`text-lg font-medium ${defaultTextColor} group-hover:${hoverTextColor} transition-colors duration-400`}
                 variants={{
                   initial: { x: 0, opacity: 0.8 },
                   hover: { x: 5, opacity: 1 }

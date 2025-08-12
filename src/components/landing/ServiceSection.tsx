@@ -46,7 +46,7 @@ const data = [
   },
 ];
 
-function SetviceSection() {
+function ServiceSection() {
   return (
     <div className="mt-20 pb-20 relative z-20 bg-linear-65 from-[#D8D8D8] to-[#D2D2D2] max-h-[952px]">
       <TitleSection
@@ -74,4 +74,4 @@ Smart Digital Solutions"
   );
 }
 
-export default SetviceSection;
+export default ServiceSection;

@@ -51,24 +51,24 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className={`bg-white rounded-lg border border-gray-200 shadow-xl p-6 ${className}`}
+      className={`bg-white rounded-lg border border-gray-200 shadow-lg p-6 max-w-[580px] ${className}`}
     >
       <div className="space-y-4 flex gap-6 items-start">
-        <div className={`p-3 w-[90px] rounded-lg ${iconBgColor} flex items-center justify-center shadow-lg`}>
+        <div className={`p-3 rounded-lg ${iconBgColor} flex items-center justify-center shadow-lg`}>
           <Image
             src={url}
             alt={title}
-            width={48}
-            height={48}
-            className={`w-16 h-8 object-contain`}
+            width={100}
+            height={100}
+            className={`w-7 h-7 object-contain`}
           />
         </div>
         
-        <div className="space-y-3 max-w-[458px]">
-          <h3 className="text-xl font-semibold text-gray-900">
+        <div className="space-y-10 max-w-[365px]">
+          <h3 className="text-3xl font-bold font-Jakarta text-gray-900">
             {title}
           </h3>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-[#535353A8]  font-Jakarta text-base/6">
             {subtitle}
           </p>
         </div>
