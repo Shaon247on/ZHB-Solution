@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { text } from "stream/consumers";
 
 interface TitleSectionProps {
   tag?: string;
@@ -10,6 +11,7 @@ interface TitleSectionProps {
   subtitle?: string;
   buttonText?: string;
   buttonHref?: string;
+  textColor?: string;
   width?: string;
 }
 
@@ -19,6 +21,7 @@ export default function TitleSection({
   subtitle,
   buttonText,
   buttonHref,
+  textColor = "text-white",
   width="max-w-150px"
 }: TitleSectionProps) {
   return (
@@ -42,7 +45,7 @@ export default function TitleSection({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className={`my-4 text-base border mx-auto border-sky-700 rounded-full font-medium ${width ? width : 'w-40'}`}
+        className={`my-4 text-base ${textColor} border mx-auto border-sky-700 rounded-full font-medium ${width ? width : 'w-40'}`}
       >
         {title}
       </motion.p>
@@ -54,7 +57,7 @@ export default function TitleSection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl font-orbitron font-bold max-w-[659px] leading-12 mx-auto"
+          className={`text-4xl font-orbitron font-bold max-w-[630px] leading-12 mx-auto ${textColor}`}
         >
           {subtitle}
         </motion.p>

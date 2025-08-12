@@ -11,7 +11,7 @@ const data = [
     imageSrc: "/card-1.jpg",
     imageAlt: "AI Robot Hand",
   },
-  
+
   {
     title: "Creative & Designs",
     description:
@@ -48,7 +48,7 @@ const data = [
 
 function SetviceSection() {
   return (
-    <div className="mt-20 relative z-20 bg-linear-65 from-[#D8D8D8] to-[#D2D2D2] max-h-[952px]">
+    <div className="mt-20 pb-20 relative z-20 bg-linear-65 from-[#D8D8D8] to-[#D2D2D2] max-h-[952px]">
       <TitleSection
         title="SERVICE"
         subtitle="Empowering Your Business with 
@@ -56,6 +56,7 @@ Smart Digital Solutions"
         buttonText="Contact Us"
         buttonHref="/contact"
         width="w-[100px]"
+        textColor="text-black"
       />
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center gap-5 lg:px-32">
         {data.map((service, index) => (
