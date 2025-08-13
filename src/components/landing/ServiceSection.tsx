@@ -48,7 +48,7 @@ const data = [
 
 function ServiceSection() {
   return (
-    <div className="mt-20 mb-[1200px] md:mb-0 pb-20 relative z-20 bg-linear-65 from-[#D8D8D8] to-[#D2D2D2] max-h-[952px]">
+    <div className="mt-20 mb-10 md:mb-0 pb-20 relative z-20 bg-linear-65 from-[#D8D8D8] to-[#D2D2D2] max-h-[2600px] lg:max-h-[952px]">
       <TitleSection
         title="SERVICE"
         subtitle="Empowering Your Business with 
