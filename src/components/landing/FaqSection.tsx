@@ -8,14 +8,14 @@ import { FaqAccordion } from "../element/FaqAccordion";
 
 function FaqSection() {
   return (
-    <div className="p-[120px] flex gap-48 justify-center">
+    <div className="p-4 lg:p-[120px] flex flex-col lg:flex-row gap-0 lg:gap-48 justify-center">
       <motion.div>
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className={`mb-10 text-base w-[60px] text-center text-black border border-sky-700 rounded-full font-medium`}
+          className={`mb-4 lg:mb-10 text-base w-[60px] text-center text-black border border-sky-700 rounded-full font-medium`}
         >
           FAQ
         </motion.p>
@@ -26,17 +26,17 @@ function FaqSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className={`text-2xl lg:text-4xl font-orbitron font-bold lg:leading-12 mx-auto text-black`}
+          className={`text-xl lg:text-4xl font-orbitron font-bold lg:leading-12 mx-auto text-black`}
         >
           Your Questions, Answered...
         </motion.p>
-        <div className="relative w-[580px] h-[302px] mt-8">
+        <div className="relative lg:w-[580px] lg:h-[302px] mt-8">
           <Image
             src="/answer-image.jpg"
             width={580}
             height={302}
             alt="image description"
-            className="w-[580px] absolute z-0 h-[302px] object-cover"
+            className="w-[580px] absolute z-0 h-[210px] lg:h-[302px] object-cover"
           />
           <svg
             width="45"
@@ -44,7 +44,7 @@ function FaqSection() {
             viewBox="0 0 45 54"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute z-10 top-0 right-0"
+            className="absolute z-10 top-0 right-0 w-6 lg:w-[45px] h-7 lg:h-[54px]"
           >
             <path
               fillRule="evenodd"
@@ -59,7 +59,7 @@ function FaqSection() {
             viewBox="0 0 45 42"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute z-10 bottom-0 right-0"
+            className="absolute z-10 bottom-0 right-0 w-6 lg:w-[45px] h-7 lg:h-[54px]"
           >
             <path
               fillRule="evenodd"
@@ -68,23 +68,23 @@ function FaqSection() {
               fill="#464646"
             />
           </svg>
-          <div className="p-6">
+          <div className="p-4 lg:p-6">
             <div className="*:data-[slot=avatar]:ring-background  flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
-              <Avatar className="size-[60px] bor">
+              <Avatar className="size-8 lg:size-[60px] border-none">
                 <AvatarImage
                   src="https://github.com/shadcn.png"
                   alt="@shadcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              <Avatar className="size-[60px] bor">
+              <Avatar className="size-8 lg:size-[60px] border-none">
                 <AvatarImage
                   src="https://github.com/leerob.png"
                   alt="@leerob"
                 />
                 <AvatarFallback>LR</AvatarFallback>
               </Avatar>
-              <Avatar className="size-[60px] bor">
+              <Avatar className="size-8 lg:size-[60px] border-none">
                 <AvatarImage
                   src="https://github.com/evilrabbit.png"
                   alt="@evilrabbit"
@@ -92,14 +92,14 @@ function FaqSection() {
                 <AvatarFallback>ER</AvatarFallback>
               </Avatar>
             </div>
-            <div className="relative text-white text-[28px] mt-6 max-w-[455px]">
+            <div className="relative text-white text-base lg:text-[28px] mt-6 max-w-[455px]">
               <h2>Get the perfect fix for your needs today.</h2>
               <Button size="xl" className="rounded-full bg-[#5E8DE8] mt-6">Set up a short call</Button>
             </div>
           </div>
         </div>
       </motion.div>
-      <div className="mt-12 lg:w-[750px]">
+      <div className="mt-12 w-[94%] lg:w-[750px]">
         <FaqAccordion/>
       </div>
     </div>

@@ -7,8 +7,8 @@ import CreativeStepSection from "../element/CreativeStepSection";
 
 function ContactSection() {
   return (
-    <>
-      <div className="flex lg:px-32 lg:py-20 bg-[#EBF1FC] gap-16">
+    <section>
+      <div className="flex flex-col lg:flex-row px-4 lg:px-32 py-10 lg:py-20 bg-[#EBF1FC] gap-6 lg:gap-16">
         <div className="flex flex-col items-start justify-between">
           <motion.div className=" ">
             <motion.p
@@ -32,7 +32,7 @@ function ContactSection() {
               Have a great idea? <br className="hidden lg:block" />
               Let’s build it together.
             </motion.p>
-            <h4 className="text-[#959595] mb-24 mt-8 max-w-[824px] mx-auto text-start text-2xl font-semibold">
+            <h4 className="text-[#959595] mb-6 lg:mb-24 mt-6 lg:mt-8 max-w-[824px] mx-auto text-start lg:text-2xl font-semibold">
               We take pride in delivering real results to businesses of all
               sizes. Here's what our clients have to say about working with us.
             </h4>
@@ -61,7 +61,7 @@ function ContactSection() {
         onButtonClick={() => console.log("Custom button clicked")}
         className="mt-8"
       />
-    </>
+    </section>
   );
 }
 

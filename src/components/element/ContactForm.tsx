@@ -246,7 +246,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             <Button
               type="submit"
               size={"xl"}
-              className="w-full rounded-full text-2xl font-semibold bg-blue-600 hover:bg-blue-700 text-white"
+              className="w-full rounded-full text-lg lg:text-2xl font-semibold bg-blue-600 hover:bg-blue-700 text-white"
               disabled={form.formState.isSubmitting}
             >
               {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
@@ -255,7 +255,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
           {/* Alternative Contact */}
           <div className="text-center pt-2">
-            <p className="text-xl font-semibold">
+            <p className="text-lg lg:text-xl font-semibold">
               Not Interested to submit the form?{' '}
               <a 
                 href="#" 

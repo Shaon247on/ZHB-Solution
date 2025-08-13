@@ -7,6 +7,7 @@ import { Facebook, Linkedin, Twitter, Instagram, Youtube, Phone, Mail, Globe } f
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import FooterIcon from "../element/FooterIcon";
+import Link from "next/link";
 
 interface FooterProps {
   logoUrl?: string;
@@ -103,7 +104,7 @@ const Footer: React.FC<FooterProps> = ({
           alt="Footer background network pattern"
           width={1280}
           height={901}
-          className="w-full object-cover"
+          className="w-full h-auto hidden lg:block object-cover"
           priority
         />
       </div>
@@ -119,7 +120,7 @@ const Footer: React.FC<FooterProps> = ({
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="lg:mx-[280px]">
+        <div className="mx-6 lg:mx-[280px]">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-12 mb-8">
             {/* Logo and Description Section */}
@@ -135,11 +136,11 @@ const Footer: React.FC<FooterProps> = ({
                     alt={logoAlt}
                     width={149}
                     height={100}
-                    className="w-[149px] h-[100px]"
+                    className="w-24 lg:w-[149px] h-20 lg:h-[100px]"
                   />
                 </div>
                 {/* Description */}
-                <p className="text-gray-300 text-xl font-medium leading-relaxed max-w-sm">
+                <p className="text-gray-300 text-base lg:text-xl font-medium leading-relaxed max-w-sm">
                   Shaping the future through smart, minimal, and human-driven
                   digital design.
                 </p>
@@ -148,17 +149,17 @@ const Footer: React.FC<FooterProps> = ({
               {/* Newsletter Subscription */}
               <div>
                 <div className="space-y-3">
-                  <h3 className="text-white text-2xl font-semibold">
+                  <h3 className="text-white text-lg lg:text-2xl font-semibold">
                     Subscribe to our Blog!
                   </h3>
                   <div className="flex items-center mb-5">
                     <Input
                       type="email"
                       placeholder="Enter Mail"
-                      className="w-[260px] h-[50px] rounded-r-none bg-white placeholder:text-[#B7B7B7]"
+                      className="w-[260px] h-11 lg:h-[50px] rounded-r-none bg-white placeholder:text-[#B7B7B7]"
                     />
                     <Button
-                      className="rounded-l-none h-[50px] rounded-r-full bg-[#172F5F] border-l-none"
+                      className="rounded-l-none h-11 lg:h-[50px] rounded-r-full bg-[#172F5F] border-l-none"
                       size={"xl"}
                     >
                       SUBSCRIBE
@@ -166,7 +167,7 @@ const Footer: React.FC<FooterProps> = ({
                   </div>
                 </div>
                 {/* Social Icons */}
-                <div className="flex justify-end space-x-3">
+                <div className="flex justify-center lg:justify-end space-x-3">
                   <FooterIcon>
                     <svg
                       width="13"
@@ -243,7 +244,7 @@ const Footer: React.FC<FooterProps> = ({
 
             {/* Navigation Links */}
           </div>
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-5 gap-8">
             {/* Contact */}
             <motion.div variants={itemVariants}>
               <h3 className="text-white font-semibold text-sm mb-4">Contact</h3>
@@ -345,31 +346,31 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* Footer Bottom */}
           <motion.div
-            className="pt-20 border-gray-600/50 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0"
+            className="pt-8 lg:pt-20 border-gray-600/50 flex flex-col lg:flex-row justify-start lg:justify-between items-center space-y-4 sm:space-y-0"
             variants={itemVariants}
           >
             <p className="text-gray-400 text-xs">
               Copyright 2024 EB Solution LLC.
             </p>
             <div className="flex flex-wrap gap-4 text-xs text-gray-400">
-              <a
+              <Link
                 href="#"
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-white text-[0.70rem] lg:text-base transition-colors duration-200"
               >
                 Privacy Policy
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-white text-[0.70rem] lg:text-base transition-colors duration-200"
               >
                 Terms & Conditions
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-white text-[0.70rem] lg:text-base transition-colors duration-200"
               >
                 Code of Conduct
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

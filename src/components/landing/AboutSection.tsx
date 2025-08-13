@@ -14,7 +14,7 @@ function AboutSection() {
           width="w-[104px]"
         />
       </div>
-      <div className="lg:mx-32 px-4 pb-16 sm:px-6 lg:px-8 flex items-center lg:gap-[280px]">
+      <div className="lg:mx-32 px-4 pb-16 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-14 lg:gap-[280px]">
         <div>
           <h2 className="text-[1.75rem] font-bold text-white">
             We are leading experts <br />

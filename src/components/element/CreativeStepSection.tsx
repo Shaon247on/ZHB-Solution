@@ -87,7 +87,7 @@ const CreativeStepSection: React.FC<CreativeStepSectionProps> = ({
           >
             {/* Main Title */}
             <motion.h2 
-              className="text-white font-orbitron font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight"
+              className="text-white font-orbitron font-bold text-xl md:text-5xl lg:text-[56px] leading-tight"
               variants={itemVariants}
             >
               {title}

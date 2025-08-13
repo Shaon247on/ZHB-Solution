@@ -24,7 +24,7 @@ export default function TitleSection({
   width="max-w-150px"
 }: TitleSectionProps) {
   return (
-    <section className="text-center py-12 bg-none">
+    <section className="text-center py-6 lg:py-12 bg-none">
       {/* Tag */}
       {tag && (
         <motion.span
@@ -44,7 +44,7 @@ export default function TitleSection({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className={`my-4 text-base ${textColor} border mx-auto border-sky-700 rounded-full font-medium ${width ? width : 'w-40'}`}
+        className={`my-4 text-xs lg:text-base ${textColor} border mx-auto border-sky-700 rounded-full font-medium ${width ? width : 'w-40'}`}
       >
         {title}
       </motion.p>
@@ -56,7 +56,7 @@ export default function TitleSection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className={`text-2xl lg:text-4xl font-orbitron font-bold ${title === "SERVICE" ? "max-w-[620px]":"max-w-[545px]"} lg:leading-12 mx-auto ${textColor}`}
+          className={`text-lg lg:text-4xl font-orbitron font-bold ${title === "SERVICE" ? "max-w-[620px]":"max-w-[545px]"} lg:leading-12 mx-auto ${textColor}`}
         >
           {subtitle}
         </motion.p>
