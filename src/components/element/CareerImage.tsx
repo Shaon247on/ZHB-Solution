@@ -13,10 +13,9 @@ function CareerImage({ className = "", image, alt }: CareerImageProps) {
       <Image
         src={image}
         alt={alt}
-        layout="responsive"
         width={320}
         height={320}
-        className={`w-[320px] h-[320px] object-cover ${className}`}
+        className={`w-16 lg:w-[320px] h-16 lg:h-[320px] object-cover ${className}`}
       />
     </div>
   );

@@ -26,7 +26,7 @@ export default function TitleSection({
   textPosition = "text-center",
 }: TitleSectionProps) {
   return (
-    <section className={`py-6 lg:py-12 bg-none ${textPosition}`}>
+    <section className={`py-6 bg-none ${textPosition}`}>
       {/* Tag */}
       {tag && (
         <motion.span
