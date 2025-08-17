@@ -16,7 +16,7 @@ export const WhoCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`flex py-4 px-6 flex-col items-start gap-4 rounded-lg ${className}`}
+      className={`flex border-2 py-4 px-6 flex-col items-start gap-4 rounded-lg ${className}`}
       
     >
       <div
@@ -27,7 +27,7 @@ export const WhoCard: React.FC<CardProps> = ({
         <div className="flex items-center justify-center">{icon}</div>
       </div>
 
-      <div className="flex flex-col gap-1 max-w-[172px]">
+      <div className="flex flex-col gap-1 w-[280px] lg:max-w-[172px]">
         <h3 className="text-xl font-semibold text-[#172F5F] leading-none mb-1">{title}</h3>
         {subtitle && <p className="text-xs text-[#172F5F] font-medium w-full">{subtitle}</p>}
       </div>

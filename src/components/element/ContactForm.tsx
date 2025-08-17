@@ -22,6 +22,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 // Form validation schema
 const formSchema = z.object({
@@ -255,9 +256,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
           {/* Alternative Contact */}
           <div className="text-center pt-2">
-            <p className="text-lg lg:text-xl font-semibold">
+            <p className="text-sm lg:text-lg font-semibold">
               Not Interested to submit the form?{' '}
-              <a 
+              <Link 
                 href="#" 
                 className="text-blue-500 hover:text-blue-600 underline font-medium"
                 onClick={(e) => {
@@ -267,7 +268,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                 }}
               >
                 Book A Call Directly
-              </a>
+              </Link>
             </p>
           </div>
         </form>

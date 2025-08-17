@@ -6,11 +6,11 @@ import React from "react";
 
 function WhoSection() {
   return (
-    <div className="pt-10 pb-[120px] px-[120px] mx-auto bg-[#F8F9F4]">
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-[100px]">
+    <div className="pt-10 pb-6 lg:pb-[120px] px-6 lg:px-[120px] mx-auto bg-[#F8F9F4]">
+      <div className="flex flex-col lg:flex-row lg:gap-[100px]">
         {/* Image Grid Section */}
-        <div className="max-w-1/2 flex flex-col gap-4 lg:gap-6 mb-8 lg:mb-0">
-          <div className="flex gap-4 lg:gap-6 mr-8">
+        <div className="w-full lg:max-w-1/2 flex flex-col gap-4 lg:gap-6 mb-8 lg:mb-0">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 lg:mr-8">
             {/* Top row */}
             <div className="">
               <Image
@@ -18,7 +18,7 @@ function WhoSection() {
                 width={428}
                 height={196}
                 alt="Who we are image-1"
-                className="object-cover w-[428px] h-[196px] rounded-lg"
+                className="object-cover w-full lg:w-[428px] h-32 lg:h-[196px] rounded-lg"
               />
             </div>
             <div className="">
@@ -27,20 +27,20 @@ function WhoSection() {
                 width={312}
                 height={196}
                 alt="Who we are image-2"
-                className="object-cover w-[312px] h-[196px] rounded-lg"
+                className="object-cover w-full lg:w-[312px] h-32 lg:h-[196px] rounded-lg"
               />
             </div>
           </div>
 
           {/* Bottom row */}
-          <div className="flex gap-4 lg:gap-6 mr-8">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 lg:mr-8">
             <div className="">
               <Image
                 src={"/about/who-3.jpg"}
                 width={252}
                 height={300}
                 alt="Who we are image-3"
-                className="object-cover w-[252px] h-[300px] rounded-lg"
+                className="object-cover w-full lg:w-[252px] h-32 lg:h-[300px] rounded-lg"
               />
             </div>
             <div className="">
@@ -49,7 +49,7 @@ function WhoSection() {
                 width={488}
                 height={300}
                 alt="Who we are image-4"
-                className="object-cover w-[488px] h-[300px] rounded-lg"
+                className="object-cover w-full lg:w-[488px] h-32 lg:h-[300px] rounded-lg"
               />
             </div>
           </div>
@@ -57,17 +57,17 @@ function WhoSection() {
 
         {/* Content Section */}
         <div className="flex-1">
-          <h2 className="text-2xl lg:text-4xl font-bold text-[#181818] font-orbitron mb-8">
+          <h2 className="text-2xl lg:text-4xl font-bold text-[#181818] font-orbitron mb-4 lg:mb-8">
             Who We Are?
           </h2>
 
-          <div className=" lg:max-w-[570px] mb-10">
-            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+          <div className="lg:max-w-[570px] mb-10">
+            <p className="text-gray-600 lg:text-lg mb-2 lg:mb-8 leading-relaxed">
               ZHB Solution LLC is a forward-thinking technology company based in
               the USA, delivering smart, scalable, and secure digital solutions.
             </p>
 
-            <p className="text-gray-600 text-lg mb-12 mt-12 leading-relaxed">
+            <p className="text-gray-600 lg:text-lg lg:mb-12 mt-4 lg:mt-12 leading-relaxed">
               We specialize in AI, IoT, blockchain, cloud computing, and
               business automation—empowering businesses to innovate, grow, and
               thrive in a digital-first world.
@@ -75,7 +75,7 @@ function WhoSection() {
           </div>
 
           {/* Feature Cards */}
-          <div className="flex items-center gap-[54px]">
+          <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-[54px]">
             {/* Innovation */}
             <div className="flex items-start gap-4">
               <WhoCard

@@ -6,14 +6,42 @@ import { Boxs, Brain, JoinHand, LapTube } from "@/components/svg/VisionSVG";
 
 function VisionSection() {
   return (
-    <div className="bg-[#1E3E7C] flex items-center px-[200px] py-20 gap-[120px]">
-      <div className="relative border w-[730px] h-[714px]">
+    <div className="bg-[#1E3E7C] flex flex-col-reverse lg:flex-row items-center px-4 lg:px-[200px] py-10 lg:py-20 gap-10 lg:gap-[120px]">
+      <div className="relative w-[300px] lg:w-[730px] h-[280px] lg:h-[714px]">
         <Image
-          src={"/about/vision-1.jpg"}
-          alt="Vision Image"
+          src={"/about/vision-1.png"}
+          alt="Vision Image 1"
+          width={535}
+          height={235}
+          className="object-cover max-w-[74%] h-[33.4%] ml-1"
+        />
+        <Image
+          src={"/about/vision-2.png"}
+          alt="Vision Image 2"
+          width={311}
+          height={220}
+          className="object-cover w-[42.85%] h-[30%] absolute top-[17.3%] lg:top-[17.1%] right-[6.4%] lg:right-[7.5%]"
+        />
+        <Image
+          src={"/about/vision-3.png"}
+          alt="Vision Image 3"
+          width={416}
+          height={220}
+          className="object-cover w-[57.45%] h-auto mt-1 absolute top-[33.5%] left-0"
+        />
+        <Image
+          src={"/about/vision-4.png"}
+          alt="Vision Image 4"
+          width={322}
+          height={207}
+          className="object-cover w-[44%] h-auto absolute bottom-[24%] -right-[1.5%]"
+        />
+        <Image
+          src={"/about/vision-5.png"}
+          alt="Vision Image 5"
           width={535}
           height={236}
-          className="object-cover w-[535px] h-[236px] absolute"
+          className="object-cover w-[76.5%] h-[32%] absolute bottom-[2.5%] left-0"
         />
       </div>
       <div>
