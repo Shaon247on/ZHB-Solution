@@ -12,6 +12,7 @@ interface TitleSectionProps {
   buttonHref?: string;
   textColor?: string;
   width?: string;
+  textPosition?: string;
 }
 
 export default function TitleSection({
@@ -21,10 +22,11 @@ export default function TitleSection({
   buttonText,
   buttonHref,
   textColor = "text-white",
-  width="max-w-150px"
+  width="max-w-150px",
+  textPosition = "text-center",
 }: TitleSectionProps) {
   return (
-    <section className="text-center py-6 lg:py-12 bg-none">
+    <section className={`py-6 lg:py-12 bg-none ${textPosition}`}>
       {/* Tag */}
       {tag && (
         <motion.span
@@ -32,7 +34,7 @@ export default function TitleSection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="inline-block border border-primary text-sm px-3 py-1 rounded-full text-primary"
+          className="inline-block border border-primary text-sm px-3 py-1 rounded-full text-primary "
         >
           {tag}
         </motion.span>
@@ -44,7 +46,7 @@ export default function TitleSection({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className={`my-4 text-xs lg:text-base ${textColor} border mx-auto border-sky-700 rounded-full font-medium ${width ? width : 'w-40'}`}
+        className={`my-4 text-xs text-center lg:text-base ${textColor} border mx-auto border-sky-700 rounded-full font-medium ${width ? width : 'w-40'}`}
       >
         {title}
       </motion.p>
@@ -56,7 +58,7 @@ export default function TitleSection({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className={`text-lg lg:text-4xl font-orbitron font-bold ${title === "SERVICE" ? "max-w-[620px]":"max-w-[545px]"} lg:leading-12 mx-auto ${textColor}`}
+          className={`text-lg lg:text-4xl font-orbitron font-bold ${title === "SERVICE" ? "max-w-[620px]":"max-w-[545px]"} lg:leading-12 mx-auto ${textColor} ${textPosition}`}
         >
           {subtitle}
         </motion.p>

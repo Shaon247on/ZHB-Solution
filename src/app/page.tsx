@@ -9,7 +9,6 @@ import ProjectsSection from "@/components/landing/ProjectsSection";
 import ServiceSection from "@/components/landing/ServiceSection";
 import SolutionSection from "@/components/landing/SolutionSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
-import { Contact } from "lucide-react";
 
 export default function Home() {
   return (

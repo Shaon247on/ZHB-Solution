@@ -1,71 +1,85 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence, easeOut, easeInOut } from 'framer-motion'
-import { ChevronDown, Menu, X } from 'lucide-react'
-import Image from 'next/image'
-import { Button } from '../ui/button'
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence, easeOut, easeInOut } from "framer-motion";
+import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Navbar = () => {
-  const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState<boolean>(false)
-  const [isMobile, setIsMobile] = useState<boolean>(false)
-  const [mounted, setMounted] = useState<boolean>(false)
+  const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] =
+    useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
+  const [active, setActive] = useState<string>("Home");
 
-  // Ensure component is mounted before rendering
+  console.log("is active", active);
+
+   useEffect(() => {
+    const saved = localStorage.getItem("myValue");
+    if (saved) setActive(saved);
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    localStorage.setItem("myValue", active);
+  }, [active]);
+
 
   // Handle responsive behavior
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 1024)
+      setIsMobile(window.innerWidth < 1024);
       if (window.innerWidth >= 1024) {
-        setIsMobileMenuOpen(false)
-        setIsMobileServicesOpen(false)
+        setIsMobileMenuOpen(false);
+        setIsMobileServicesOpen(false);
       }
-    }
+    };
 
-    checkScreenSize()
-    window.addEventListener('resize', checkScreenSize)
-    return () => window.removeEventListener('resize', checkScreenSize)
-  }, [])
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement
-      if (!target.closest('.services-dropdown')) {
-        setIsServicesOpen(false)
+      const target = event.target as HTMLElement;
+      if (!target.closest(".services-dropdown")) {
+        setIsServicesOpen(false);
       }
-    }
+    };
 
-    document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutside)
-  }, [])
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About US', href: '/about' },
-    { 
-      name: 'Services', 
-      href: '/services',
+    { name: "Home", href: "/" },
+    { name: "About US", href: "/about" },
+    {
+      name: "Services",
+      href: "/services",
       hasDropdown: true,
       dropdownItems: [
-        'Web Development',
-        'Mobile App Development',
-        'Digital Marketing',
-        'UI/UX Design',
-        'Cloud Solutions',
-        'Data Analytics'
-      ]
+        { name: "Web Development", href: "/services/web-development" },
+        {
+          name: "Mobile App Development",
+          href: "/services/mobile-app-development",
+        },
+        { name: "Digital Marketing", href: "/services/digital-marketing" },
+        { name: "UI/UX Design", href: "/services/ui-ux-design" },
+        { name: "Cloud Solutions", href: "/services/cloud-solutions" },
+        { name: "Data Analytics", href: "/services/data-analytics" },
+      ],
     },
-    { name: 'Work', href: '/work' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Career', href: '/career' }
-  ]
+    { name: "Work", href: "/work" },
+    { name: "Blog", href: "/blog" },
+    { name: "Career", href: "/career" },
+  ];
 
   const dropdownVariants = {
     hidden: {
@@ -74,8 +88,8 @@ const Navbar = () => {
       scale: 0.95,
       transition: {
         duration: 0.2,
-        ease: easeOut
-      }
+        ease: easeOut,
+      },
     },
     visible: {
       opacity: 1,
@@ -83,52 +97,52 @@ const Navbar = () => {
       scale: 1,
       transition: {
         duration: 0.3,
-        ease: easeInOut
-      }
-    }
-  }
+        ease: easeInOut,
+      },
+    },
+  };
 
   const mobileMenuVariants = {
     hidden: {
-      x: '100%',
+      x: "100%",
       transition: {
         duration: 0.3,
-        ease: easeOut
-      }
+        ease: easeOut,
+      },
     },
     visible: {
       x: 0,
       transition: {
         duration: 0.3,
-        ease: easeInOut
-      }
-    }
-  }
+        ease: easeInOut,
+      },
+    },
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, x: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: {
         duration: 0.2,
-        ease: easeOut
-      }
-    }
-  }
+        ease: easeOut,
+      },
+    },
+  };
 
   const staggerContainer = {
     visible: {
       transition: {
-        staggerChildren: 0.1
-      }
-    }
-  }
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
   const arrowVariants = {
     closed: { rotate: 0 },
-    open: { rotate: 180 }
-  }
+    open: { rotate: 180 },
+  };
 
   // Prevent hydration issues by not rendering until mounted
   if (!mounted) {
@@ -145,17 +159,24 @@ const Navbar = () => {
             />
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
-                <div key={item.name} className="relative">
-                  <a
+                <button onClick={() => setActive(item.name)} key={item.name} className="relative">
+                  <Link
                     href={item.href}
-                    className="text-[#FDFDFD] hover:text-[#3671E2] transition-colors duration-200 font-medium"
+                    className={`${
+                      active === item.name ? "text-[#3671E2]" : "text-[#FDFDFD]"
+                    } hover:text-[#3671E2] transition-colors duration-200 font-medium`}
+                    
                   >
                     {item.name}
-                  </a>
-                </div>
+                  </Link>
+                </button>
               ))}
             </div>
-            <Button className="hidden lg:block" variant="default" size="default">
+            <Button
+              className="hidden lg:block"
+              variant="default"
+              size="default"
+            >
               Contact Us
             </Button>
             <div className="lg:hidden">
@@ -164,7 +185,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    )
+    );
   }
 
   return (
@@ -188,7 +209,11 @@ const Navbar = () => {
                   <div className="relative">
                     <button
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className="flex items-center space-x-1 text-[#FDFDFD] hover:text-[#3671E2] transition-colors duration-200 py-2"
+                      className={`flex items-center space-x-1 ${
+                        active === "Service"
+                          ? "text-[#FDFDFD]"
+                          : "text-[#FDFDFD]"
+                      } hover:text-[#3671E2] transition-colors duration-200 py-2`}
                     >
                       <span className="font-medium">{item.name}</span>
                       <motion.div
@@ -215,14 +240,16 @@ const Navbar = () => {
                             animate="visible"
                           >
                             {item.dropdownItems?.map((dropdownItem, index) => (
-                              <motion.a
-                                key={index}
-                                variants={itemVariants}
-                                href="#"
-                                className="block px-4 py-3 text-gray-800 hover:bg-gray-50 hover:text-[#172F5F] transition-colors duration-200"
-                              >
-                                {dropdownItem}
-                              </motion.a>
+                              <Link
+                              onClick={() => setActive(dropdownItem.name)}
+                              key={index} href={dropdownItem.href}>
+                                <motion.p
+                                  variants={itemVariants}
+                                  className="block px-4 py-3 text-gray-800 hover:bg-gray-50 hover:text-[#172F5F] transition-colors duration-200"
+                                >
+                                  {dropdownItem.name}
+                                </motion.p>
+                              </Link>
                             ))}
                           </motion.div>
                         </motion.div>
@@ -230,17 +257,18 @@ const Navbar = () => {
                     </AnimatePresence>
                   </div>
                 ) : (
-                  <a
+                  <Link
+                    onClick={() => setActive(item.name)}
                     href={item.href}
-                    className="text-[#FDFDFD] hover:text-[#3671E2] transition-colors duration-200 font-medium"
+                    className={`${active === item.name ? "text-[#3671E2]":"text-[#FDFDFD]"} hover:text-[#3671E2] transition-colors duration-200 font-medium`}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
           </div>
-          
+
           <Button className="hidden lg:block" variant="default" size="default">
             Contact Us
           </Button>
@@ -284,7 +312,9 @@ const Navbar = () => {
                     {item.hasDropdown ? (
                       <div>
                         <button
-                          onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                          onClick={() =>
+                            setIsMobileServicesOpen(!isMobileServicesOpen)
+                          }
                           className="flex items-center justify-between w-full text-[#FDFDFD] hover:text-[#3671E2] py-3 text-left font-medium transition-colors duration-200"
                         >
                           <span>{item.name}</span>
@@ -307,18 +337,20 @@ const Navbar = () => {
                               className="overflow-hidden"
                             >
                               <div className="pl-4 space-y-2 py-2">
-                                {item.dropdownItems?.map((dropdownItem, index) => (
-                                  <motion.a
-                                    key={index}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.1 }}
-                                    href="#"
-                                    className="block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200"
-                                  >
-                                    {dropdownItem}
-                                  </motion.a>
-                                ))}
+                                {item.dropdownItems?.map(
+                                  (dropdownItem, index) => (
+                                    <motion.a
+                                      key={index}
+                                      initial={{ opacity: 0, x: -10 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{ delay: index * 0.1 }}
+                                      href="#"
+                                      className="block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200"
+                                    >
+                                      {dropdownItem}
+                                    </motion.a>
+                                  )
+                                )}
                               </div>
                             </motion.div>
                           )}
@@ -364,7 +396,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
