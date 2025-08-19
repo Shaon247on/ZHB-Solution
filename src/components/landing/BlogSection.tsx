@@ -11,7 +11,7 @@ function BlogSection() {
         title="Blogs"
         subtitle="Latest inspiring insights for business growth"
         buttonText="Explore Insights"
-        buttonHref="/blog"
+        buttonHref="/blogs"
         width="w-[80px]"
       />
 
