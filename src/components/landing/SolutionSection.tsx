@@ -46,7 +46,7 @@ const statsData = [
 
 function SolutionSection() {
   return (
-    <div className="relative mask-y-to-cyan-200 my-20">
+    <div className="relative mask-y-to-cyan-200 lg:my-20">
       <video
         src="/solution.mp4"
         autoPlay

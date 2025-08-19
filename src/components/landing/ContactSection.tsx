@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import CreativeStepSection from "../element/CreativeStepSection";
 
-function ContactSection() {
+function ContactSection({bottom=true}:{bottom?:boolean}) {
   return (
     <section>
       <div className="flex flex-col lg:flex-row px-4 lg:px-32 py-10 lg:py-20 bg-[#EBF1FC] gap-6 lg:gap-16">
@@ -54,13 +54,13 @@ function ContactSection() {
         </div>
         <ContactForm />
       </div>
-      <CreativeStepSection
+      {bottom && <CreativeStepSection
         title="Take the first creative step toward success"
         // subtitle="Discover how we transform ideas into exceptional digital experiences through our proven methodology"
         buttonText="Learn More"
         onButtonClick={() => console.log("Custom button clicked")}
         className="mt-8"
-      />
+      />}
     </section>
   );
 }

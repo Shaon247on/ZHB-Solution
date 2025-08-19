@@ -6,6 +6,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false);
@@ -15,10 +16,11 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [mounted, setMounted] = useState<boolean>(false);
   const [active, setActive] = useState<string>("Home");
+  const route = useRouter();
 
   console.log("is active", active);
 
-   useEffect(() => {
+  useEffect(() => {
     const saved = localStorage.getItem("myValue");
     if (saved) setActive(saved);
     setMounted(true);
@@ -27,7 +29,6 @@ const Navbar = () => {
   useEffect(() => {
     localStorage.setItem("myValue", active);
   }, [active]);
-
 
   // Handle responsive behavior
   useEffect(() => {
@@ -159,13 +160,16 @@ const Navbar = () => {
             />
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
-                <button onClick={() => setActive(item.name)} key={item.name} className="relative">
+                <button
+                  onClick={() => setActive(item.name)}
+                  key={item.name}
+                  className="relative"
+                >
                   <Link
                     href={item.href}
                     className={`${
                       active === item.name ? "text-[#3671E2]" : "text-[#FDFDFD]"
                     } hover:text-[#3671E2] transition-colors duration-200 font-medium`}
-                    
                   >
                     {item.name}
                   </Link>
@@ -176,6 +180,10 @@ const Navbar = () => {
               className="hidden lg:block"
               variant="default"
               size="default"
+              onClick={() => {
+                setActive("Contact");
+                route.push("/contact");
+              }}
             >
               Contact Us
             </Button>
@@ -241,8 +249,10 @@ const Navbar = () => {
                           >
                             {item.dropdownItems?.map((dropdownItem, index) => (
                               <Link
-                              onClick={() => setActive(dropdownItem.name)}
-                              key={index} href={dropdownItem.href}>
+                                onClick={() => setActive(dropdownItem.name)}
+                                key={index}
+                                href={dropdownItem.href}
+                              >
                                 <motion.p
                                   variants={itemVariants}
                                   className="block px-4 py-3 text-gray-800 hover:bg-gray-50 hover:text-[#172F5F] transition-colors duration-200"
@@ -260,7 +270,9 @@ const Navbar = () => {
                   <Link
                     onClick={() => setActive(item.name)}
                     href={item.href}
-                    className={`${active === item.name ? "text-[#3671E2]":"text-[#FDFDFD]"} hover:text-[#3671E2] transition-colors duration-200 font-medium`}
+                    className={`${
+                      active === item.name ? "text-[#3671E2]" : "text-[#FDFDFD]"
+                    } hover:text-[#3671E2] transition-colors duration-200 font-medium`}
                   >
                     {item.name}
                   </Link>
@@ -269,7 +281,15 @@ const Navbar = () => {
             ))}
           </div>
 
-          <Button className="hidden lg:block" variant="default" size="default">
+          <Button
+            onClick={() => {
+              route.push("/contact");
+              setActive("Contact");
+            }}
+            className="hidden lg:block"
+            variant="default"
+            size="default"
+          >
             Contact Us
           </Button>
 
@@ -369,6 +389,10 @@ const Navbar = () => {
 
                 <motion.div variants={itemVariants} className="pt-4">
                   <motion.button
+                    onClick={() => {
+                      route.push("/contact");
+                      setActive("Contact");
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-full bg-[#3671E2] hover:bg-[#00B596] text-white px-6 py-3 rounded-full font-semibold transition-colors duration-200"
