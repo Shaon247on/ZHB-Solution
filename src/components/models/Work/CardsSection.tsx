@@ -1,70 +1,15 @@
 import WorkCard, { WorkCardProps } from "@/components/element/WorkCard";
+import { workData1, workData2, workData3 } from "@/data/WorkData";
 import React from "react";
 import { id } from "zod/v4/locales";
 
-const workData1: WorkCardProps = [
-  {
-    id: 1,
-    title: "Admin Control Center Sites",
-    subtitle:
-      "A robust backend interface built to manage users, content, and operations all from a single, secure dashboard.",
-    tags: [
-      "Web Application Development",
-      "Enterprise Solutions",
-      "Custom Software Development",
-    ],
-    imageHeight:"h-[785px]",
-    imageWidth: "w-[1516px]",
-    image: "/work/work-1.png",
-    gridCol: "col-span-2",
-  },
-  {
-    id: 2,
-    title: "Multivendor e-commerce site",
-    subtitle:
-      "A scalable marketplace connecting multiple vendors with seamless shopping, powerful dashboards, and real time operations.",
-    tags: [
-      "Web Application Development",
-      "Enterprise Solutions",
-      "Custom Software Development",
-    ],
-    
-    imageHeight:"h-[248px]",
-    imageWidth: "w-[710px]",
-    image: "/work/work-2.jpg",
-    gridCol: "col-span-1",
-  },
-  {
-    id: 3,
-    title: "Task Manager Mobile App",
-    subtitle:
-      "A sleek mobile solution designed to help users organize, prioritize, and complete tasks anytime, anywhere.",
-    tags: [
-      "Mobile App Development",
-      "Productivity & Workflow Tools",
-      "UI/UX Design Projects",
-    ],
-    imageHeight:"h-[248px]",
-    imageWidth: "w-[710px]",
-    image: "/work/work-3.jpg",
-    gridCol: "col-span-1",
-  },
-  {
-    id: 4,
-    title: "Smart POS for Restaurants",
-    subtitle:
-      "Streamline orders, manage tables, track inventory, and boost efficiency — all from one powerful POS platform designed for the food industry",
-    tags: ["POS Development", "Restaurant Management", "Cloud-Based POS"],
-    imageHeight:"h-[305px]",
-    imageWidth: "w-[616px]",
-    image: "/work/work-4.jpg",
-    gridCol: "col-span-2",
-  },
-];
+
+
+
 
 function CardsSection() {
   return (
-    <div className="bg-[#172134] rounded-b-3xl px-6 lg:px-[77px]">
+    <div className="bg-[#172134] rounded-b-3xl px-6 lg:px-[77px] py-6 lg:py-20">
       <h2 className="text-[#EBF1FC] font-bold text-2xl font-orbitron text-center lg:text-[56px] mb-2">
         Showcasing Innovation Through <br className="hidden lg:block" />
         Our Work
@@ -76,7 +21,7 @@ function CardsSection() {
       </p>
       <div className="py-6 lg:py-20">
         <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 px-0 lg:px-[100px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-0 lg:px-[100px]">
             {workData1.map((item) => (
               <WorkCard
                 key={item.id}
@@ -85,11 +30,53 @@ function CardsSection() {
                 subtitle={item.subtitle}
                 tags={item.tags}
                 image={item.image}
-                imageHeight="h-[240px]"
-                cardHeight={item?.cardHeight}
+                imageHeight={item.imageHeight}
+                imageWidth={item.imageWidth}
                 gridCol={item.gridCol}
               />
             ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-0 lg:px-14 pt-12">
+            {workData2.map((item) => (
+              <WorkCard
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                subtitle={item.subtitle}
+                tags={item.tags}
+                image={item.image}
+                imageHeight={item.imageHeight}
+                imageWidth={item.imageWidth}
+                gridCol={item.gridCol}
+              />
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-0 lg:px-[332px] pt-12 items-center">
+            {workData3.slice(0,2).map((item) => (
+              <WorkCard
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                subtitle={item.subtitle}
+                tags={item.tags}
+                image={item.image}
+                imageHeight={item.imageHeight}
+                imageWidth={item.imageWidth}
+                gridCol={item.gridCol}
+              />
+            ))}
+          </div>
+          <div className="px-0 lg:px-[332px] pt-12">
+              <WorkCard
+                id={workData3[2].id}
+                title={workData3[2].title}
+                subtitle={workData3[2].subtitle}
+                tags={workData3[2].tags}
+                image={workData3[2].image}
+                imageHeight={workData3[2].imageHeight}
+                imageWidth={workData3[2].imageWidth}
+                gridCol={workData3[2].gridCol}
+              />
           </div>
         </div>
       </div>

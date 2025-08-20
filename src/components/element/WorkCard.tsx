@@ -10,39 +10,47 @@ export interface WorkCardProps {
   subtitle: string;
   tags: string[];
   image: string; // path from /public
-  cardHeight?: string;
   imageHeight?: string;
   imageWidth?: string;
   gridCol?: string;
 }
 
 export default function WorkCard({
-  id: number,
+  id,
   title,
   subtitle,
   tags,
   image,
-  cardHeight = "w-full",
   imageHeight = "h-64",
   imageWidth = "w-full",
   gridCol = "col-span-1",
 }: WorkCardProps) {
   return (
     <div
-      className={`bg-[#11204E] ${gridCol} overflow-hidden shadow-md text-white ${cardHeight} py-4 px-6`}
+      className={`bg-[#11204E] ${gridCol} overflow-hidden shadow-md text-white py-2 lg:py-4 px-2 lg:px-6`}
     >
-      <div className={`relative`}>
+      <div className={`relative ${id === 4 && "flex items-center pt-6 lg:pt-[63px] pb-4 lg:pb-[39px] justify-center"}`}>
         <Image
           src={image}
           alt={title}
           width={1516}
           height={735}
           objectFit="cover"
-          className={`object-cover w-full h-full`}
+          className={`object-cover ${id === 4 && "relative z-10"} ${imageWidth} ${imageHeight}`}
         />
+        {id === 4 && (
+          <Image
+          src={"/work/cardBg.jpg"}
+          alt={title}
+          width={1516}
+          height={735}
+          objectFit="cover"
+          className={`object-cover h-full w-full absolute z-0`}
+        />
+        )}
       </div>
       <div className="">
-        <div className="flex flex-wrap gap-2 my-4">
+        <div className={`flex flex-wrap gap-2 ${id === 4 ? "my-7":"my-4"}`}>
           {tags.map((tag, i) => (
             <span
               key={i}
@@ -52,7 +60,7 @@ export default function WorkCard({
             </span>
           ))}
         </div>
-        <h3 className="text-[32px] font-semibold mb-2">{title}</h3>
+        <h3 className="text-xl lg:text-[32px] font-semibold mb-2">{title}</h3>
         <p className="text-sm text-gray-300 mb-6">{subtitle}</p>
         <Button size="xl" className="gap-2 rounded-full">
           Read Case Study <ArrowRight className="w-4 h-4" />
