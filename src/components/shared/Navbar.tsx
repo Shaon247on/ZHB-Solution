@@ -75,6 +75,7 @@ const Navbar = () => {
         { name: "UI/UX Design", href: "/services/ui-ux-design" },
         { name: "Cloud Solutions", href: "/services/cloud-solutions" },
         { name: "Data Analytics", href: "/services/data-analytics" },
+        { name: "Digital Marketing", href: "/services/digital-marketing" },
       ],
     },
     { name: "Work", href: "/work" },
