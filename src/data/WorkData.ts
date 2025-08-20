@@ -1,3 +1,5 @@
+import { WorkCardProps } from "@/components/element/WorkCard";
+
 export const workData1: WorkCardProps[] = [
   {
     id: 1,

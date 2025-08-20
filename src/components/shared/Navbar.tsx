@@ -215,57 +215,85 @@ const Navbar = () => {
             {navItems.map((item) => (
               <div key={item.name} className="relative services-dropdown">
                 {item.hasDropdown ? (
-                  <div className="relative">
-                    <button
-                      onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className={`flex items-center space-x-1 ${
-                        active === "Service"
-                          ? "text-[#FDFDFD]"
-                          : "text-[#FDFDFD]"
-                      } hover:text-[#3671E2] transition-colors duration-200 py-2`}
-                    >
-                      <span className="font-medium">{item.name}</span>
-                      <motion.div
-                        variants={arrowVariants}
-                        animate={isServicesOpen ? "open" : "closed"}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <ChevronDown className="w-4 h-4" />
-                      </motion.div>
-                    </button>
-
-                    <AnimatePresence>
-                      {isServicesOpen && (
-                        <motion.div
-                          variants={dropdownVariants}
-                          initial="hidden"
-                          animate="visible"
-                          exit="hidden"
-                          className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                  <div
+                    key={item.name}
+                    className="relative services-dropdown"
+                    onMouseEnter={() => setIsServicesOpen(true)}
+                    onMouseLeave={() => setIsServicesOpen(false)}
+                  >
+                    {item.hasDropdown ? (
+                      <div className="relative">
+                        {/* Services button is now a link */}
+                        <Link
+                          href={item.href}
+                          onClick={() => setActive(item.name)}
+                          className={`flex items-center space-x-1 ${
+                            active === "Services"
+                              ? "text-[#3671E2]"
+                              : "text-[#FDFDFD]"
+                          } hover:text-[#3671E2] transition-colors duration-200 py-2`}
                         >
+                          <span className="font-medium">{item.name}</span>
                           <motion.div
-                            variants={staggerContainer}
-                            initial="hidden"
-                            animate="visible"
+                            variants={arrowVariants}
+                            animate={isServicesOpen ? "open" : "closed"}
+                            transition={{ duration: 0.2 }}
                           >
-                            {item.dropdownItems?.map((dropdownItem, index) => (
-                              <Link
-                                onClick={() => setActive(dropdownItem.name)}
-                                key={index}
-                                href={dropdownItem.href}
-                              >
-                                <motion.p
-                                  variants={itemVariants}
-                                  className="block px-4 py-3 text-gray-800 hover:bg-gray-50 hover:text-[#172F5F] transition-colors duration-200"
-                                >
-                                  {dropdownItem.name}
-                                </motion.p>
-                              </Link>
-                            ))}
+                            <ChevronDown className="w-4 h-4" />
                           </motion.div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                        </Link>
+
+                        {/* Dropdown stays the same */}
+                        <AnimatePresence>
+                          {isServicesOpen && (
+                            <motion.div
+                              variants={dropdownVariants}
+                              initial="hidden"
+                              animate="visible"
+                              exit="hidden"
+                              className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                            >
+                              <motion.div
+                                variants={staggerContainer}
+                                initial="hidden"
+                                animate="visible"
+                              >
+                                {item.dropdownItems?.map(
+                                  (dropdownItem, index) => (
+                                    <Link
+                                      onClick={() =>
+                                        setActive(dropdownItem.name)
+                                      }
+                                      key={index}
+                                      href={dropdownItem.href}
+                                    >
+                                      <motion.p
+                                        variants={itemVariants}
+                                        className="block px-4 py-3 text-gray-800 hover:bg-gray-50 hover:text-[#172F5F] transition-colors duration-200"
+                                      >
+                                        {dropdownItem.name}
+                                      </motion.p>
+                                    </Link>
+                                  )
+                                )}
+                              </motion.div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link
+                        onClick={() => setActive(item.name)}
+                        href={item.href}
+                        className={`${
+                          active === item.name
+                            ? "text-[#3671E2]"
+                            : "text-[#FDFDFD]"
+                        } hover:text-[#3671E2] transition-colors duration-200 font-medium`}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </div>
                 ) : (
                   <Link

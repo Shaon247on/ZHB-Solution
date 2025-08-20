@@ -46,7 +46,7 @@ export default function TitleSection({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className={`my-4 text-xs text-center lg:text-base ${textColor} border mx-auto border-sky-700 rounded-full font-medium ${width ? width : 'w-40'}`}
+        className={`my-1 lg:my-2 text-xs text-center lg:text-base ${textColor} border mx-auto border-sky-700 rounded-full font-medium ${width ? width : 'w-40'}`}
       >
         {title}
       </motion.p>
