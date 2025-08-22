@@ -49,7 +49,7 @@ export const TopSecviceCardData = [
       "E-Commerce Development",
       "Web Application Development",
     ],
-    url: "/services/web",
+    url: "/services/web-development",
   },
   {
     id: 2,
@@ -64,7 +64,7 @@ export const TopSecviceCardData = [
       "UI/UX Design",
       "App Analytics",
     ],
-    url: "/services/app",
+    url: "/services/mobile-app-development",
   },
   {
     id: 3,
@@ -79,14 +79,14 @@ export const TopSecviceCardData = [
       "Visual Design",
       "Interaction Design",
     ],
-    url: "/services/design",
+    url: "/services/ui-ux-design",
   },
   {
     id: 4,
     title: "Cloud Solutions",
     subtitle:
       "Empower your business with cloud-based solutions that improve scalability and efficiency.",
-    image: "/services/service-4.jpg",
+    image: "/services/service-5.jpg",
     features: [
       "Cloud Migration",
       "Cloud Integration",
@@ -94,14 +94,14 @@ export const TopSecviceCardData = [
       "Data Storage & Backup",
       "Disaster Recovery",
     ],
-    url: "/services/cloud",
+    url: "/services/cloud-solutions",
   },
   {
     id: 5,
     title: "Data Analytics",
     subtitle:
       "Leverage data to gain actionable insights and make data-driven decisions for your business.",
-    image: "/services/service-5.jpg",
+    image: "/services/service-4.jpg",
     features: [
       "Business Intelligence",
       "Data Visualizations",
@@ -109,7 +109,7 @@ export const TopSecviceCardData = [
       "Big Data Solutions",
       "Data Warehousing",
     ],
-    url: "/services/data",
+    url: "/services/data-analytics",
   },
   {
     id: 6,
@@ -124,7 +124,7 @@ export const TopSecviceCardData = [
       "Email Campaigns",
       "Analytics & Reporting",
     ],
-    url: "/services/marketing",
+    url: "/services/digital-marketing",
   },
 ];
 

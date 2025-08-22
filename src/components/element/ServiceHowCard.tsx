@@ -21,10 +21,10 @@ const ServiceStepCard: FC<ServiceStepCardProps> = ({
     <div className="bg-white rounded-lg p-6 shadow-lg flex flex-col items-start space-y-4 h-[560px] lg:h-[550px]">
       <span className="font-medium text-sm text-[#3167CE] mb-7">Step 0{step}</span>
 
-      <div className="size-11 flex items-center justify-center bg-[#172F5F] rounded-[12px] mb-6">
+      <div className="size-11 flex items-center justify-center bg-[#172F5F] rounded-[12px] mb-4 lg:mb-6">
         {icon}
       </div>
-      <h3 className="text-2xl font-semibold text-[#181818] mb-4">{title}</h3>
+      <h3 className="text-lg lg:text-2xl font-semibold text-[#181818] mb-4">{title}</h3>
       <p className="text-sm text-[#464646] max-w-[353px]">{description}</p>
       <ul className="space-y-6 text-sm text-black">
         {features.map((feature, index) => (

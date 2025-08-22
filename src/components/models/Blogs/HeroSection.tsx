@@ -35,7 +35,7 @@ function HeroSection() {
         </div>
         <div>
           <Image
-            src={"/expert.png"}
+            src={"/growth-1.png"}
             width={936}
             height={530}
             alt="Expert"

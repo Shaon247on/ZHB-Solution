@@ -6,7 +6,7 @@ function HowSection() {
   return (
     <div className="py-6 lg:py-20 px-6 lg:px-[120px] bg-[#172F5F] text-white">
       <h3 className="w-fit inline-block px-4 border rounded-full mb-2">
-        Why Choose Us
+        How we Work
       </h3>
       <h2 className="text-2xl lg:text-4xl font-bold font-orbitron mb-6">
         Our Proven Process for Delivering Success

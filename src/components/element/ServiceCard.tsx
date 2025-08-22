@@ -25,7 +25,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <motion.div
-      className={`relative w-full h-[450px] sm:h-[500px] bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group ${className}`}
+      className={`relative w-full h-[300px] lg:h-[400px] bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group ${className}`}
       whileHover="hover"
       initial="initial"
     >

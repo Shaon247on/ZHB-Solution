@@ -50,16 +50,16 @@ const image = [
 
 function HeroSection() {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <video
         src="/services/hero.mp4"
         autoPlay
         loop
         muted
         controls={false}
-        className="w-[2000px]  absolute z-0 bottom-16"
+        className="w-full min-h-full object-cover absolute z-0"
       />
-      <div className="w-full h-[95%] -top-3 absolute z-10 bg-[#181818CC]" />
+      <div className="w-full min-h-[100vh] absolute z-10 bg-[#181818CC]" />
       <div className=" relative z-30 py-7 lg:py-20 px-6 lg:px-[300px] text-white text-center">
         <h1 className="text-xl lg:text-[56px] font-semibold lg:font-bold font-orbitron">
           Service of <br className="hidden lg:block" />
@@ -72,11 +72,11 @@ function HeroSection() {
         </p>
         <Button
           size={"xl"}
-          className="rounded-full mb-2 lg:mb-10 mt-6 lg:mt-12"
+          className="rounded-full mb-6 lg:mb-10 mt-6 lg:mt-12"
         >
           Explore Our Service
         </Button>
-        <div className="max-w-[1680px] flex items-center gap-1 lg:gap-6 h-30 lg:h-[420px] relative overflow-hidden">
+        <div className="flex items-center justify-center py-2 lg:py-16 gap-1 lg:gap-6 relative">
           {image.map((img, index) => (
             <ServicesImage
               key={index}

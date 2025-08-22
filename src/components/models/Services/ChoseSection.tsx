@@ -47,7 +47,7 @@ function ChoseSection() {
         </h2>
         <div className="space-y-4">
           {data.map((item, index) => (
-            <div key={index} className="flex items-center gap-6 my-12">
+            <div key={index} className="flex items-center gap-6 lg:my-12">
               <div className="bg-[#EBF1FC] flex items-center text-[#172F5F] justify-center rounded-lg size-10 lg:size-[56px] shadow-[0_5px_20px_rgba(0,0,0,0.25)]">
                 {item.icon}
               </div>

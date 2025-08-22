@@ -20,7 +20,7 @@ function WhatSection() {
         />
       </div>
       <div className="lg:p-6">
-        <h3 className="text-[32px] font-semibold font-orbitron mb-2">
+        <h3 className="text-2xl lg:text-[32px] font-semibold font-orbitron mb-2">
           What We Do
         </h3>
         <p className="max-w-[835px] mb-6 lg:mb-12">

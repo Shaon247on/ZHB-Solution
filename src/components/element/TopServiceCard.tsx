@@ -26,13 +26,13 @@ const TopServiceCard: React.FC<TopServiceCardProps> = ({
 
   return (
     <div
-      className={`flex border-b-2  border-b-[#C1D3F6] pb-10 flex-col md:flex-row items-start gap-12 justify-between bg-[#F8F9F4] p-6 mb-6 md:mb-12`}
+      className={`flex border-b-2  border-b-[#C1D3F6] pb-10 flex-col md:flex-row items-start gap-4 lg:gap-12 justify-between bg-[#F8F9F4] p-6 mb-6 md:mb-12`}
     >
       {/* Left Side (Text Section) */}
-      <div className={`flex-1 ${isImageOnRight ? "md:order-2" : ""} space-y-4`}>
-        <h2 className="text-3xl font-semibold text-[#1E3E7C]">{title}</h2>
-        <p className="text-gray-700 text-lg max-w-[482px]">{subtitle}</p>
-        <ul className="space-y-2 text-sm text-gray-600 max-w-[482px] mb-16">
+      <div className={`flex-1 ${isImageOnRight ? "md:order-2" : ""} space-y-4 py-6 px-0 lg:px-4`}>
+        <h2 className="text-2xl lg:text-3xl font-semibold text-[#1E3E7C]">{title}</h2>
+        <p className="text-gray-700 text-base lg:text-lg max-w-[482px]">{subtitle}</p>
+        <ul className="space-y-2 text-sm text-gray-600 max-w-[482px] mb-2 lg:mb-16">
           {features.map((feature, index) => (
             <li
               key={index}
@@ -54,7 +54,7 @@ const TopServiceCard: React.FC<TopServiceCardProps> = ({
 
       {/* Right Side (Image Section) */}
       <div
-        className={`flex-1 ${id === 1 || id === 2 ? "relative" : ""} border-2`}
+        className={`flex-1 ${id === 1 || id === 2 ? "relative" : ""}`}
       >
         {id === 1 && (
           <Image
@@ -69,7 +69,7 @@ const TopServiceCard: React.FC<TopServiceCardProps> = ({
             src={"/services/service-bg2.jpg"}
             fill
             alt="bg image"
-            className="absolute z-0 w-full h-full"
+            className="absolute z-0 w-full h-full opacity-40"
           />
         )}
         <Image
@@ -77,9 +77,9 @@ const TopServiceCard: React.FC<TopServiceCardProps> = ({
           alt={title}
           width={868}
           height={884}
-          className={`object-cover lg:w-[868px] lg:h-[884px] ${
+          className={`object-cover  lg:w-[868px] lg:h-[884px] ${
             id === 1 || id === 2 ? "relative z-20" : ""
-          }`}
+          } `}
         />
       </div>
     </div>
