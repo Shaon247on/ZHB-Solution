@@ -67,11 +67,7 @@ const Navbar = () => {
       hasDropdown: true,
       dropdownItems: [
         { name: "Web Development", href: "/services/web-development" },
-        {
-          name: "Mobile App Development",
-          href: "/services/mobile-app-development",
-        },
-        { name: "Digital Marketing", href: "/services/digital-marketing" },
+        { name: "Mobile App Development", href: "/services/mobile-app-development",},
         { name: "UI/UX Design", href: "/services/ui-ux-design" },
         { name: "Cloud Solutions", href: "/services/cloud-solutions" },
         { name: "Data Analytics", href: "/services/data-analytics" },
@@ -269,7 +265,7 @@ const Navbar = () => {
                                     >
                                       <motion.p
                                         variants={itemVariants}
-                                        className="block px-4 py-3 text-gray-800 hover:bg-gray-50 hover:text-[#172F5F] transition-colors duration-200"
+                                        className={`block px-4 py-3 text-gray-800 hover:bg-gray-200 hover:text-[#172F5F] transition-colors duration-200 ${active === dropdownItem.name && "bg-gray-200"} rounded-2xl mx-2`}
                                       >
                                         {dropdownItem.name}
                                       </motion.p>
@@ -315,7 +311,7 @@ const Navbar = () => {
               route.push("/contact");
               setActive("Contact");
             }}
-            className="hidden lg:block"
+            className="hidden lg:block cursor-pointer"
             variant="default"
             size="default"
           >
@@ -394,9 +390,9 @@ const Navbar = () => {
                                       animate={{ opacity: 1, x: 0 }}
                                       transition={{ delay: index * 0.1 }}
                                       href="#"
-                                      className="block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200"
+                                      className={`block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200 ${active === dropdownItem.name && " bg-gray-200"} rounded-2xl mx-2`}
                                     >
-                                      {dropdownItem}
+                                      {dropdownItem.name}
                                     </motion.a>
                                   )
                                 )}
@@ -424,7 +420,7 @@ const Navbar = () => {
                     }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full bg-[#3671E2] hover:bg-[#00B596] text-white px-6 py-3 rounded-full font-semibold transition-colors duration-200"
+                    className="w-full cursor-pointer bg-[#3671E2] hover:bg-[#00B596] text-white px-6 py-3 rounded-full font-semibold transition-colors duration-200"
                   >
                     Contact Us
                   </motion.button>

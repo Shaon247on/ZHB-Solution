@@ -53,7 +53,9 @@ function HeroSection() {
     <div className="relative">
       <video
         src="/services/hero.mp4"
+        autoPlay
         loop
+        muted
         controls={false}
         className="w-[2000px]  absolute z-0 bottom-16"
       />

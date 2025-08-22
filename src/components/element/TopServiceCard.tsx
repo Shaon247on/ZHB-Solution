@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 interface TopServiceCardProps {
   id: number;
@@ -10,6 +11,7 @@ interface TopServiceCardProps {
   subtitle: string;
   image: string;
   features: string[];
+  url: string;
 }
 
 const TopServiceCard: React.FC<TopServiceCardProps> = ({
@@ -18,6 +20,7 @@ const TopServiceCard: React.FC<TopServiceCardProps> = ({
   subtitle,
   image,
   features,
+  url,
 }) => {
   const isImageOnRight = id % 2 !== 0;
 
@@ -42,14 +45,16 @@ const TopServiceCard: React.FC<TopServiceCardProps> = ({
             </li>
           ))}
         </ul>
-        <Button size="lg" className="mt-4 rounded-full">
-          Discover
-        </Button>
+        <Link href={url}>
+          <Button size="lg" className="mt-4 rounded-full">
+            Discover
+          </Button>
+        </Link>
       </div>
 
       {/* Right Side (Image Section) */}
       <div
-        className={`flex-1 ${id === 1 || id === 2 ? "relative":""} border-2`}
+        className={`flex-1 ${id === 1 || id === 2 ? "relative" : ""} border-2`}
       >
         {id === 1 && (
           <Image
