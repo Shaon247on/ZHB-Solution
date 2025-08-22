@@ -9,39 +9,33 @@ interface dataType {
 const data: dataType[] = [
   {
     step: "1",
-    title: "Discovery",
+    title: "Data Gathering",
     description:
-      "We start by understanding your business goals, challenges, and requirements through in-depth discussions and research.",
+      "Our proven process transforms complex data into meaningful strategies that drive business growth",
   },
   {
     step: "2",
-    title: "Design",
+    title: "Cleaning",
     description:
-      "Our team crafts a detailed project plan, wireframes, and design mockups. We focus on creating intuitive, user-friendly interfaces and clear workflows to bring your idea to life.",
+      "Collecting data from multiple reliable sources to build a comprehensive dataset.",
   },
   {
     step: "3",
-    title: "Development",
+    title: "Analysis",
     description:
-      "Our team crafts a detailed project plan, wireframes, and design mockups. We focus on creating intuitive, user-friendly interfaces and clear workflows to bring your idea to life.",
+      "Removing duplicates, fixing errors, and standardizing formats for accurate analysis.",
   },
   {
     step: "4",
-    title: "Testing",
+    title: "Visualization",
     description:
-      "Our team crafts a detailed project plan, wireframes, and design mockups. We focus on creating intuitive, user-friendly interfaces and clear workflows to bring your idea to life.",
+      "Presenting findings through intuitive dashboards, charts, and graphs.",
   },
   {
     step: "5",
-    title: "Deployment",
+    title: "Insights",
     description:
-      "Our team crafts a detailed project plan, wireframes, and design mockups. We focus on creating intuitive, user-friendly interfaces and clear workflows to bring your idea to life.",
-  },
-  {
-    step: "6",
-    title: "Maintenance",
-    description:
-      "Our team crafts a detailed project plan, wireframes, and design mockups. We focus on creating intuitive, user-friendly interfaces and clear workflows to bring your idea to life.",
+      "Delivering actionable recommendations that empower smart business decisions.",
   },
 ];
 
@@ -61,16 +55,15 @@ function HowSection() {
           How We Work
         </h3>
         <h2 className="mt-2 text-4xl font-bold text-[#E8E8E8] font-orbitron">
-          Our Streamlined Process for Delivering{" "}
-          <br className="hidden lg:block" /> Excellence
+          Our Cloud Migration & Optimization Process
         </h2>
         <p className="font-medium text-[#B7B7B7] max-w-[888px] mt-2 mb-6 lg:mb-12">
-          From initial discovery to ongoing maintenance, we follow a proven
-          workflow that ensures quality, efficiency, and client satisfaction at
-          every stage.
+          From initial assessment to ongoing support, we ensure a secure,
+          smooth, and cost-effective cloud <br className="hidden lg:block" />
+          journey.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-x-6 lg:gap-x-16 gap-y-6 px-6 lg:px-[327px]">
-          {data.map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 lg:gap-6 px-6 lg:px-[20%]">
+          {data.slice(0, 3).map((item, index) => (
             <div key={index} className="py-3 lg:py-6 px-2 lg:px-4 bg-[#F8F9F4]">
               <span className="inline-block w-fit rounded-full bg-[#B9D4CE] text-sm px-4 py-1 mb-3 lg:mb-6">
                 Step 0{item.step}
@@ -78,9 +71,20 @@ function HowSection() {
               <h2 className="font-semibold text-2xl text-[#181818] mb-4">
                 {item.title}
               </h2>
-              <p className="text-[#464646]">
-                {item.description}
-              </p>
+              <p className="text-[#464646] mb-16">{item.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center gap-4 lg:gap-6 px-6 lg:px-[28%] mt-6 ">
+          {data.slice(3, 5).map((item, index) => (
+            <div key={index} className="py-3 lg:py-6 px-2 lg:px-4 bg-[#F8F9F4]">
+              <span className="inline-block w-fit rounded-full bg-[#B9D4CE] text-sm px-4 py-1 mb-3 lg:mb-6 ">
+                Step 0{item.step}
+              </span>
+              <h2 className="font-semibold text-2xl text-[#181818] mb-4">
+                {item.title}
+              </h2>
+              <p className="text-[#464646] mb-16">{item.description}</p>
             </div>
           ))}
         </div>
