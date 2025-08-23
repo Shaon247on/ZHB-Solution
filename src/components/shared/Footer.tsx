@@ -244,7 +244,7 @@ const Footer: React.FC<FooterProps> = ({
 
             {/* Navigation Links */}
           </div>
-          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 lg:col-span-3 gap-8">
             {/* Contact */}
             <motion.div variants={itemVariants}>
               <h3 className="text-white font-semibold text-sm mb-4">Contact</h3>
@@ -292,45 +292,6 @@ const Footer: React.FC<FooterProps> = ({
               </h3>
               <ul className="space-y-2">
                 {footerLinks.quickLink1.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-gray-300 text-sm hover:text-white transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Quick Link 2 */}
-            <motion.div variants={itemVariants} className="hidden md:block">
-              <h3 className="text-white font-semibold text-sm mb-4">
-                QUICK LINK
-              </h3>
-              <ul className="space-y-2">
-                {footerLinks.quickLink2.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-gray-300 text-sm hover:text-white transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Quick Link 3 */}
-
-            <motion.div variants={itemVariants} className="hidden md:block">
-              <h3 className="text-white font-semibold text-sm mb-4">
-                QUICK LINK
-              </h3>
-              <ul className="space-y-2">
-                {footerLinks.quickLink2.map((link, index) => (
                   <li key={index}>
                     <a
                       href={link.href}
