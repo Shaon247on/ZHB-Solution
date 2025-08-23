@@ -24,8 +24,8 @@ const statsData = [
   },
   {
     number: "03",
-    title: "Projects Completed",
-    subtitle: "150+",
+    title: "Satisfied User",
+    subtitle: "1000+",
     label: "Projects",
     defaultBgColor: "bg-white",
     hoverBgColor: "bg-emerald-600",
@@ -34,9 +34,9 @@ const statsData = [
   },
   {
     number: "04",
-    title: "Client Satisfaction",
-    subtitle: "98%",
-    label: "Rating",
+    title: "Listed Products",
+    subtitle: "12",
+    label: "In Service",
     defaultBgColor: "bg-white",
     hoverBgColor: "bg-sky-900",
     defaultTextColor: "text-balck",
