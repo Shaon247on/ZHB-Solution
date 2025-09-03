@@ -72,21 +72,21 @@ function FaqSection() {
             <div className="*:data-[slot=avatar]:ring-background  flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
               <Avatar className="size-8 lg:size-[60px] border-none">
                 <AvatarImage
-                  src="https://github.com/shadcn.png"
+                  src="/faq-1.png"
                   alt="@shadcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              <Avatar className="size-8 lg:size-[60px] border-none">
+              <Avatar className="size-8 lg:size-[60px] object-cover border-none">
                 <AvatarImage
-                  src="https://github.com/leerob.png"
+                  src="/faq-2.png"
                   alt="@leerob"
                 />
                 <AvatarFallback>LR</AvatarFallback>
               </Avatar>
               <Avatar className="size-8 lg:size-[60px] border-none">
                 <AvatarImage
-                  src="https://github.com/evilrabbit.png"
+                  src="/faq-3.png"
                   alt="@evilrabbit"
                 />
                 <AvatarFallback>ER</AvatarFallback>

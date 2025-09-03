@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { de } from 'zod/v4/locales';
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { de } from "zod/v4/locales";
+import Link from "next/link";
 
 interface CreativeStepSectionProps {
   title?: string;
@@ -17,7 +18,7 @@ const CreativeStepSection: React.FC<CreativeStepSectionProps> = ({
   title = "Creative Step",
   buttonText = "See our Step",
   onButtonClick,
-  className = ""
+  className = "",
 }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -25,9 +26,9 @@ const CreativeStepSection: React.FC<CreativeStepSectionProps> = ({
       opacity: 1,
       transition: {
         duration: 0.8,
-        staggerChildren: 0.3
-      }
-    }
+        staggerChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -37,21 +38,23 @@ const CreativeStepSection: React.FC<CreativeStepSectionProps> = ({
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.25, 0.25, 0.75]
-      }
-    }
+        ease: [0.25, 0.25, 0.25, 0.75],
+      },
+    },
   };
 
   const handleButtonClick = () => {
     if (onButtonClick) {
       onButtonClick();
     } else {
-      console.log('See our Step clicked');
+      console.log("See our Step clicked");
     }
   };
 
   return (
-    <section className={`w-full flex justify-center py-8 lg:py-16 ${className}`}>
+    <section
+      className={`w-full flex justify-center py-8 lg:py-16 ${className}`}
+    >
       <motion.div
         className="relative w-full max-w-[1220px] h-[300px] sm:h-[400px] lg:h-[480px] rounded-2xl overflow-hidden mx-4 sm:mx-6 lg:mx-8"
         variants={containerVariants}
@@ -71,11 +74,11 @@ const CreativeStepSection: React.FC<CreativeStepSectionProps> = ({
         </div>
 
         {/* Overlay */}
-        <div 
+        <div
           className="absolute inset-0 z-10"
           style={{
-            backgroundColor: '#172134',
-            opacity: 0.85
+            backgroundColor: "#172134",
+            opacity: 0.85,
           }}
         />
 
@@ -86,24 +89,23 @@ const CreativeStepSection: React.FC<CreativeStepSectionProps> = ({
             variants={itemVariants}
           >
             {/* Main Title */}
-            <motion.h2 
+            <motion.h2
               className="text-white font-orbitron font-bold text-xl md:text-5xl lg:text-[56px] leading-tight"
               variants={itemVariants}
             >
               {title}
             </motion.h2>
             {/* Button */}
-            <motion.div
-              variants={itemVariants}
-              className="pt-4"
-            >
-              <Button
-                size="xl"
-                onClick={handleButtonClick}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                {buttonText}
-              </Button>
+            <motion.div variants={itemVariants} className="pt-4">
+              <Link href={"/contact"}>
+                <Button
+                  size="xl"
+                  onClick={handleButtonClick}
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  {buttonText}
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

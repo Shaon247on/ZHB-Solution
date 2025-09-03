@@ -7,53 +7,60 @@ const data = [
   {
     title: "Web Development",
     description:
-      "From logos to complete brand identity, we craft visually stunning designs that capture attention and build lasting impressions. Let your brand speak through creative excellence.",
+      "We build responsive, high-performance websites tailored to your business needs. From front-end to back-end, our solutions ensure seamless functionality, strong security, and scalable growth for a powerful online presence.",
     buttonText: "Design with Impact",
     imageSrc: "/1.png",
-    imageAlt: "AI Robot Hand",
+    imageAlt: "Web Development",
+    href:"/services/web-development"
+    
   },
-
   {
-    title: "Creative & Designs",
+    title: "Mobile App Development",
     description:
-      "Strategic marketing campaigns that drive results. From SEO to social media, we help your business reach the right audience at the right time.",
+      "Create intuitive, cross-platform mobile apps that deliver seamless user experiences. We design and develop apps that enhance customer engagement, improve accessibility, and drive measurable business results across Android and iOS platforms.",
     buttonText: "Grow Your Reach",
     imageSrc: "/2.png",
-    imageAlt: "Creative & Designs",
+    imageAlt: "Mobile App Development",
+    href:"/services/mobile-app-development"
   },
   {
-    title: "Web & App Development",
+    title: "UI/UX Design",
     description:
-      "Modern, responsive websites that deliver exceptional user experiences. Built with cutting-edge technologies for optimal performance and scalability.",
+      "We craft user-focused designs that balance beauty with functionality. Our UI/UX solutions enhance usability, streamline navigation, and deliver engaging experiences that keep users returning while strengthening your brand identity.",
     buttonText: "Start Building",
     imageSrc: "/3.png",
-    imageAlt: "Web & App Development",
+    imageAlt: "UI/UX Design",
+    href:"/services/ui-ux-design"
   },
   {
-    title: "e-Commerce Solutions",
+    title: "Cloud Solutions",
     description:
-      "Strategic marketing campaigns that drive results. From SEO to social media, we help your business reach the right audience at the right time.",
+      "Leverage the power of cloud technology to scale securely and efficiently. From storage and hosting to cloud-native applications, we deliver solutions that improve flexibility, reliability, and cost-effectiveness for businesses.",
     buttonText: "Grow Your Reach",
     imageSrc: "/4.png",
-    imageAlt: "e-Commerce Solutions",
+    imageAlt: "Cloud Solutions",
+    href:"/services/cloud-solutions"
   },
   {
-    title: "360° Business Solutions",
+    title: "Data Analytics",
     description:
-      "Strategic marketing campaigns that drive results. From SEO to social media, we help your business reach the right audience at the right time.",
+      "Transform raw data into actionable insights. Our analytics solutions help businesses understand customer behavior, forecast trends, and optimize performance, empowering data-driven decision-making for long-term growth and success.",
     buttonText: "Grow Your Reach",
     imageSrc: "/5.png",
-    imageAlt: "360° Business Solutions",
+    imageAlt: "Data Analytics",
+    href:"/services/data-analytics"
   },
   {
-    title: "360° Business Solutions",
+    title: "Digital Marketing",
     description:
-      "Strategic marketing campaigns that drive results. From SEO to social media, we help your business reach the right audience at the right time.",
+      "Boost your online presence with targeted digital marketing strategies. From SEO and content marketing to paid ads and social campaigns, we connect you with the right audience to maximize ROI.",
     buttonText: "Grow Your Reach",
     imageSrc: "/6.png",
-    imageAlt: "360° Business Solutions",
+    imageAlt: "Digital Marketing",
+    href:"/services/digital-marketing"
   },
 ];
+
 
 function ServiceSection() {
   return (
@@ -86,6 +93,7 @@ Smart Digital Solutions"
             buttonText={service.buttonText}
             imageSrc={service.imageSrc}
             imageAlt={service.imageAlt}
+            href={service.href}
           />
         ))}
       </div>

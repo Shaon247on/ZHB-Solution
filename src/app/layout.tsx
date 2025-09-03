@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { Toaster } from "sonner";
-
+import { AppProvider } from "@/context/AppContext";
 
 const parkinsans = Parkinsans({
   variable: "--font-parkinsans",
@@ -35,10 +35,12 @@ export default function RootLayout({
       <body
         className={`${jakarta.variable} ${parkinsans.variable} ${orbitron.variable} font-parkinsans antialiased`}
       >
-        <Navbar/>
-        {children}
-        <Toaster/>
-        <Footer/>
+        <AppProvider>
+          <Navbar />
+          {children}
+          <Toaster />
+          <Footer />
+        </AppProvider>
       </body>
     </html>
   );

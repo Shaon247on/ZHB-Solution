@@ -1,17 +1,20 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAppContext } from "@/context/AppContext";
 
 interface ServiceCardProps {
-  title: string
-  description: string
-  buttonText: string
-  imageSrc: string
-  imageAlt: string
-  onButtonClick?: () => void
-  className?: string
+  title: string;
+  description: string;
+  buttonText: string;
+  imageSrc: string;
+  imageAlt: string;
+  className?: string;
+  href: string;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -20,9 +23,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   buttonText,
   imageSrc,
   imageAlt,
-  onButtonClick,
-  className = ""
+  className = "",
+  href,
 }) => {
+  const router = useRouter();
+  const {navTitle,setNavTitle} = useAppContext();
+
+  const handleRedirect = () => {
+    router.push(`${href}`);
+    setNavTitle("Services")
+  };
   return (
     <motion.div
       className={`relative w-full h-[300px] lg:h-[400px] bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group ${className}`}
@@ -45,7 +55,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         className="absolute inset-0 bg-blue-950"
         variants={{
           initial: { opacity: 0 },
-          hover: { opacity: 1, transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] } }
+          hover: {
+            opacity: 1,
+            transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
+          },
         }}
       />
 
@@ -54,7 +67,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         className="absolute top-4 left-4 sm:top-8 sm:left-8 z-10"
         variants={{
           initial: { x: 0, y: 0, opacity: 1 },
-          hover: { x: "0%", y: "100px", opacity: 0, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } }
+          hover: {
+            x: "0%",
+            y: "100px",
+            opacity: 0,
+            transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+          },
         }}
       >
         <h2 className="text-lg sm:text-2xl font-semibold font-orbitron text-gray-800 leading-tight max-w-[220px] sm:max-w-[251px]">
@@ -73,9 +91,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             opacity: 1,
             transition: {
               y: { duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: 0.1 },
-              opacity: { duration: 1, ease: [0.4, 0, 0.2, 1], delay: 0.2 }
-            }
-          }
+              opacity: { duration: 1, ease: [0.4, 0, 0.2, 1], delay: 0.2 },
+            },
+          },
         }}
       >
         <motion.div
@@ -83,7 +101,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           initial={{ opacity: 0 }}
           variants={{
             initial: { opacity: 0 },
-            hover: { opacity: 1, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: 0.2 } }
+            hover: {
+              opacity: 1,
+              transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: 0.2 },
+            },
           }}
         >
           <motion.p
@@ -91,19 +112,28 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             initial={{ opacity: 0 }}
             variants={{
               initial: { opacity: 0 },
-              hover: { opacity: 1, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } }
+              hover: {
+                opacity: 1,
+                transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+              },
             }}
           >
             {description}
           </motion.p>
-
           <motion.button
-            onClick={onButtonClick}
+            onClick={handleRedirect}
             className="bg-blue-500 hover:bg-blue-600 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-full text-sm sm:text-base transition-colors duration-200"
             initial={{ opacity: 0 }}
             variants={{
               initial: { opacity: 0 },
-              hover: { opacity: 1, transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1], delay: 0.3 } }
+              hover: {
+                opacity: 1,
+                transition: {
+                  duration: 0.4,
+                  ease: [0.4, 0, 0.2, 1],
+                  delay: 0.3,
+                },
+              },
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -113,7 +143,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         </motion.div>
       </motion.div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default ServiceCard
+export default ServiceCard;

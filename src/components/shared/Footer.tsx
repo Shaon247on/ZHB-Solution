@@ -125,7 +125,7 @@ const Footer: React.FC<FooterProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 mb-8">
             {/* Logo and Description Section */}
             <motion.div
-              className="lg:col-span-12 space-y-6 flex flex-col lg:flex-row justify-between mb-20"
+              className="lg:col-span-12 space-y-6 flex flex-col lg:flex-row justify-between mb-6"
               variants={itemVariants}
             >
               {/* Logo */}
@@ -136,7 +136,7 @@ const Footer: React.FC<FooterProps> = ({
                     alt={logoAlt}
                     width={149}
                     height={100}
-                    className="w-24 lg:w-[149px] h-20 lg:h-[100px]"
+                    className="w-24 lg:w-[200px] h-16 lg:h-[120px]"
                   />
                 </div>
                 {/* Description */}
