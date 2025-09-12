@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import CreativeStepSection from "../element/CreativeStepSection";
 
-function ContactSection({bottom=true}:{bottom?:boolean}) {
+function ContactSection({ bottom = true }: { bottom?: boolean }) {
   return (
     <section>
       <div className="flex flex-col lg:flex-row px-4 lg:px-32 py-10 lg:py-20 bg-[#EBF1FC] gap-6 lg:gap-16">
@@ -38,29 +38,33 @@ function ContactSection({bottom=true}:{bottom?:boolean}) {
             </h4>
           </motion.div>
           <div>
-            <Image
-              src={"/CTO.png"}
-              width={240}
-              height={240}
-              layout="responsive"
-              alt="cto photo"
-              className="object-contain w-[240px] h-[240px]"
-            />
+            <div className="w-[240px] h-[240px] overflow-hidden">
+              <Image
+                src={"/CTO.jpg"}
+                width={240}
+                height={240}
+                layout="responsive"
+                alt="cto photo"
+                className="object-contain w-[240px] h-[240px]"
+              />
+            </div>
             <h2 className="text-2xl font-semibold mt-5 mb-2">
-              Cristofer Kenter
+              Md Zahirul Bhuiyan
             </h2>
             <p className="text-[#464646] font-medium">CTO, ZHB Solution LLC</p>
           </div>
         </div>
         <ContactForm />
       </div>
-      {bottom && <CreativeStepSection
-        title="Take the first creative step toward success"
-        // subtitle="Discover how we transform ideas into exceptional digital experiences through our proven methodology"
-        buttonText="Learn More"
-        onButtonClick={() => console.log("Custom button clicked")}
-        className="mt-8"
-      />}
+      {bottom && (
+        <CreativeStepSection
+          title="Take the first creative step toward success"
+          // subtitle="Discover how we transform ideas into exceptional digital experiences through our proven methodology"
+          buttonText="Learn More"
+          onButtonClick={() => console.log("Custom button clicked")}
+          className="mt-8"
+        />
+      )}
     </section>
   );
 }

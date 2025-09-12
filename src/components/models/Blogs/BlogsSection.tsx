@@ -2,7 +2,7 @@
 import BlogCard from "@/components/element/BlogCard";
 import CreativeStepSection from "@/components/element/CreativeStepSection";
 import SubscribeSection from "@/components/element/SubscribeSection";
-import { blogs } from "@/data/BlogsData";
+import { blogs } from "@/data/BlogsDataMain";
 import { Dot, Search } from "lucide-react";
 import React, { useState } from "react";
 

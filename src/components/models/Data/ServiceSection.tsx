@@ -5,43 +5,44 @@ import { AiContent, Cart, Computer, Globe2 } from "@/components/svg/WebSVG";
 import { LightbulbIconWhite } from "@/components/svg/WhoSVG";
 import { Chart, Mining, PaintBoard } from "@/components/svg/DataSVG";
 import { HomeWhite } from "@/components/svg/CareerISVG";
+import { Notebook, NotebookIcon, Settings } from "lucide-react";
 
 const data: cardDataType[] = [
   {
-    icon: <LightbulbIconWhite />,
-    title: "Business Intelligence",
+    icon: <Computer />,
+    title: "Machine Learning Solutions",
     description:
-      "Creating responsive, visually appealing, and user-friendly interfaces using modern frameworks like React, Vue.js, and Angular.",
+      "Predictive models, recommendation engines, and fraud detection systems.",
+  },
+  {
+    icon: <Settings stroke="white" />,
+    title: "Natural Language Processing (NLP)",
+    description:
+      "Chatbots, sentiment analysis, and multilingual text processing for better customer engagement.",
+  },
+  {
+    icon: <Computer />,
+    title: "Computer Vision",
+    description:
+      "Image recognition, object detection, and AR/VR integration for real-world impact.",
+  },
+  {
+    icon: <NotebookIcon stroke="white" />,
+    title: "AI-Powered Automation",
+    description:
+      "RPA, document processing, and workflow automation to reduce costs and save time.",
+  },
+  {
+    icon: <Cart />,
+    title: "Predictive Analytics",
+    description:
+      "Forecasting, customer behavior insights, and demand prediction.",
   },
   {
     icon: <Globe2 />,
-    title: "Big Data Analytics",
+    title: "Generative AI Solutions",
     description:
-      "Building robust, secure, and scalable server-side applications with technologies like Node.js, Laravel, and Django.",
-  },
-  {
-    icon: <Chart />,
-    title: "Predictive Analytics",
-    description:
-      "Designing and developing custom e-commerce platforms with secure payment gateways, inventory management, and SEO optimization.",
-  },
-  {
-    icon: <HomeWhite />,
-    title: "Data Warehousing",
-    description:
-      "Providing complete end-to-end development from UI to database, ensuring seamless functionality across the entire system.",
-  },
-  {
-    icon: <PaintBoard />,
-    title: "Data Visualization",
-    description:
-      "Creating responsive, visually appealing, and user-friendly interfaces using modern frameworks like React, Vue.js, and Angular.",
-  },
-  {
-    icon: <Mining />,
-    title: "Data Mining",
-    description:
-      "Building robust, secure, and scalable server-side applications with technologies like Node.js, Laravel, and Django.",
+      "AI-driven content creation, design tools, and personalized marketing.",
   },
 ];
 

@@ -10,23 +10,22 @@ function HeroSection() {
         loop
         muted
         controls={false}
-        className="w-full h-screen object-cover absolute z-0"
+        className="w-full h-full lg:h-screen object-cover absolute z-0"
       />
       <div className="w-full h-screen top-0 absolute z-10 bg-[#181818CC]" />
 
       <div className="relative z-30 py-7 lg:py-20 px-6 lg:px-[300px] text-white text-center">
         <h1 className="text-xl lg:text-[56px] font-semibold lg:font-bold font-orbitron">
-          Turn Data into Actionable <br className="hidden lg:block" />
-          Insights
+          AI-Powered Solutions for Smarter <br className="hidden lg:block" /> Businesses
         </h1>
         <p className="text-sm lg:text-xl font-semibold text-[#B7B7B7] max-w-[830px] mx-auto mt-2 ">
-          Leverage analytics to make smarter business decisions.
+          From machine learning to generative AI, we build intelligent solutions that automate, analyze, and accelerate your business growth.
         </p>
         <Button
           size={"xl"}
           className="rounded-full mb-20 lg:mb-10 mt-6 lg:mt-12"
         >
-          Schedule Your Free Consultation
+          Schedule Your AI Consultation
         </Button>
       </div>
     </div>

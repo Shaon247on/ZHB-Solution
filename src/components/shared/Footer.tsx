@@ -58,11 +58,12 @@ const Footer: React.FC<FooterProps> = ({
 
   const footerLinks = {
     service: [
-      { label: "AI Solution & Automation", href: "#" },
-      { label: "Creative & Designs", href: "#" },
-      { label: "Web and App Development", href: "#" },
-      { label: "e-Commerce solution", href: "#" },
-      { label: "360° Business Services", href: "#" },
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "Mobile App Development", href: "/services/mobile-app-development" },
+      { label: "UI/UX Design", href: "/services/ui-ux-design" },
+      { label: "Cloud Solution", href: "/services/cloud-solution" },
+      { label: "Artificial Intelligence", href: "/services/artificial-intelligence" },
+      { label: "Digital Marketing", href: "/services/digital-marketing" },
     ],
     quickLink1: [
       { label: "Work", href: "#" },

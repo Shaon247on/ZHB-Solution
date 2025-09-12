@@ -14,7 +14,7 @@ function ProjectsSection() {
           textColor="text-black"
           width="w-[104px]"
           buttonText="Explore Our Projects"
-          buttonHref="/projects"
+          buttonHref="/work"
         />
         <div>
           <div className="px-4 sm:px-6 lg:px-32 bg-sky-50 flex flex-col lg:flex-row gap-7 items-center lg:gap-[300px]">

@@ -9,33 +9,39 @@ interface dataType {
 const data: dataType[] = [
   {
     step: "1",
-    title: "Data Gathering",
+    title: "Discovery & Data Assessment",
     description:
-      "Our proven process transforms complex data into meaningful strategies that drive business growth",
+      "Identify use cases and gather quality datasets.",
   },
   {
     step: "2",
-    title: "Cleaning",
+    title: "Design & Prototyping",
     description:
-      "Collecting data from multiple reliable sources to build a comprehensive dataset.",
+      "Build AI models and test with small datasets.",
   },
   {
     step: "3",
-    title: "Analysis",
+    title: "Development & Training",
     description:
-      "Removing duplicates, fixing errors, and standardizing formats for accurate analysis.",
+      "Train models with large-scale data for accuracy.",
   },
   {
     step: "4",
-    title: "Visualization",
+    title: "Validation & QA",
     description:
-      "Presenting findings through intuitive dashboards, charts, and graphs.",
+      "Test performance, remove bias, and ensure compliance.",
   },
   {
     step: "5",
-    title: "Insights",
+    title: "Deployment",
     description:
-      "Delivering actionable recommendations that empower smart business decisions.",
+      "Integrate AI solutions seamlessly into business systems.",
+  },
+  {
+    step: "6",
+    title: "Support & Optimization",
+    description:
+      "Continuous monitoring and model improvements.",
   },
 ];
 
@@ -54,15 +60,13 @@ function HowSection() {
         <h3 className="inline-block w-fit px-4 text-[#E8E8E8] rounded-full border-2 border-[#E8E8E8] ">
           How We Work
         </h3>
-        <h2 className="mt-2 text-4xl font-bold text-[#E8E8E8] font-orbitron">
-          Our Cloud Migration & Optimization Process
+        <h2 className="mt-2 text-2xl md:text-4xl font-bold text-[#E8E8E8] font-orbitron">
+          Our Streamlined Process for Delivering AI <br className="hidden lg:block"/> Excellence
         </h2>
         <p className="font-medium text-[#B7B7B7] max-w-[888px] mt-2 mb-6 lg:mb-12">
-          From initial assessment to ongoing support, we ensure a secure,
-          smooth, and cost-effective cloud <br className="hidden lg:block" />
-          journey.
+         From discovery to ongoing optimization, our AI process ensures accuracy, reliability, and measurable business value at every stage.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 lg:gap-6 px-6 lg:px-[20%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 lg:gap-6 px-2 lg:px-[20%]">
           {data.slice(0, 3).map((item, index) => (
             <div key={index} className="py-3 lg:py-6 px-2 lg:px-4 bg-[#F8F9F4]">
               <span className="inline-block w-fit rounded-full bg-[#B9D4CE] text-sm px-4 py-1 mb-3 lg:mb-6">
@@ -75,10 +79,10 @@ function HowSection() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center gap-4 lg:gap-6 px-6 lg:px-[28%] mt-6 ">
-          {data.slice(3, 5).map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 lg:gap-6 px-2 lg:px-[20%] mt-4 lg:mt-6">
+          {data.slice(3, 6).map((item, index) => (
             <div key={index} className="py-3 lg:py-6 px-2 lg:px-4 bg-[#F8F9F4]">
-              <span className="inline-block w-fit rounded-full bg-[#B9D4CE] text-sm px-4 py-1 mb-3 lg:mb-6 ">
+              <span className="inline-block w-fit rounded-full bg-[#B9D4CE] text-sm px-4 py-1 mb-3 lg:mb-6">
                 Step 0{item.step}
               </span>
               <h2 className="font-semibold text-2xl text-[#181818] mb-4">

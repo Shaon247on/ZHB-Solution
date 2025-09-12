@@ -6,7 +6,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
 
 const Navbar = () => {
@@ -17,10 +17,9 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [mounted, setMounted] = useState<boolean>(false);
   const route = useRouter();
+  const pathname = usePathname();  // Using pathname for active link
 
-  const {navTitle,setNavTitle} = useAppContext()
-
-  console.log("is navTitle", navTitle);
+  const {navTitle, setNavTitle} = useAppContext();
 
   useEffect(() => {
     const saved = localStorage.getItem("myValue");
@@ -47,29 +46,16 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest(".services-dropdown")) {
-        setIsServicesOpen(false);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
-
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About US", href: "/about" },
+    { name: "About Us", href: "/about" },
     {
       name: "Services",
       href: "/services",
       hasDropdown: true,
       dropdownItems: [
         { name: "Web Development", href: "/services/web-development" },
-        { name: "Mobile App Development", href: "/services/mobile-app-development",},
+        { name: "Mobile App Development", href: "/services/mobile-app-development" },
         { name: "UI/UX Design", href: "/services/ui-ux-design" },
         { name: "Cloud Solutions", href: "/services/cloud-solutions" },
         { name: "Data Analytics", href: "/services/data-analytics" },
@@ -167,7 +153,7 @@ const Navbar = () => {
                   <Link
                     href={item.href}
                     className={`${
-                      navTitle === item.name ? "text-[#3671E2]" : "text-[#FDFDFD]"
+                      pathname === item.href ? "text-[#3671E2]" : "text-[#FDFDFD]"
                     } hover:text-[#3671E2] transition-colors duration-200 font-medium`}
                   >
                     {item.name}
@@ -219,86 +205,63 @@ const Navbar = () => {
                     onMouseEnter={() => setIsServicesOpen(true)}
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
-                    {item.hasDropdown ? (
-                      <div className="relative">
-                        {/* Services button is now a link */}
-                        <Link
-                          href={item.href}
-                          onClick={() => setNavTitle(item.name)}
-                          className={`flex items-center space-x-1 ${
-                            navTitle === "Services"
-                              ? "text-[#3671E2]"
-                              : "text-[#FDFDFD]"
-                          } hover:text-[#3671E2] transition-colors duration-200 py-2`}
-                        >
-                          <span className="font-medium">{item.name}</span>
-                          <motion.div
-                            variants={arrowVariants}
-                            animate={isServicesOpen ? "open" : "closed"}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <ChevronDown className="w-4 h-4" />
-                          </motion.div>
-                        </Link>
-
-                        {/* Dropdown stays the same */}
-                        <AnimatePresence>
-                          {isServicesOpen && (
-                            <motion.div
-                              variants={dropdownVariants}
-                              initial="hidden"
-                              animate="visible"
-                              exit="hidden"
-                              className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
-                            >
-                              <motion.div
-                                variants={staggerContainer}
-                                initial="hidden"
-                                animate="visible"
-                              >
-                                {item.dropdownItems?.map(
-                                  (dropdownItem, index) => (
-                                    <Link
-                                      onClick={() =>
-                                        setNavTitle(dropdownItem.name)
-                                      }
-                                      key={index}
-                                      href={dropdownItem.href}
-                                    >
-                                      <motion.p
-                                        variants={itemVariants}
-                                        className={`block px-4 py-3 text-gray-800 hover:bg-gray-200 hover:text-[#172F5F] transition-colors duration-200 ${navTitle === dropdownItem.name && "bg-gray-200"} rounded-2xl mx-2`}
-                                      >
-                                        {dropdownItem.name}
-                                      </motion.p>
-                                    </Link>
-                                  )
-                                )}
-                              </motion.div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    ) : (
-                      <Link
-                        onClick={() => setNavTitle(item.name)}
-                        href={item.href}
-                        className={`${
-                          navTitle === item.name
-                            ? "text-[#3671E2]"
-                            : "text-[#FDFDFD]"
-                        } hover:text-[#3671E2] transition-colors duration-200 font-medium`}
+                    <Link
+                      href={item.href}
+                      onClick={() => setNavTitle(item.name)}
+                      className={`flex items-center space-x-1 ${
+                        pathname === item.href ? "text-[#3671E2]" : "text-[#FDFDFD]"
+                      } hover:text-[#3671E2] transition-colors duration-200 py-2`}
+                    >
+                      <span className="font-medium">{item.name}</span>
+                      <motion.div
+                        variants={arrowVariants}
+                        animate={isServicesOpen ? "open" : "closed"}
+                        transition={{ duration: 0.2 }}
                       >
-                        {item.name}
-                      </Link>
-                    )}
+                        <ChevronDown className="w-4 h-4" />
+                      </motion.div>
+                    </Link>
+
+                    {/* Dropdown stays the same */}
+                    <AnimatePresence>
+                      {isServicesOpen && (
+                        <motion.div
+                          variants={dropdownVariants}
+                          initial="hidden"
+                          animate="visible"
+                          exit="hidden"
+                          className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50"
+                        >
+                          <motion.div
+                            variants={staggerContainer}
+                            initial="hidden"
+                            animate="visible"
+                          >
+                            {item.dropdownItems?.map((dropdownItem, index) => (
+                              <Link
+                                onClick={() => setNavTitle(dropdownItem.name)}
+                                key={index}
+                                href={dropdownItem.href}
+                              >
+                                <motion.p
+                                  variants={itemVariants}
+                                  className={`block px-4 py-3 text-gray-800 hover:bg-gray-200 hover:text-[#172F5F] transition-colors duration-200 ${pathname === dropdownItem.href && "bg-gray-200"} rounded-2xl mx-2`}
+                                >
+                                  {dropdownItem.name}
+                                </motion.p>
+                              </Link>
+                            ))}
+                          </motion.div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 ) : (
                   <Link
                     onClick={() => setNavTitle(item.name)}
                     href={item.href}
                     className={`${
-                      navTitle === item.name ? "text-[#3671E2]" : "text-[#FDFDFD]"
+                      pathname === item.href ? "text-[#3671E2]" : "text-[#FDFDFD]"
                     } hover:text-[#3671E2] transition-colors duration-200 font-medium`}
                   >
                     {item.name}
@@ -392,7 +355,7 @@ const Navbar = () => {
                                       animate={{ opacity: 1, x: 0 }}
                                       transition={{ delay: index * 0.1 }}
                                       href="#"
-                                      className={`block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200 ${navTitle === dropdownItem.name && " bg-gray-200"} rounded-2xl mx-2`}
+                                      className={`block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200 ${pathname === dropdownItem.href && " bg-gray-200"} rounded-2xl mx-2`}
                                     >
                                       {dropdownItem.name}
                                     </motion.a>
@@ -406,7 +369,7 @@ const Navbar = () => {
                     ) : (
                       <a
                         href={item.href}
-                        className="block text-[#FDFDFD] hover:text-[#3671E2] py-3 font-medium transition-colors duration-200"
+                        className={`block text-[#FDFDFD] hover:text-[#3671E2] py-3 font-medium transition-colors duration-200 ${pathname === item.href && "bg-gray-200"}`}
                       >
                         {item.name}
                       </a>

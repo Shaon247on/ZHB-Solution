@@ -42,7 +42,7 @@ const data = [
     href:"/services/cloud-solutions"
   },
   {
-    title: "Data Analytics",
+    title: "Artificial Intelligence",
     description:
       "Transform raw data into actionable insights. Our analytics solutions help businesses understand customer behavior, forecast trends, and optimize performance, empowering data-driven decision-making for long-term growth and success.",
     buttonText: "Grow Your Reach",
