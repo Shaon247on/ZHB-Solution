@@ -26,7 +26,7 @@ function BlogSection() {
                   AI: What You Need to Know
                 </h2>
                 <p className="mt-4 max-w-[531px] text-sm lg:text-base text-[#FDFDFD]">
-                  Artificial Intelligence (AI) is transforming the way
+                  Artificial-Intelligence (AI) is transforming the way
                   businesses operate—automating tasks, enhancing
                   decision-making, and unlocking new revenue streams.
                 </p>

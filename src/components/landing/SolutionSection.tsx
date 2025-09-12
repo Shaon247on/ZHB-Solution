@@ -5,7 +5,7 @@ const statsData = [
   {
     number: "01",
     title: "Experience",
-    subtitle: "7+",
+    subtitle: "14+",
     label: "Years",
     defaultBgColor: "bg-white",
     hoverBgColor: "bg-green-500",

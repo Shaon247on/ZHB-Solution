@@ -24,7 +24,7 @@ function HeroSection() {
             What You Need to Know
           </h2>
           <p className="mt-4 max-w-[577px] text-lg text-[#E8E8E8]">
-            Artificial Intelligence (AI) is transforming the way businesses
+            Artificial-Intelligence (AI) is transforming the way businesses
             operate—automating tasks, enhancing decision-making, and unlocking
             new revenue streams.
           </p>

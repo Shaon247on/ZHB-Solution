@@ -21,41 +21,41 @@ function OpenPositionsSection() {
       location: "On Site",
     },
     {
-      tag: "Mobile App  Development",
+      tag: "Marketing",
       icon: <Phone />,
-      title: "Mid- Level Mobile App Development",
+      title: "Sales Person",
       jobType: "Full Time",
       location: "On Site",
     },
-    {
-      tag: "Cloud Solution",
-      icon: <Cloud />,
-      title: "Sr. Cloud Solution Architecture",
-      jobType: "Full Time",
-      location: "On Site",
-    },
+    // {
+    //   tag: "Cloud Solution",
+    //   icon: <Cloud />,
+    //   title: "Sr. Cloud Solution Architecture",
+    //   jobType: "Full Time",
+    //   location: "On Site",
+    // },
 
-    {
-      tag: "UI/UX Design",
-      icon: <Pen />,
-      title: "Sr. UX Designer",
-      jobType: "Full Time",
-      location: "On Site",
-    },
-    {
-      tag: "Data Analytics",
-      icon: <Database />,
-      title: "Business Analyst",
-      jobType: "Full Time",
-      location: "On Site",
-    },
-    {
-      tag: "Digital Marketing",
-      icon: <CodeDisplay />,
-      title: "Digital Marketing Specialist",
-      jobType: "Full Time",
-      location: "On Site",
-    },
+    // {
+    //   tag: "UI/UX Design",
+    //   icon: <Pen />,
+    //   title: "Sr. UX Designer",
+    //   jobType: "Full Time",
+    //   location: "On Site",
+    // },
+    // {
+    //   tag: "Data Analytics",
+    //   icon: <Database />,
+    //   title: "Business Analyst",
+    //   jobType: "Full Time",
+    //   location: "On Site",
+    // },
+    // {
+    //   tag: "Digital Marketing",
+    //   icon: <CodeDisplay />,
+    //   title: "Digital Marketing Specialist",
+    //   jobType: "Full Time",
+    //   location: "On Site",
+    // },
   ];
 
   // parent container animation (stagger children)

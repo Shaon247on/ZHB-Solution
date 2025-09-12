@@ -27,10 +27,10 @@ const image = [
   },
   {
     id:4,
-    src: "/services/service-4.jpg",
+    src: "/blogs/blog1.jpg",
     alt: "About Us 4",
     className: "rounded-tr-full",
-    tag: "Data Analytics"
+    tag: "Artificial Intelligence"
   },
   {
     id:5,

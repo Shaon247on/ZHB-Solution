@@ -5,6 +5,7 @@ export type Blog = {
   publishDate: string;
   readTime: string;
   tags: string[];
+  tag: string;
   content: ContentSection[];
   sidebar: Sidebar[];
   relatedPosts: RelatedPost[];
@@ -51,6 +52,7 @@ export const blogs: Blog[] = [
     publishDate: "04 September 2025",
     readTime: "12 min read",
     tags: ["AI", "IT", "Automation", "Cybersecurity", "Software Development"],
+    tag: "Artificial-Intelligence",
     content: [
       {
         heading: "Smarter Automation, Faster Results",
@@ -254,6 +256,7 @@ export const blogs: Blog[] = [
     publishDate: "04 September 2025",
     readTime: "10 min read",
     tags: ["SEO", "AI", "Digital Marketing"],
+    tag: "Digital Marketing",
     content: [
       {
         heading: "Search Is Smarter Than Ever",
@@ -371,6 +374,7 @@ export const blogs: Blog[] = [
     publishDate: "04 September 2025",
     readTime: "15 min read",
     tags: ["Legacy IT", "Optimization", "Productivity"],
+    tag: "Legacy IT",
     content: [
       {
         heading: "Streamline, Don't Rip and Replace",

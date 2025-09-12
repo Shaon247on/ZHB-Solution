@@ -62,7 +62,7 @@ const Footer: React.FC<FooterProps> = ({
       { label: "Mobile App Development", href: "/services/mobile-app-development" },
       { label: "UI/UX Design", href: "/services/ui-ux-design" },
       { label: "Cloud Solution", href: "/services/cloud-solution" },
-      { label: "Artificial Intelligence", href: "/services/artificial-intelligence" },
+      { label: "Artificial-Intelligence", href: "/services/artificial-intelligence" },
       { label: "Digital Marketing", href: "/services/digital-marketing" },
     ],
     quickLink1: [
@@ -250,8 +250,8 @@ const Footer: React.FC<FooterProps> = ({
             <motion.div variants={itemVariants}>
               <h3 className="text-white font-semibold text-sm mb-4">Contact</h3>
               <div className="space-y-3 text-gray-300 text-sm">
-                <p>3401 Shawnee Fwy STE, ETX 75236</p>
-                <p>Dallas, United States</p>
+                <p>3651 Peachtree pkwy STE. E #116</p>
+                <p>Suwanee, GA 30024</p>
                 
                 <div className="flex items-center gap-2.5 mt-4">
                     <Phone size={18} fill="white" stroke="white"/>

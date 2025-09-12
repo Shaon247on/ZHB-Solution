@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 interface BlogCardProps {
+  id: number;
   image: string;
   tag: string;
   title: string;
@@ -10,6 +12,7 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({
+  id,
   image,
   tag,
   title,
@@ -41,9 +44,11 @@ export default function BlogCard({
           <p className="text-sm text-[#464646] font-medium">{subtitle}</p>
         </div>
         <div className="flex flex-col-reverse lg:flex-row items-start lg:items-center gap-5 lg:gap-10">
+          <Link href={`/blogs/${id}`}>
           <Button size={"xl"} className="bg-[#172F5F] rounded-2xl">
             Read More
           </Button>
+          </Link>
           <p className="text-xs font-medium text-[#959595] ml-4 lg:ml-0">
             13/08/2025 • Wednesday• 04:42 pm
           </p>

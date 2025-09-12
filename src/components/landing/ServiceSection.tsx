@@ -42,13 +42,13 @@ const data = [
     href:"/services/cloud-solutions"
   },
   {
-    title: "Artificial Intelligence",
+    title: "Artificial-Intelligence",
     description:
-      "Transform raw data into actionable insights. Our analytics solutions help businesses understand customer behavior, forecast trends, and optimize performance, empowering data-driven decision-making for long-term growth and success.",
+      "Leverage AI-driven analytics to transform raw data into actionable insights. Our intelligent solutions help businesses understand customer behavior, predict market trends, and optimize performance, enabling smarter decisions that drive sustainable growth and long-term success.",
     buttonText: "Grow Your Reach",
     imageSrc: "/5.png",
     imageAlt: "Data Analytics",
-    href:"/services/data-analytics"
+    href:"/services/Artificial-Intelligence"
   },
   {
     title: "Digital Marketing",

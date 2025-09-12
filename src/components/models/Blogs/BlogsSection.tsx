@@ -3,7 +3,8 @@ import BlogCard from "@/components/element/BlogCard";
 import CreativeStepSection from "@/components/element/CreativeStepSection";
 import SubscribeSection from "@/components/element/SubscribeSection";
 import { blogs } from "@/data/BlogsDataMain";
-import { Dot, Search } from "lucide-react";
+import { image } from "framer-motion/client";
+import { Dot, Search, FileText } from "lucide-react";
 import React, { useState } from "react";
 
 const tags = [
@@ -12,8 +13,9 @@ const tags = [
   "Mobile App Development",
   "UI/UX Design",
   "Cloud Solution",
-  "Data Analytics",
+  "Artificial-Intelligence",
   "Digital Marketing",
+  "Legacy IT",
 ];
 
 function BlogsSection() {
@@ -29,6 +31,44 @@ function BlogsSection() {
 
     return matchesTag && matchesSearch;
   });
+
+  // No Results Card Component
+  const NoResultsCard = () => (
+    <div className="sm:col-span-1 md:col-span-2 lg:col-span-3 flex justify-center items-center py-20">
+      <div className="bg-[#EBF1FC] rounded-2xl p-12 text-center max-w-md mx-auto border border-gray-200">
+        <div className="mb-6">
+          <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+        </div>
+        <h3 className="text-2xl font-bold text-[#172F5F] mb-4">
+          No blogs found
+        </h3>
+        <p className="text-gray-600 mb-6">
+          {search ? (
+            <>
+              No blogs match your search for "<span className="font-semibold">{search}</span>"
+              {activeTag !== "All Posts" && (
+                <> in <span className="font-semibold">{activeTag}</span></>
+              )}
+            </>
+          ) : (
+            <>
+              No blogs have been posted yet for{" "}
+              <span className="font-semibold">{activeTag}</span>
+            </>
+          )}
+        </p>
+        <button
+          onClick={() => {
+            setActiveTag("All Posts");
+            setSearch("");
+          }}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors duration-200"
+        >
+          View All Posts
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     <section className="px-6 lg:px-[120px] py-10">
@@ -73,26 +113,49 @@ function BlogsSection() {
 
       {/* Grid */}
       <div className="grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {filteredCards.map((blog, idx) => {
-          // Insert SubscribeSection right after the 6th card
-          if (idx === 5 && filteredCards.length >= 7) {
-            return (
-              <React.Fragment key={idx}>
-                <BlogCard {...blog} />
-                <div className="sm:col-span-1 md:col-span-2 lg:col-span-3">
-                  <SubscribeSection />
-                </div>
-              </React.Fragment>
-            );
-          }
-          return <BlogCard key={idx} {...blog} />;
-        })}
+        {filteredCards.length === 0 ? (
+          <NoResultsCard />
+        ) : (
+          <>
+            {filteredCards.map((blog, idx) => {
+              // Insert SubscribeSection right after the 6th card
+              if (idx === 5 && filteredCards.length >= 7) {
+                return (
+                  <React.Fragment key={idx}>
+                    <BlogCard
+                      subtitle={blog.content[0].points[0] || ""}
+                      tag={blog.tag}
+                      title={blog.title}
+                      bgColor="#EBF1FC"
+                      image={`/blogs/blog${blog.id}.jpg`}
+                      id={blog.id}
+                    />
+                    <div className="sm:col-span-1 md:col-span-2 lg:col-span-3">
+                      <SubscribeSection />
+                    </div>
+                  </React.Fragment>
+                );
+              }
+              return (
+                <BlogCard
+                  id={blog.id}
+                  key={idx}
+                  subtitle={blog.content[0].points[0] || ""}
+                  tag={blog.tag}
+                  title={blog.title}
+                  bgColor="#EBF1FC"
+                  image={`/blogs/blog${blog.id}.jpg`}
+                />
+              );
+            })}
 
-        {/* If less than 7 cards → push SubscribeSection to bottom */}
-        {filteredCards.length > 0 && filteredCards.length < 7 && (
-          <div className="sm:col-span-1 md:col-span-2 lg:col-span-3">
-            <SubscribeSection />
-          </div>
+            {/* If less than 7 cards → push SubscribeSection to bottom */}
+            {filteredCards.length > 0 && filteredCards.length < 7 && (
+              <div className="sm:col-span-1 md:col-span-2 lg:col-span-3">
+                <SubscribeSection />
+              </div>
+            )}
+          </>
         )}
       </div>
 

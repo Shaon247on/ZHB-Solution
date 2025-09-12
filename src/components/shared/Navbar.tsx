@@ -58,7 +58,7 @@ const Navbar = () => {
         { name: "Mobile App Development", href: "/services/mobile-app-development" },
         { name: "UI/UX Design", href: "/services/ui-ux-design" },
         { name: "Cloud Solutions", href: "/services/cloud-solutions" },
-        { name: "Data Analytics", href: "/services/data-analytics" },
+        { name: "Data Analytics", href: "/services/Artificial-Intelligence" },
         { name: "Digital Marketing", href: "/services/digital-marketing" },
       ],
     },
@@ -183,7 +183,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#172F5F] text-[#FDFDFD] shadow-lg relative z-50">
-      <div className="px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6 lg:px-20">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <Image

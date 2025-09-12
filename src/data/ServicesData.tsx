@@ -98,18 +98,19 @@ export const TopSecviceCardData = [
   },
   {
     id: 5,
-    title: "Data Analytics",
+    title: "Artificial Intelligence",
     subtitle:
-      "Leverage data to gain actionable insights and make data-driven decisions for your business.",
-    image: "/services/service-4.jpg",
+      "Intelligent, secure, and scalable AI solutions built to transform your business operations.",
+    image: "/blogs/blog1.jpg",
     features: [
-      "Business Intelligence",
-      "Data Visualizations",
+      "Machine Learning Solutions",
+      "Natural Language Processing (NLP)",
+      "Computer Vision",
+      "AI-Powered Automation",
       "Predictive Analytics",
-      "Big Data Solutions",
-      "Data Warehousing",
+      "Generative AI Solutions"
     ],
-    url: "/services/data-analytics",
+    url: "/services/Artificial-Intelligence",
   },
   {
     id: 6,
