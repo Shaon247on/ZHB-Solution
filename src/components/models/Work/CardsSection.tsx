@@ -1,5 +1,6 @@
 import WorkCard, { WorkCardProps } from "@/components/element/WorkCard";
 import { workData1, workData2, workData3 } from "@/data/WorkData";
+import { workDataMain } from "@/data/WorkDataMain";
 import React from "react";
 import { id } from "zod/v4/locales";
 
@@ -22,62 +23,50 @@ function CardsSection() {
       <div className="py-6 lg:py-20">
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-0 lg:px-[100px]">
-            {workData1.map((item) => (
+            {workDataMain.slice(0,1).map((item) => (
               <WorkCard
                 key={item.id}
                 id={item.id}
-                title={item.title}
-                subtitle={item.subtitle}
-                tags={item.tags}
-                image={item.image}
-                imageHeight={item.imageHeight}
-                imageWidth={item.imageWidth}
-                gridCol={item.gridCol}
+                title={item.heroSection.title}
+                subtitle={item.heroSection.description}
+                tags={item.tag}
+                image={item.heroSection.heroImage}
+                imageHeight={"w-[544px]"}
+                imageWidth={"max-h-[584px]"}
+                gridCol={"col-span-1 lg:col-span-2"}
               />
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-0 lg:px-14 pt-12">
-            {workData2.map((item) => (
+            {workDataMain.slice(1,4).map((item) => (
               <WorkCard
                 key={item.id}
                 id={item.id}
-                title={item.title}
-                subtitle={item.subtitle}
-                tags={item.tags}
-                image={item.image}
-                imageHeight={item.imageHeight}
-                imageWidth={item.imageWidth}
-                gridCol={item.gridCol}
+                title={item.heroSection.title}
+                subtitle={item.heroSection.description}
+                tags={item.tag}
+                image={item.heroSection.heroImage}
+                imageHeight={"w-[544px]"}
+                imageWidth={"max-h-[284px]"}
+                gridCol={"col-span-1 lg:col-span-1"}
               />
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-0 lg:px-[332px] pt-12 items-center">
-            {workData3.slice(0,2).map((item) => (
+            {workDataMain.slice(4,6).map((item) => (
               <WorkCard
                 key={item.id}
                 id={item.id}
-                title={item.title}
-                subtitle={item.subtitle}
-                tags={item.tags}
-                image={item.image}
-                imageHeight={item.imageHeight}
-                imageWidth={item.imageWidth}
-                gridCol={item.gridCol}
+                title={item.heroSection.title}
+                subtitle={item.heroSection.description}
+                tags={item.tag}
+                image={item.heroSection.heroImage}
+                imageHeight={"w-[544px]"}
+                imageWidth={"max-h-[284px]"}
+                gridCol={"col-span-1 lg:col-span-1"}
               />
             ))}
-          </div>
-          <div className="px-0 lg:px-[332px] pt-12">
-              <WorkCard
-                id={workData3[2].id}
-                title={workData3[2].title}
-                subtitle={workData3[2].subtitle}
-                tags={workData3[2].tags}
-                image={workData3[2].image}
-                imageHeight={workData3[2].imageHeight}
-                imageWidth={workData3[2].imageWidth}
-                gridCol={workData3[2].gridCol}
-              />
-          </div>
+          </div>          
         </div>
       </div>
     </div>

@@ -195,7 +195,7 @@ const Navbar = () => {
           />
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-[70px]">
+          <div className="hidden lg:flex items-center lg:space-x-8 xl:space-x-[70px]">
             {navItems.map((item) => (
               <div key={item.name} className="relative services-dropdown">
                 {item.hasDropdown ? (

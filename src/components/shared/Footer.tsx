@@ -105,7 +105,7 @@ const Footer: React.FC<FooterProps> = ({
           alt="Footer background network pattern"
           width={1280}
           height={901}
-          className="w-full h-auto hidden lg:block object-cover"
+          className="w-full lg:h-[950px] xl:h-auto hidden lg:block object-cover"
           priority
         />
       </div>
@@ -121,7 +121,7 @@ const Footer: React.FC<FooterProps> = ({
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="mx-6 lg:mx-[280px]">
+        <div className="mx-6 lg:mx-20 xl:mx-[280px]">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-12 mb-8">
             {/* Logo and Description Section */}
