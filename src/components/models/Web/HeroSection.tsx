@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 function HeroSection() {
@@ -23,12 +24,14 @@ function HeroSection() {
           transformation , we deliver technology that drives growth, efficiency,
           and success.
         </p>
+       <Link href={"/services"}>
         <Button
           size={"xl"}
           className="rounded-full mb-20 lg:mb-10 mt-6 lg:mt-12"
         >
           Explore Our Service
-        </Button>        
+        </Button>  
+       </Link>      
       </div>
     </div>
   );

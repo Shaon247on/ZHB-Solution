@@ -21,7 +21,7 @@ function HeroSection() {
           layout="responsive"
           width={1680}
           height={400}
-          className="absolute lg:-top-[270px] left-0 w-full h-full object-cover"
+          className="absolute md:-top-[135px] lg:lg:-top-[270px] left-0 w-full h-full object-cover"
         />
       </div>
     </div>

@@ -37,9 +37,11 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   const idNumber = Number(id);
-  
+
   const workData = allProjects.find((project) => project.id === idNumber);
-  const relatedWorkData = allProjects.filter((project) => project.id !== idNumber);
+  const relatedWorkData = allProjects.filter(
+    (project) => project.id !== idNumber
+  );
 
   console.log("Related Work Data:", relatedWorkData);
   // Comment form
@@ -149,7 +151,7 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
           backgroundPosition: "center",
         }}
       >
-        <div className="relative z-10 px-4 sm:px-6 lg:px-10 xl:px-28 w-full">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-10 xl:px-28 w-full pt-10 lg:pt-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
@@ -179,9 +181,18 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                 ))}
               </div>
 
-              <Button size={"xl"} className="rounded-full text-sm sm:text-base px-6 sm:px-8">
-                {workData.heroSection.ctaText}
-              </Button>
+              <Link
+                href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size={"xl"}
+                  className="rounded-full text-sm sm:text-base px-6 sm:px-8"
+                >
+                  {workData.heroSection.ctaText}
+                </Button>
+              </Link>
             </motion.div>
 
             {/* Right Content - Hero Image */}
@@ -249,30 +260,42 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                     </div>
 
                     <div className="flex justify-between items-start">
-                      <span className="text-sm sm:text-base text-gray-600 font-medium">Team</span>
+                      <span className="text-sm sm:text-base text-gray-600 font-medium">
+                        Team
+                      </span>
                       <span className="text-sm sm:text-base text-gray-900 text-right leading-relaxed">
                         {workData.projectSummary.team}
                       </span>
                     </div>
 
                     <div className="flex justify-between items-start">
-                      <span className="text-sm sm:text-base text-gray-600 font-medium">Service</span>
+                      <span className="text-sm sm:text-base text-gray-600 font-medium">
+                        Service
+                      </span>
                       <span className="text-sm sm:text-base text-gray-900 text-right leading-relaxed">
                         {workData.projectSummary.service}
                       </span>
                     </div>
 
                     <div className="flex justify-between items-start">
-                      <span className="text-sm sm:text-base text-gray-600 font-medium">Stack</span>
+                      <span className="text-sm sm:text-base text-gray-600 font-medium">
+                        Stack
+                      </span>
                       <span className="text-xs sm:text-sm text-gray-900 text-right leading-relaxed whitespace-pre-line">
                         {workData.projectSummary.stack}
                       </span>
                     </div>
                   </div>
 
-                  <Button className="w-full mt-6 sm:mt-8 bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base">
-                    {workData.projectSummary.ctaText}
-                  </Button>
+                  <Link
+                    href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="w-full mt-6 sm:mt-8 bg-blue-600 hover:bg-blue-700 text-white py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base">
+                      {workData.projectSummary.ctaText}
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
 
@@ -319,12 +342,19 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                           Business Goal
                         </h3>
                         <ul className="space-y-2 sm:space-y-3 text-gray-700">
-                          {workData.goalsAndChallenges.businessGoals.map((goal, index) => (
-                            <li key={index} className="flex items-start gap-3">
-                              <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                              <span className="text-sm sm:text-base">{goal.text}</span>
-                            </li>
-                          ))}
+                          {workData.goalsAndChallenges.businessGoals.map(
+                            (goal, index) => (
+                              <li
+                                key={index}
+                                className="flex items-start gap-3"
+                              >
+                                <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span className="text-sm sm:text-base">
+                                  {goal.text}
+                                </span>
+                              </li>
+                            )
+                          )}
                         </ul>
                       </Card>
                     </div>
@@ -334,12 +364,19 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                           Key Challenges
                         </h3>
                         <ul className="space-y-2 sm:space-y-3 text-gray-700">
-                          {workData.goalsAndChallenges.keyChallenges.map((challenge, index) => (
-                            <li key={index} className="flex items-start gap-3">
-                              <span className="w-2 h-2 bg-red-600 rounded-full mt-2 flex-shrink-0"></span>
-                              <span className="text-sm sm:text-base">{challenge.text}</span>
-                            </li>
-                          ))}
+                          {workData.goalsAndChallenges.keyChallenges.map(
+                            (challenge, index) => (
+                              <li
+                                key={index}
+                                className="flex items-start gap-3"
+                              >
+                                <span className="w-2 h-2 bg-red-600 rounded-full mt-2 flex-shrink-0"></span>
+                                <span className="text-sm sm:text-base">
+                                  {challenge.text}
+                                </span>
+                              </li>
+                            )
+                          )}
                         </ul>
                       </Card>
                     </div>
@@ -359,16 +396,18 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
 
                   <div className="p-4 sm:p-8 rounded-lg">
                     <div className="flex flex-col xl:flex-row items-center justify-center xl:gap-24 gap-6 sm:gap-8">
-                      {workData.solutionArchitecture.images.map((image, index) => (
-                        <Image
-                          key={index}
-                          src={image.src}
-                          alt={image.alt}
-                          width={image.width}
-                          height={image.height}
-                          className="rounded-lg shadow-md w-full sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[400px]"
-                        />
-                      ))}
+                      {workData.solutionArchitecture.images.map(
+                        (image, index) => (
+                          <Image
+                            key={index}
+                            src={image.src}
+                            alt={image.alt}
+                            width={image.width}
+                            height={image.height}
+                            className="rounded-lg shadow-md w-full sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[400px]"
+                          />
+                        )
+                      )}
                     </div>
                   </div>
                 </CardContent>
@@ -383,7 +422,10 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
                     {workData.featureHighlights.map((feature, index) => (
-                      <Card key={index} className="bg-white border border-gray-200">
+                      <Card
+                        key={index}
+                        className="bg-white border border-gray-200"
+                      >
                         <CardContent className="p-4 sm:p-6">
                           <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">
                             {feature.title}
@@ -401,7 +443,9 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
               {/* Screen & Gallery */}
               <Card className="mb-6 sm:mb-8 shadow-none bg-[#F9F8F4]">
                 <CardContent className="lg:mx-6 lg:my-2 p-4 sm:p-6 rounded-2xl">
-                  <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Screen & Gallery</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">
+                    Screen & Gallery
+                  </h2>
                   <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">
                     Replace these placeholders with your real screenshots
                     (PNG/WebP). Maintain consistent aspect ratios for a clean
@@ -410,7 +454,10 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {workData.screenGallery.map((screen, index) => (
-                      <Card key={index} className="bg-white overflow-hidden border border-gray-200">
+                      <Card
+                        key={index}
+                        className="bg-white overflow-hidden border border-gray-200"
+                      >
                         {screen.placeholder ? (
                           <div className="bg-gray-100 p-4 h-32 sm:h-40 lg:h-48 flex items-center justify-center">
                             <div className="text-center">
@@ -451,7 +498,9 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
               {/* Technology Stack */}
               <Card className="mb-6 sm:mb-8 shadow-none bg-[#F9F8F4]">
                 <CardContent className="lg:mx-6 lg:my-2 p-4 sm:p-6 rounded-2xl">
-                  <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Technology Stack</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
+                    Technology Stack
+                  </h2>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-3 sm:gap-4 mb-6 sm:mb-8">
                     {workData.technologyStack.map((tech, index) => (
@@ -477,7 +526,9 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                     {workData.securityCompliance.map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <span className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></span>
-                        <span className="text-sm sm:text-base">{item.text}</span>
+                        <span className="text-sm sm:text-base">
+                          {item.text}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -487,13 +538,22 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
               {/* Result & Impact */}
               <Card className="mb-6 sm:mb-8 shadow-none bg-[#F9F8F4]">
                 <CardContent className="lg:mx-6 lg:my-2 p-4 sm:p-6 rounded-2xl">
-                  <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Result & Impact</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
+                    Result & Impact
+                  </h2>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     {workData.resultImpact.map((result, index) => (
-                      <Card key={index} className="bg-white text-center border border-gray-200">
+                      <Card
+                        key={index}
+                        className="bg-white text-center border border-gray-200"
+                      >
                         <CardContent className="p-4 sm:p-6">
-                          <div className={`text-2xl sm:text-3xl font-bold mb-1 sm:mb-2 ${getColorClasses(result.color)}`}>
+                          <div
+                            className={`text-2xl sm:text-3xl font-bold mb-1 sm:mb-2 ${getColorClasses(
+                              result.color
+                            )}`}
+                          >
                             {result.value}
                           </div>
                           <div className="text-xs sm:text-sm text-gray-600">
@@ -546,7 +606,9 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                         </blockquote>
 
                         <div className="flex items-center gap-3 sm:gap-4">
-                          <div className={`w-10 sm:w-12 h-10 sm:h-12 bg-${workData.testimonial.author.avatarColor} rounded-full flex items-center justify-center`}>
+                          <div
+                            className={`w-10 sm:w-12 h-10 sm:h-12 bg-${workData.testimonial.author.avatarColor} rounded-full flex items-center justify-center`}
+                          >
                             <span className="text-black bg-yellow-500 p-3 rounded-full  font-bold text-base sm:text-lg">
                               {workData.testimonial.author.initials}
                             </span>
@@ -588,20 +650,20 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                   </div>
                 </CardContent>
               </Card>
-              <h2 className="text-xl md:text-3xl font-bold mb-6 sm:mb-8 ">More projects</h2>
+              <h2 className="text-xl md:text-3xl font-bold mb-6 sm:mb-8 ">
+                More projects
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 gap-4 mt-6">
-                {
-                    relatedWorkData?.map((project, index) => (
-                      <WorkCard
-                        key={index}
-                        id={project.id}
-                        title={project.heroSection.title}
-                        subtitle={project.heroSection.description}
-                        tags={project.tag}
-                        image={project.heroSection.heroImage}
-                      />
-                    ))
-                }
+                {relatedWorkData?.map((project, index) => (
+                  <WorkCard
+                    key={index}
+                    id={project.id}
+                    title={project.heroSection.title}
+                    subtitle={project.heroSection.description}
+                    tags={project.tag}
+                    image={project.heroSection.heroImage}
+                  />
+                ))}
               </div>
             </motion.div>
           </div>

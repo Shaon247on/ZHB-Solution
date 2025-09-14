@@ -354,7 +354,7 @@ const Navbar = () => {
                                       initial={{ opacity: 0, x: -10 }}
                                       animate={{ opacity: 1, x: 0 }}
                                       transition={{ delay: index * 0.1 }}
-                                      href="#"
+                                      href={dropdownItem.href}
                                       className={`block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200 ${pathname === dropdownItem.href && " bg-gray-200"} rounded-2xl mx-2`}
                                     >
                                       {dropdownItem.name}

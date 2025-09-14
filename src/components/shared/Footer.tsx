@@ -278,11 +278,13 @@ const Footer: React.FC<FooterProps> = ({
                     <p>+1 (404) 936-3567</p>
                   </div>
                 </Link>
-                <div className="flex items-center gap-2.5">
+                <Link href={"/contact"}>
+                <div className="flex items-center gap-2.5 cursor-pointer mb-3">
                   <Mail size={18} stroke="white" />
                   <p>services@zhbsolutions.com</p>
                 </div>
-                <div className="flex items-center gap-2.5">
+                </Link>
+                <div className="flex items-center gap-2.5 cursor-pointer">
                   <Globe size={18} stroke="white" />
                   <p>www.zhbsolutions.com</p>
                 </div>

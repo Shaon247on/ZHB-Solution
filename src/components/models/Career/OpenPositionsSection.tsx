@@ -76,7 +76,7 @@ function OpenPositionsSection() {
   };
 
   return (
-    <div className="py-4 lg:py-14 bg-[#EBF1FC] px-6 lg:px-[90px]">
+    <div id="job_offers" className="py-4 lg:py-14 bg-[#EBF1FC] px-6 lg:px-[90px]">
       <TitleSection
         title="Open Positions"
         subtitle="Your Next Role Awaits"

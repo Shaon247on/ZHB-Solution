@@ -1,10 +1,10 @@
 import CreativeStepSection from "@/components/element/CreativeStepSection"
 import TestimonialsSection from "@/components/landing/TestimonialsSection"
-import BuildSection from "@/components/Marketing/BuildSection"
-import HeroSection from "@/components/Marketing/HeroSection"
-import HowSection from "@/components/Marketing/HowSection"
-import ServiceSection from "@/components/Marketing/ServiceSection"
-import TechnologySection from "@/components/Marketing/TechnologySection"
+import BuildSection from "@/components/models/Marketing/BuildSection"
+import HeroSection from "@/components/models/Marketing/HeroSection"
+import HowSection from "@/components/models/Marketing/HowSection"
+import ServiceSection from "@/components/models/Marketing/ServiceSection"
+import TechnologySection from "@/components/models/Marketing/TechnologySection"
 
 function page() {
   return (

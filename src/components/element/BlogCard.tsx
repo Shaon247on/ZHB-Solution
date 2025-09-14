@@ -34,7 +34,7 @@ export default function BlogCard({
         />
       </div>
       <div className="p-3">
-        <div className="p-4 flex flex-col gap-2 h-[380px] lg:h-[268px] mb-4 lg:mb-10">
+        <div className="p-4 flex flex-col gap-2 h-[280px] lg:h-[268px] mb-4 lg:mb-10">
           <span className="inline-block text-xs p-2 bg-[#104035] text-white rounded-full w-fit font-medium">
             {tag}
           </span>

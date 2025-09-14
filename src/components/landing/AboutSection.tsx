@@ -2,6 +2,7 @@ import React from "react";
 import TitleSection from "../element/TitleSection";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 function AboutSection() {
   return (
@@ -25,7 +26,9 @@ function AboutSection() {
             solutions that drive measurable results. With a proven track record
             of success
           </p>
+          <Link href={"/about"}>
           <Button className="mt-8 md:mt-12 lg:mt-20">Learn More</Button>
+          </Link>
         </div>
         <div>
             <Image

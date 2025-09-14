@@ -14,7 +14,9 @@ function page() {
       <HeroSection />
       <WhoSection/>
       <OurStoryCarousel/>
-      <BrandMarquee/>
+      <div className='mb-20'>
+        <BrandMarquee/>
+      </div>
       <SolutionSection/>
       <VisionSection/>
       <ContactSection/>

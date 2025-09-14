@@ -70,13 +70,13 @@ function HeroSection() {
           transformation , we deliver technology that drives growth, efficiency,
           and success.
         </p>
-        <Button
+        {/* <Button
           size={"xl"}
           className="rounded-full mb-6 lg:mb-10 mt-6 lg:mt-12"
         >
           Explore Our Service
-        </Button>
-        <div className="flex items-center justify-center py-2 lg:py-16 gap-1 lg:gap-6 relative">
+        </Button> */}
+        <div className="flex items-center justify-center py-2 lg:py-16 gap-1 lg:gap-6 relative mt-6 lg:mt-20">
           {image.map((img, index) => (
             <ServicesImage
               key={index}

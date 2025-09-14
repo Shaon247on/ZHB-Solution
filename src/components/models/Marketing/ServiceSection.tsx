@@ -5,8 +5,8 @@ import { AiContent, Cart, Computer, Globe2 } from "@/components/svg/WebSVG";
 import { LightbulbIconWhite } from "@/components/svg/WhoSVG";
 import { Chart, Mining, PaintBoard } from "@/components/svg/DataSVG";
 import { HomeWhite } from "@/components/svg/CareerISVG";
-import { Grow, Search } from "../svg/ServicesSVG";
-import { Browser, Mail, SmartPhone } from "../svg/MarketingSVG";
+import { Grow, Search } from "../../svg/ServicesSVG";
+import { Browser, Mail, SmartPhone } from "../../svg/MarketingSVG";
 
 const data: cardDataType[] = [
   {

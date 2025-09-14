@@ -4,6 +4,7 @@ import { Team } from "@/components/svg/DesignSVG";
 import { Security } from "@/components/svg/WebSVG";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export interface cardDataType {
@@ -21,20 +22,17 @@ const data: cardDataType[] = [
   {
     icon: <RocketWhite />,
     title: "Performance Driven ",
-    description:
-      "Optimized for speed, responsiveness, and reliability.",
+    description: "Optimized for speed, responsiveness, and reliability.",
   },
   {
     icon: <Team />,
     title: "User-Centric Design",
-    description:
-      " Interfaces crafted for engagement and ease of use.",
+    description: " Interfaces crafted for engagement and ease of use.",
   },
   {
     icon: <Security />,
     title: "Enterprise-Grade Security",
-    description:
-      "Protecting user data with best-in-class security protocols",
+    description: "Protecting user data with best-in-class security protocols",
   },
 ];
 
@@ -82,12 +80,18 @@ function BuildSection() {
             experiences that not only look stunning but also deliver real
             results.
           </p>
-          <Button
-            size={"lg"}
-            className="mt-4 lg:mt-8 text-[#F2F8FC] px-9 rounded-full"
+          <Link
+            href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Start Your App Project
-          </Button>
+            <Button
+              size={"lg"}
+              className="mt-4 lg:mt-8 text-[#F2F8FC] px-9 rounded-full"
+            >
+              Start Your App Project
+            </Button>
+          </Link>
         </div>
         <div className="flex flex-col lg:flex-row items-center lg:px-[13px] mt-4 lg:mt-20">
           {data.map((item, index) => (

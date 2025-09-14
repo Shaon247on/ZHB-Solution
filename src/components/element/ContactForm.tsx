@@ -26,14 +26,13 @@ import Link from "next/link";
 import { toast } from "sonner";
 
 const services = [
+  "Artificial-Intelligence",
   "Web Development",
   "Mobile App Development",
   "UI/UX Design",
-  "E-commerce Solutions",
+  "Cloud Solution",
   "Digital Marketing",
-  "SEO Services",
-  "Brand Identity",
-  "Consulting",
+  
 ];
 
 const budgetRanges = [

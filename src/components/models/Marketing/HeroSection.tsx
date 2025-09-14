@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 function HeroSection() {
@@ -16,17 +17,24 @@ function HeroSection() {
 
       <div className="relative z-30 py-7 lg:py-20 px-6 lg:px-[300px] text-white text-center">
         <h1 className="text-xl lg:text-[56px] font-semibold lg:font-bold font-orbitron">
-          Grow Your Business with Proven <br className="hidden lg:block"/>Digital Strategies
+          Grow Your Business with Proven <br className="hidden lg:block" />
+          Digital Strategies
         </h1>
         <p className="text-sm lg:text-xl font-semibold text-[#B7B7B7] max-w-[830px] mx-auto mt-2 ">
           From SEO to paid campaigns, we help you win online.
         </p>
-        <Button
-          size={"xl"}
-          className="rounded-full mb-20 lg:mb-10 mt-6 lg:mt-12"
+        <Link
+          href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Schedule Your Free Consultation
-        </Button>
+          <Button
+            size={"xl"}
+            className="rounded-full mb-20 lg:mb-10 mt-6 lg:mt-12"
+          >
+            Schedule Your Free Consultation
+          </Button>
+        </Link>
       </div>
     </div>
   );

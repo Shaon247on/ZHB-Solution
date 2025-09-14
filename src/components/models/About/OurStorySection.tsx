@@ -7,6 +7,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OurStoryCarousel() {
   return (
@@ -25,7 +26,13 @@ export default function OurStoryCarousel() {
             collaboration, innovation, and measurable impact—ensuring our
             clients achieve sustainable growth.
           </p>
-          <Button>Dive Into Our Projects</Button>
+          <Link
+            href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>Dive Into Our Projects</Button>
+          </Link>
         </div>
       </div>
       <Carousel
