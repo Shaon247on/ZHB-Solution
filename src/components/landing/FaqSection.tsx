@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "../ui/button";
 import { FaqAccordion } from "../element/FaqAccordion";
+import Link from "next/link";
 
 function FaqSection() {
   return (
@@ -71,36 +72,38 @@ function FaqSection() {
           <div className="p-4 lg:p-6">
             <div className="*:data-[slot=avatar]:ring-background  flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
               <Avatar className="size-8 lg:size-[60px] border-none">
-                <AvatarImage
-                  src="/faq-1.png"
-                  alt="@shadcn"
-                />
+                <AvatarImage src="/faq-1.png" alt="@shadcn" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <Avatar className="size-8 lg:size-[60px] object-cover border-none">
-                <AvatarImage
-                  src="/faq-2.png"
-                  alt="@leerob"
-                />
+                <AvatarImage src="/faq-2.png" alt="@leerob" />
                 <AvatarFallback>LR</AvatarFallback>
               </Avatar>
               <Avatar className="size-8 lg:size-[60px] border-none">
-                <AvatarImage
-                  src="/faq-3.png"
-                  alt="@evilrabbit"
-                />
+                <AvatarImage src="/faq-3.png" alt="@evilrabbit" />
                 <AvatarFallback>ER</AvatarFallback>
               </Avatar>
             </div>
             <div className="relative text-white text-base lg:text-[28px] mt-6 max-w-[455px]">
               <h2>Get the perfect fix for your needs today.</h2>
-              <Button size="xl" className="rounded-full bg-[#5E8DE8] mt-6">Set up a short call</Button>
+
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                href={
+                  "https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+                }
+              >
+                <Button size="xl" className="rounded-full bg-[#5E8DE8] mt-6">
+                  Set up a short call
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </motion.div>
       <div className="mt-12 w-[94%] lg:w-[750px]">
-        <FaqAccordion/>
+        <FaqAccordion />
       </div>
     </div>
   );

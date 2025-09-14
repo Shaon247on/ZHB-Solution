@@ -54,11 +54,11 @@ const Navbar = () => {
       href: "/services",
       hasDropdown: true,
       dropdownItems: [
+        { name: "Artificial Intelligence", href: "/services/Artificial-Intelligence" },
         { name: "Web Development", href: "/services/web-development" },
         { name: "Mobile App Development", href: "/services/mobile-app-development" },
         { name: "UI/UX Design", href: "/services/ui-ux-design" },
         { name: "Cloud Solutions", href: "/services/cloud-solutions" },
-        { name: "Data Analytics", href: "/services/Artificial-Intelligence" },
         { name: "Digital Marketing", href: "/services/digital-marketing" },
       ],
     },

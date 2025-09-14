@@ -9,13 +9,12 @@ import React, { useState } from "react";
 
 const tags = [
   "All Posts",
+  "Artificial-Intelligence",
   "Web Development",
   "Mobile App Development",
   "UI/UX Design",
   "Cloud Solution",
-  "Artificial-Intelligence",
   "Digital Marketing",
-  "Legacy IT",
 ];
 
 function BlogsSection() {

@@ -28,7 +28,7 @@ export default function WorkCard({
 }: WorkCardProps) {
   return (
     <div
-      className={`bg-[#11204E] ${gridCol} overflow-hidden shadow-md text-white py-2 lg:py-4 px-2 lg:px-6`}
+      className={`relative h-[700px] bg-[#11204E] ${gridCol} overflow-hidden shadow-md text-white py-2 lg:py-4 px-2 lg:px-6`}
     >
       <div
         className={`relative ${
@@ -62,7 +62,7 @@ export default function WorkCard({
           {tags.map((tag, i) => (
             <span
               key={i}
-              className="text-xs bg-[#1E3E7C] px-2 py-1 rounded-full uppercase tracking-wider"
+              className="text-xs px-2 py-1 rounded-full uppercase tracking-wider"
             >
               {tag}
             </span>
@@ -71,7 +71,7 @@ export default function WorkCard({
         <h3 className="text-xl lg:text-3xl font-semibold mb-2">{title}</h3>
         <p className="text-sm text-gray-300 mb-6">{subtitle}</p>
         <Link href={`/work/${id}`}>
-        <Button size="xl" className="gap-2 rounded-full">
+        <Button size="xl" className="gap-2 rounded-full absolute bottom-10">
           Read Case Study <ArrowRight className="w-4 h-4" />
         </Button>
         </Link>

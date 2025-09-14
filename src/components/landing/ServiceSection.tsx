@@ -5,14 +5,22 @@ import Image from "next/image";
 
 const data = [
   {
+    title: "Artificial-Intelligence",
+    description:
+      "Leverage AI-driven analytics to transform raw data into actionable insights. Our intelligent solutions help businesses understand customer behavior, predict market trends, and optimize performance, enabling smarter decisions that drive sustainable growth and long-term success.",
+    buttonText: "Grow Your Reach",
+    imageSrc: "/5.png",
+    imageAlt: "Data Analytics",
+    href: "/services/Artificial-Intelligence",
+  },
+  {
     title: "Web Development",
     description:
       "We build responsive, high-performance websites tailored to your business needs. From front-end to back-end, our solutions ensure seamless functionality, strong security, and scalable growth for a powerful online presence.",
     buttonText: "Design with Impact",
     imageSrc: "/1.png",
     imageAlt: "Web Development",
-    href:"/services/web-development"
-    
+    href: "/services/web-development",
   },
   {
     title: "Mobile App Development",
@@ -21,7 +29,7 @@ const data = [
     buttonText: "Grow Your Reach",
     imageSrc: "/2.png",
     imageAlt: "Mobile App Development",
-    href:"/services/mobile-app-development"
+    href: "/services/mobile-app-development",
   },
   {
     title: "UI/UX Design",
@@ -30,7 +38,7 @@ const data = [
     buttonText: "Start Building",
     imageSrc: "/3.png",
     imageAlt: "UI/UX Design",
-    href:"/services/ui-ux-design"
+    href: "/services/ui-ux-design",
   },
   {
     title: "Cloud Solutions",
@@ -39,16 +47,7 @@ const data = [
     buttonText: "Grow Your Reach",
     imageSrc: "/4.png",
     imageAlt: "Cloud Solutions",
-    href:"/services/cloud-solutions"
-  },
-  {
-    title: "Artificial-Intelligence",
-    description:
-      "Leverage AI-driven analytics to transform raw data into actionable insights. Our intelligent solutions help businesses understand customer behavior, predict market trends, and optimize performance, enabling smarter decisions that drive sustainable growth and long-term success.",
-    buttonText: "Grow Your Reach",
-    imageSrc: "/5.png",
-    imageAlt: "Data Analytics",
-    href:"/services/Artificial-Intelligence"
+    href: "/services/cloud-solutions",
   },
   {
     title: "Digital Marketing",
@@ -57,33 +56,32 @@ const data = [
     buttonText: "Grow Your Reach",
     imageSrc: "/6.png",
     imageAlt: "Digital Marketing",
-    href:"/services/digital-marketing"
+    href: "/services/digital-marketing",
   },
 ];
-
 
 function ServiceSection() {
   return (
     <div className="mt-20 mb-10 md:mb-0 pb-20 relative z-20 bg-linear-65 from-[#D8D8D8] to-[#D2D2D2] max-h-[2600px] lg:max-h-[1952px]">
-      <div className="relative z-30"> 
+      <div className="relative z-30">
         <TitleSection
-        title="SERVICE"
-        subtitle="Empowering Your Business with 
+          title="SERVICE"
+          subtitle="Empowering Your Business with 
 Smart Digital Solutions"
-        buttonText="Contact Us"
-        buttonHref="/contact"
-        width="w-[100px]"
-        textColor="text-black"
-      />
+          buttonText="Contact Us"
+          buttonHref="/contact"
+          width="w-[100px]"
+          textColor="text-black"
+        />
       </div>
       <Image
-      src={"/serviceBg.jpg"}
-      width={1920}
-      height={1068}
-      alt="bg image"
-      className="absolute z-0 top-0 w-full h-full"
+        src={"/serviceBg.jpg"}
+        width={1920}
+        height={1068}
+        alt="bg image"
+        className="absolute z-0 top-0 w-full h-full"
       />
-      <div className="absolute z-10 w-full h-full top-0 bg-linear-to-b from-[#d8d8d8da] to-[#d2d2d250]"/>
+      <div className="absolute z-10 w-full h-full top-0 bg-linear-to-b from-[#d8d8d8da] to-[#d2d2d250]" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-5 px-5 lg:px-32 relative z-30">
         {data.map((service, index) => (
           <ServiceCard

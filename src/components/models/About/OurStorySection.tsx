@@ -13,15 +13,17 @@ export default function OurStoryCarousel() {
     <div className="bg-[#172134] py-6 lg:py-20 px-6">
       <div className="flex flex-col lg:flex-row items-start justify-between lg:px-[363px] gap-4 lg:gap-[130px] mb-16 lg:mb-[120px]">
         <h2 className="text-white text-2xl lg:text-[56px] font-bold font-orbitron lg:w-[500px]">
-          EmpoOur Story, <br className="hidden lg:block" /> Your Success
+          Our Story, <br className="hidden lg:block" /> Your Success
         </h2>
         <div>
-          <p className="lg:max-w-[500px] text-xs lg:text-base font-medium text-[#B7B7B7] mx-auto mb-6 lg:mb-20">
-            Every great partnership begins with a story. At ZHB Solution LLC,
-            ours is built on a passion for technology and a commitment to
-            helping businesses grow. Your success drives everything we do — from
-            strategy to execution — as we turn innovative ideas into powerful
-            digital solutions.
+          <p className="lg:max-w-[500px] text-xs lg:text-base font-medium text-[#B7B7B7] mx-auto mb-6 lg:mb-10">
+            For over 14 years, our journey has been defined by a commitment to
+            excellence and client success. Guided by the leadership of Md.
+            Zahirul Bhuiyan, whose vision and expertise continue to inspire
+            innovation, ZHB Solutions has evolved into a trusted name across
+            industries. Every project we undertake is built on a foundation of
+            collaboration, innovation, and measurable impact—ensuring our
+            clients achieve sustainable growth.
           </p>
           <Button>Dive Into Our Projects</Button>
         </div>

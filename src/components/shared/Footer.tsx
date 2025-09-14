@@ -3,7 +3,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Facebook, Linkedin, Twitter, Instagram, Youtube, Phone, Mail, Globe } from "lucide-react";
+import {
+  Facebook,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Youtube,
+  Phone,
+  Mail,
+  Globe,
+} from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import FooterIcon from "../element/FooterIcon";
@@ -58,34 +67,40 @@ const Footer: React.FC<FooterProps> = ({
 
   const footerLinks = {
     service: [
+      {
+        label: "Artificial-Intelligence",
+        href: "/services/artificial-intelligence",
+      },
       { label: "Web Development", href: "/services/web-development" },
-      { label: "Mobile App Development", href: "/services/mobile-app-development" },
+      {
+        label: "Mobile App Development",
+        href: "/services/mobile-app-development",
+      },
       { label: "UI/UX Design", href: "/services/ui-ux-design" },
       { label: "Cloud Solution", href: "/services/cloud-solution" },
-      { label: "Artificial-Intelligence", href: "/services/artificial-intelligence" },
       { label: "Digital Marketing", href: "/services/digital-marketing" },
     ],
     quickLink1: [
-      { label: "Work", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Service", href: "#" },
-      { label: "Career", href: "#" },
-      { label: "Blog", href: "#" },
+      { label: "Work", href: "/work" },
+      { label: "About", href: "/about" },
+      { label: "Services", href: "/services" },
+      { label: "Career", href: "/career" },
+      { label: "Blog", href: "/blogs" },
     ],
-    quickLink2: [
-      { label: "FAQ", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Service", href: "#" },
-      { label: "Career", href: "#" },
-      { label: "Blog", href: "#" },
-    ],
-    quickLink3: [
-      { label: "Work", href: "#" },
-      { label: "About", href: "#" },
-      { label: "Service", href: "#" },
-      { label: "Career", href: "#" },
-      { label: "Blog", href: "#" },
-    ],
+    // quickLink2: [
+    //   { label: "FAQ", href: "#" },
+    //   { label: "About", href: "#" },
+    //   { label: "Service", href: "#" },
+    //   { label: "Career", href: "#" },
+    //   { label: "Blog", href: "#" },
+    // ],
+    // quickLink3: [
+    //   { label: "Work", href: "#" },
+    //   { label: "About", href: "#" },
+    //   { label: "Service", href: "#" },
+    //   { label: "Career", href: "#" },
+    //   { label: "Blog", href: "#" },
+    // ],
   };
 
   const socialIcons = [
@@ -252,20 +267,25 @@ const Footer: React.FC<FooterProps> = ({
               <div className="space-y-3 text-gray-300 text-sm">
                 <p>3651 Peachtree pkwy STE. E #116</p>
                 <p>Suwanee, GA 30024</p>
-                
-                <div className="flex items-center gap-2.5 mt-4">
-                    <Phone size={18} fill="white" stroke="white"/>
-                    <p>(469) 896-3557</p>
+
+                <Link
+                  href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+                  target="_blank"
+                  rel="noopener noreferrer"                  
+                >
+                  <div className="flex items-center gap-2.5 cursor-pointer mb-3">
+                    <Phone size={18} fill="white" stroke="white" />
+                    <p>+1 (404) 936-3567</p>
+                  </div>
+                </Link>
+                <div className="flex items-center gap-2.5">
+                  <Mail size={18} stroke="white" />
+                  <p>services@zhbsolutions.com</p>
                 </div>
                 <div className="flex items-center gap-2.5">
-                    <Mail size={18} stroke="white"/>
-                    <p>www.ebsolutions.com</p>
+                  <Globe size={18} stroke="white" />
+                  <p>www.zhbsolutions.com</p>
                 </div>
-                <div className="flex items-center gap-2.5">
-                    <Globe size={18} stroke="white"/>
-                    <p>www.zhbsolutions.com</p>
-                </div>
-                
               </div>
             </motion.div>
 

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { WhoCardData } from "@/data/ServicesData";
 import { div } from "framer-motion/client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function WhatSection() {
@@ -28,9 +29,15 @@ function WhatSection() {
           demands of our clients. We focus on crating solutions that are both
           innovative and customer centric.{" "}
         </p>
-        <Button size={"lg"} className="rounded-full mb-10 lg:mb-[120px]">
-          Get a Free Consultation
-        </Button>
+        <Link
+          href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button size={"lg"} className="rounded-full mb-10 lg:mb-[120px]">
+            Get a Free Consultation
+          </Button>
+        </Link>
         <div className="lg:px-[123px] grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6">
           {WhoCardData.map((item, index) => (
             <WhatCard key={index} {...item} />

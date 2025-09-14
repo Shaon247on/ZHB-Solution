@@ -53,36 +53,39 @@ function VisionSection() {
           textPosition="text-start"
         />
         <p className="text-[#959595] max-w-[660px]">
-          To be a global leader in delivering innovative, reliable, and
-          impactful software solutions that empower businesses and communities
-          worldwide.
+          We envision a future where businesses, regardless of size, can harness
+          the full potential of cutting-edge technologies. At ZHB Solutions, our
+          vision is simple: to be the catalyst that drives digital
+          transformation and helps organizations thrive globally. By aligning
+          innovation with business goals, we aim to redefine success in the
+          digital economy.
         </p>
         <div className="space-y-4 mt-12">
-            <VisionCard
-            icon={<Brain/>}
+          <VisionCard
+            icon={<Brain />}
             title="Lead Globally"
             subtitle="Establish a strong presence in international markets with trusted technology solutions."
-            />
-            <VisionCard
-            icon={<Boxs/>}
+          />
+          <VisionCard
+            icon={<Boxs />}
             title="Innovate Continuously"
             subtitle="Foster a culture of creativity, research, and cutting-edge development."
-            />
-            <VisionCard
-            icon={<JoinHand/>}
+          />
+          <VisionCard
+            icon={<JoinHand />}
             title="Empower Businesses"
             subtitle="Provide tools and platforms that drive growth, efficiency, and success."
-            />
-            <VisionCard
-            icon={<LapTube/>}
+          />
+          <VisionCard
+            icon={<LapTube />}
             title="Ensure Trust & Security"
             subtitle="Build secure, reliable systems that protect data and user confidence."
-            />
-            <VisionCard
-            icon={<LapTube/>}
+          />
+          <VisionCard
+            icon={<LapTube />}
             title="Drive Sustainable Growth"
             subtitle="Deliver long-term value for clients, partners, and stakeholders."
-            />
+          />
         </div>
       </div>
     </div>

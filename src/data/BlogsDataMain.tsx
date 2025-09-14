@@ -256,7 +256,7 @@ export const blogs: Blog[] = [
     publishDate: "04 September 2025",
     readTime: "10 min read",
     tags: ["SEO", "AI", "Digital Marketing"],
-    tag: "Digital Marketing",
+    tag: "Artificial-Intelligence",
     content: [
       {
         heading: "Search Is Smarter Than Ever",
@@ -374,7 +374,7 @@ export const blogs: Blog[] = [
     publishDate: "04 September 2025",
     readTime: "15 min read",
     tags: ["Legacy IT", "Optimization", "Productivity"],
-    tag: "Legacy IT",
+    tag: "Artificial-Intelligence",
     content: [
       {
         heading: "Streamline, Don't Rip and Replace",

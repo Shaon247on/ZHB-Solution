@@ -6,7 +6,7 @@ import React from "react";
 
 function WhoSection() {
   return (
-    <div className="pt-10 pb-6 lg:pb-[120px] px-6 lg:px-[120px] mx-auto bg-[#F8F9F4]">
+    <div className="pt-10 pb-6 lg:pb-[120px] px-6 lg:px-[120px] mx-auto bg-[#F8F9F4] lg:mt-8">
       <div className="flex flex-col lg:flex-row lg:gap-[100px]">
         {/* Image Grid Section */}
         <div className="w-full lg:max-w-1/2 flex flex-col gap-4 lg:gap-6 mb-8 lg:mb-0">
@@ -63,14 +63,15 @@ function WhoSection() {
 
           <div className="lg:max-w-[570px] mb-10">
             <p className="text-gray-600 lg:text-lg mb-2 lg:mb-8 leading-relaxed">
-              ZHB Solution LLC is a forward-thinking technology company based in
-              the USA, delivering smart, scalable, and secure digital solutions.
+              ZHB Solutions is a forward-thinking technology partner dedicated
+              to transforming ideas into scalable digital solutions. Founded on
+              the principle of combining innovation with reliability.
             </p>
-
-            <p className="text-gray-600 lg:text-lg lg:mb-12 mt-4 lg:mt-12 leading-relaxed">
-              We specialize in AI, IoT, blockchain, cloud computing, and
-              business automation—empowering businesses to innovate, grow, and
-              thrive in a digital-first world.
+            <p className="text-gray-600 lg:text-lg lg:mb-12 mt-4 lg:mt-4 leading-relaxed">
+              we bring together a team of seasoned experts passionate about
+              creating impactful results. From startups to enterprises, we help
+              organizations unlock new opportunities with technology-driven
+              strategies.
             </p>
           </div>
 
@@ -79,31 +80,28 @@ function WhoSection() {
             {/* Innovation */}
             <div className="flex items-start gap-4">
               <WhoCard
-                icon={<LightbulbIcon/>}
+                icon={<LightbulbIcon />}
                 title="Innovation"
                 subtitle="Always exploring creative solutions"
-                
-                />
+              />
             </div>
 
             {/* Reliable */}
             <div className="flex items-start gap-4">
-                <WhoCard
-                icon={<Profile/>}
+              <WhoCard
+                icon={<Profile />}
                 title="Reliable"
                 subtitle="Building trust with every project."
-                
-                />
+              />
             </div>
 
             {/* Global */}
             <div className="flex items-start gap-4">
-                <WhoCard
-                icon={<Global/>}
+              <WhoCard
+                icon={<Global />}
                 title="Global"
                 subtitle="Serving clients worldwide."
-                
-                />
+              />
             </div>
           </div>
         </div>
