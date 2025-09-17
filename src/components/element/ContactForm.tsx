@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import emailjs from "@emailjs/browser";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import {
   Form,
   FormControl,
@@ -32,7 +33,6 @@ const services = [
   "UI/UX Design",
   "Cloud Solution",
   "Digital Marketing",
-  
 ];
 
 const budgetRanges = [
@@ -47,30 +47,70 @@ const budgetRanges = [
 const formSchema = z.object({
   fullName: z.string().min(1, "Full name is required"),
   companyName: z.string().optional(),
-  email: z.email("Please enter a valid email address"),
-  serviceRequired: z.enum(services),
-  projectBudget: z.enum(budgetRanges),
+  email: z.string().email("Please enter a valid email address"),
+  serviceRequired: z.enum(services as [string, ...string[]]),
+  projectBudget: z.enum(budgetRanges as [string, ...string[]]),
   projectDetails: z.string().min(10, "Please provide at least 10 characters"),
 });
 
-// 3. Update FormData type
 type FormData = z.infer<typeof formSchema>;
 
 const ContactForm: React.FC = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
       companyName: "",
       email: "",
-      serviceRequired: "",
-      projectBudget: "",
+      serviceRequired: undefined,
+      projectBudget: undefined,
       projectDetails: "",
     },
   });
 
   const handleSubmit = async (data: FormData) => {
+    if (!executeRecaptcha) {
+      toast.error("reCAPTCHA not available. Please refresh the page and try again.");
+      return;
+    }
+
     try {
+      // Execute reCAPTCHA v3 and get token
+      const recaptchaToken = await executeRecaptcha("contact_form_submit");
+      
+      if (!recaptchaToken) {
+        toast.error("reCAPTCHA verification failed. Please try again.");
+        return;
+      }
+
+      // Verify reCAPTCHA on the server side
+      const recaptchaResponse = await fetch('/api/verify-recaptcha-v3', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          token: recaptchaToken,
+          action: 'contact_form_submit'
+        }),
+      });
+
+      const recaptchaResult = await recaptchaResponse.json();
+
+      if (!recaptchaResponse.ok || !recaptchaResult.success) {
+        toast.error("Security verification failed. Please try again.");
+        return;
+      }
+console.log("rechaptcha scroe",recaptchaResult.score)
+      // Check the score (optional - you can adjust the threshold)
+      if (recaptchaResult.score < 0.5) {
+        toast.error("Security check failed. Please contact us directly if you're having trouble.");
+        return;
+      }
+
+      // Send email with EmailJS
       const result = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
@@ -81,6 +121,7 @@ const ContactForm: React.FC = () => {
           serviceRequired: data.serviceRequired,
           projectBudget: data.projectBudget,
           projectDetails: data.projectDetails,
+          recaptchaScore: recaptchaResult.score, // Optional: include score for reference
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
@@ -215,7 +256,7 @@ const ContactForm: React.FC = () => {
                 <FormControl>
                   <textarea
                     placeholder="Tell us more about your idea"
-                    className="w-full border border-gray-300 rounded-md p-2"
+                    className="w-full border border-gray-300 rounded-md p-2 min-h-[100px] resize-vertical"
                     {...field}
                   />
                 </FormControl>
@@ -232,6 +273,7 @@ const ContactForm: React.FC = () => {
           >
             {form.formState.isSubmitting ? "Sending..." : "Send Message"}
           </Button>
+          
           <div className="text-center pt-2">
             <p className="text-sm lg:text-lg font-semibold">
               Not Interested to submit the form?{" "}
@@ -240,11 +282,23 @@ const ContactForm: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:text-blue-600 underline font-medium"
-
               >
                 Book A Call Directly
               </Link>
             </p>
+          </div>
+
+          {/* reCAPTCHA v3 Badge Notice */}
+          <div className="text-xs text-gray-500 text-center">
+            This site is protected by reCAPTCHA and the Google{" "}
+            <a href="https://policies.google.com/privacy" className="text-blue-500 hover:underline">
+              Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a href="https://policies.google.com/terms" className="text-blue-500 hover:underline">
+              Terms of Service
+            </a>{" "}
+            apply.
           </div>
         </form>
       </Form>

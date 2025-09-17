@@ -5,6 +5,7 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { Toaster } from "sonner";
 import { AppProvider } from "@/context/AppContext";
+import ReCaptchaProvider from "@/components/ReCaptcha/ReCaptchaProvider";
 
 const parkinsans = Parkinsans({
   variable: "--font-parkinsans",
@@ -35,12 +36,14 @@ export default function RootLayout({
       <body
         className={`${jakarta.variable} ${parkinsans.variable} ${orbitron.variable} font-parkinsans antialiased`}
       >
-        <AppProvider>
-          <Navbar />
-          {children}
-          <Toaster />
-          <Footer />
-        </AppProvider>
+        <ReCaptchaProvider>
+          <AppProvider>
+            <Navbar />
+            {children}
+            <Toaster />
+            <Footer />
+          </AppProvider>
+        </ReCaptchaProvider>
       </body>
     </html>
   );
