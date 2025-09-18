@@ -1,7 +1,6 @@
 import { Platform } from "@/components/svg/AppSVG";
 import { ClockWise } from "@/components/svg/CloudSVG";
 import { Accessibility, Target, Voltage } from "@/components/svg/DesignSVG";
-import { Earth, Grow, Search, Shield } from "@/components/svg/ServicesSVG";
 import { Security } from "@/components/svg/WebSVG";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -39,9 +38,9 @@ const data: cardDataType[] = [
 
 function BuildSection() {
   return (
-    <div className="py-6 lg:py-20 px-6 lg:px-[120px] flex flex-col-reverse lg:flex-row items-start justify-start gap-12">
-      <div className="max-w-[518px]">
-        <div className="relative lg:w-[518px] lg:h-[345px]">
+    <div className="py-6 xl:py-20 px-6 xl:px-[120px] flex flex-col xl:flex-row items-start justify-start gap-12">
+      <div className="max-w-[518px] ">
+        <div className="relative xl:w-[518px] xl:h-[345px] lg:py-14 xl:py-0">
           <Image
             src={"/cloud/cloud-1.jpg"}
             alt="cloud image"

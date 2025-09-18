@@ -46,26 +46,26 @@ const data: cardDataType[] = [
 
 function BuildSection() {
   return (
-    <div className="py-6 lg:py-20 px-6 lg:px-[120px] flex flex-col-reverse lg:flex-row items-start justify-start gap-12">
-      <div className="max-w-[518px]">
-        <div className="lg:w-[518px] lg:h-[388px] overflow-hidden rounded-br-[80px]">
+    <div className="py-6 xl:py-20 px-6 xl:px-[120px] flex flex-col xl:flex-row items-start justify-start gap-12">
+      <div className="xl:max-w-[518px] lg:flex lg:flex-row lg:w-full xl:block">
+        <div className="xl:w-[518px] lg:w-1/2 lg:h-[388px] overflow-hidden rounded-br-[80px]">
           <Image
             src={"/marketing/marketing-1.jpg"}
             alt="marketing image"
             width={400}
             height={388}
             layout="responsive"
-            className="object-cover lg:w-[400px] lg:h-[388px] rounded-tl-[80px] rounded-br-[80px]"
+            className="object-cover xl:w-[400px] xl:h-[388px] rounded-tl-[80px] rounded-br-[80px]"
           />
         </div>
-        <div className="lg:w-[518px] lg:h-full">
+        <div className="lg:w-[518px] xl:h-full">
           <Image
             src={"/marketing/marketing-2.jpg"}
             alt="marketing image"
             width={518}
             height={388}
             layout="responsive"
-            className="object-cover lg:w-[518px] lg:h-[388px] rounded-tl-[80px] rounded-br-[80px]"
+            className="object-cover xl:w-[518px] xl:h-[388px] rounded-tl-[80px] rounded-br-[80px]"
           />
           <div></div>
         </div>

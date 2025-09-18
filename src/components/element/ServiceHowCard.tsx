@@ -18,7 +18,7 @@ const ServiceStepCard: FC<ServiceStepCardProps> = ({
   icon,
 }) => {
   return (
-    <div className="bg-white rounded-lg p-6 shadow-lg flex flex-col items-start space-y-4 h-[560px] lg:h-[550px]">
+    <div className="bg-white rounded-lg p-6 shadow-lg flex flex-col items-start space-y-4 h-[560px] lg:min-h-[770px]">
       <span className="font-medium text-sm text-[#3167CE] mb-7">Step 0{step}</span>
 
       <div className="size-11 flex items-center justify-center bg-[#172F5F] rounded-[12px] mb-4 lg:mb-6">

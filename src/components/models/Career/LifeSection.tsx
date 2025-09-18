@@ -45,13 +45,13 @@ const data = [
 function LifeSection() {
   return (
     <div className="py-6 lg:py-20 px-6 lg:px-[60px] relative">
-        <Image
+        {/* <Image
           src="/career/lifeBG.jpg"
           alt="Life at ZHB"
           layout="fill"
           objectFit="cover"
           className="absolute inset-0 -z-10"
-        />
+        /> */}
         <div className="absolute inset-0 z-10 w-full h-full bg-[#f9f8f4e1]" />
       <div className="relative z-20">
         <h2 className="text-2xl lg:text-4xl font-bold mb-2 font-orbitron text-center">

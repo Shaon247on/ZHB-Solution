@@ -47,7 +47,7 @@ const data: dataType[] = [
 
 function HowSection() {
   return (
-    <div className="relative py-6 lg:py-20 px-6 lg:px-[120px]">
+    <div className="relative py-6 lg:py-20 px-6 xl:px-[120px]">
       <Image
         src={"/web/howBg.jpg"}
         alt="background"
@@ -67,7 +67,7 @@ function HowSection() {
         <p className="font-medium text-[#B7B7B7] max-w-[888px] mt-2 mb-6 lg:mb-12">
           From idea to ongoing support, our process ensures quality, efficiency, and success at every stage.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-x-6 lg:gap-x-16 gap-y-6 px-6 lg:px-[327px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-x-6 xl:gap-x-16 gap-y-6 px-6 xl:px-[327px]">
           {data.map((item, index) => (
             <div key={index} className="py-3 lg:py-6 px-2 lg:px-4 bg-[#F8F9F4]">
               <span className="inline-block w-fit rounded-full bg-[#B9D4CE] text-sm px-4 py-1 mb-3 lg:mb-6">

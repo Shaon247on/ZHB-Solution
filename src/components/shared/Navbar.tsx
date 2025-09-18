@@ -17,9 +17,9 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [mounted, setMounted] = useState<boolean>(false);
   const route = useRouter();
-  const pathname = usePathname();  // Using pathname for active link
+  const pathname = usePathname(); // Using pathname for active link
 
-  const {navTitle, setNavTitle} = useAppContext();
+  const { navTitle, setNavTitle } = useAppContext();
 
   useEffect(() => {
     const saved = localStorage.getItem("myValue");
@@ -54,9 +54,15 @@ const Navbar = () => {
       href: "/services",
       hasDropdown: true,
       dropdownItems: [
-        { name: "Artificial Intelligence", href: "/services/Artificial-Intelligence" },
+        {
+          name: "Artificial Intelligence",
+          href: "/services/Artificial-Intelligence",
+        },
         { name: "Web Development", href: "/services/web-development" },
-        { name: "Mobile App Development", href: "/services/mobile-app-development" },
+        {
+          name: "Mobile App Development",
+          href: "/services/mobile-app-development",
+        },
         { name: "UI/UX Design", href: "/services/ui-ux-design" },
         { name: "Cloud Solutions", href: "/services/cloud-solutions" },
         { name: "Digital Marketing", href: "/services/digital-marketing" },
@@ -136,13 +142,15 @@ const Navbar = () => {
       <nav className="bg-[#172F5F] text-[#FDFDFD] shadow-lg relative z-50">
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 lg:h-20">
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={84}
-              height={56}
-              className="flex-shrink-0"
-            />
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={84}
+                height={56}
+                className="flex-shrink-0"
+              />
+            </Link>
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <button
@@ -153,7 +161,9 @@ const Navbar = () => {
                   <Link
                     href={item.href}
                     className={`${
-                      pathname === item.href ? "text-[#3671E2]" : "text-[#FDFDFD]"
+                      pathname === item.href
+                        ? "text-[#3671E2]"
+                        : "text-[#FDFDFD]"
                     } hover:text-[#3671E2] transition-colors duration-200 font-medium`}
                   >
                     {item.name}
@@ -186,13 +196,15 @@ const Navbar = () => {
       <div className="px-4 sm:px-6 lg:px-20">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={84}
-            height={56}
-            className="flex-shrink-0"
-          />
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={84}
+              height={56}
+              className="flex-shrink-0"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center lg:space-x-8 xl:space-x-[70px]">
@@ -209,7 +221,9 @@ const Navbar = () => {
                       href={item.href}
                       onClick={() => setNavTitle(item.name)}
                       className={`flex items-center space-x-1 ${
-                        pathname === item.href ? "text-[#3671E2]" : "text-[#FDFDFD]"
+                        pathname === item.href
+                          ? "text-[#3671E2]"
+                          : "text-[#FDFDFD]"
                       } hover:text-[#3671E2] transition-colors duration-200 py-2`}
                     >
                       <span className="font-medium">{item.name}</span>
@@ -245,7 +259,10 @@ const Navbar = () => {
                               >
                                 <motion.p
                                   variants={itemVariants}
-                                  className={`block px-4 py-3 text-gray-800 hover:bg-gray-200 hover:text-[#172F5F] transition-colors duration-200 ${pathname === dropdownItem.href && "bg-gray-200"} rounded-2xl mx-2`}
+                                  className={`block px-4 py-3 text-gray-800 hover:bg-gray-200 hover:text-[#172F5F] transition-colors duration-200 ${
+                                    pathname === dropdownItem.href &&
+                                    "bg-gray-200"
+                                  } rounded-2xl mx-2`}
                                 >
                                   {dropdownItem.name}
                                 </motion.p>
@@ -261,7 +278,9 @@ const Navbar = () => {
                     onClick={() => setNavTitle(item.name)}
                     href={item.href}
                     className={`${
-                      pathname === item.href ? "text-[#3671E2]" : "text-[#FDFDFD]"
+                      pathname === item.href
+                        ? "text-[#3671E2]"
+                        : "text-[#FDFDFD]"
                     } hover:text-[#3671E2] transition-colors duration-200 font-medium`}
                   >
                     {item.name}
@@ -355,7 +374,10 @@ const Navbar = () => {
                                       animate={{ opacity: 1, x: 0 }}
                                       transition={{ delay: index * 0.1 }}
                                       href={dropdownItem.href}
-                                      className={`block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200 ${pathname === dropdownItem.href && " bg-gray-200"} rounded-2xl mx-2`}
+                                      className={`block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200 ${
+                                        pathname === dropdownItem.href &&
+                                        " bg-gray-200"
+                                      } rounded-2xl mx-2`}
                                     >
                                       {dropdownItem.name}
                                     </motion.a>
@@ -369,7 +391,9 @@ const Navbar = () => {
                     ) : (
                       <a
                         href={item.href}
-                        className={`block text-[#FDFDFD] hover:text-[#3671E2] py-3 font-medium transition-colors duration-200 ${pathname === item.href && "bg-gray-200"}`}
+                        className={`block text-[#FDFDFD] hover:text-[#3671E2] py-3 font-medium transition-colors duration-200 ${
+                          pathname === item.href && "bg-gray-200"
+                        }`}
                       >
                         {item.name}
                       </a>

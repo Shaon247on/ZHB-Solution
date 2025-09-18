@@ -21,7 +21,7 @@ function ProjectsSection() {
         />
         {data.slice(0, 1).map((item, index) => (
           <div key={index}>
-            <div className="px-4 sm:px-6 lg:px-32 bg-sky-50 flex flex-col lg:flex-row gap-7 items-center lg:gap-[300px]">
+            <div className="py-8 px-4 sm:px-6 lg:px-32 bg-sky-50 flex flex-col lg:flex-row gap-7 items-center lg:gap-[300px]">
               <div>
                 <h2 className="text-xl lg:text-[1.75rem] font-bold">
                   {item.heroSection.title}

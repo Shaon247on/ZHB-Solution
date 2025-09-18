@@ -7,7 +7,7 @@ import { Boxs, Brain, JoinHand, LapTube } from "@/components/svg/VisionSVG";
 function VisionSection() {
   return (
     <div className="bg-[#1E3E7C] flex flex-col-reverse lg:flex-row items-center px-4 lg:px-[200px] py-10 lg:py-20 gap-10 lg:gap-[120px]">
-      <div className="relative w-[300px] lg:w-[730px] h-[280px] lg:h-[714px]">
+      <div className="relative w-[300px] xl:w-[730px] h-[280px] xl:h-[714px] lg:hidden xl:block">
         <Image
           src={"/about/vision-1.png"}
           alt="Vision Image 1"
