@@ -38,8 +38,8 @@ const data: cardDataType[] = [
 
 function BuildSection() {
   return (
-    <div className="py-6 lg:py-20 px-6 lg:px-[120px] flex flex-col-reverse lg:flex-row items-start justify-start gap-12">
-      <div className="max-w-[518px]">
+    <div className="py-6 xl:py-20 px-6 xl:px-[120px] flex flex-col xl:flex-row items-start justify-start gap-12">
+      <div className="xl:max-w-[518px] lg:flex lg:flex-row lg:w-full lg:gap-4">
         <div className="lg:w-[518px] lg:h-full">
           <Image
             src={"/app/image-2.jpg"}

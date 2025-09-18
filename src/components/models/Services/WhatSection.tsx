@@ -10,8 +10,8 @@ import React from "react";
 
 function WhatSection() {
   return (
-    <div className="px-6 lg:px-[123px] py-6 lg:py-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-6 lg:gap-0">
-      <div className=" lg:rounded-tr-[200px] lg:rounded-bl-[182px] lg:w-[743px] lg:h-[850px] border-2 overflow-hidden">
+    <div className="px-6 xl:px-[123px] py-6 xl:py-10 flex flex-col-reverse xl:flex-row items-center justify-between gap-6 lg:gap-0">
+      <div className=" xl:rounded-tr-[200px] xl:rounded-bl-[182px] xl:w-[743px] xl:h-[850px] border-2 overflow-hidden">
         <Image
           src={"/services/whatImage.jpg"}
           alt="What we do Image"
@@ -38,7 +38,7 @@ function WhatSection() {
             Get a Free Consultation
           </Button>
         </Link>
-        <div className="lg:px-[123px] grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6">
+        <div className="xl:px-[123px] grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
           {WhoCardData.map((item, index) => (
             <WhatCard key={index} {...item} />
           ))}

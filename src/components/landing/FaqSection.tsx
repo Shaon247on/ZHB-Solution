@@ -9,7 +9,7 @@ import Link from "next/link";
 
 function FaqSection() {
   return (
-    <div className="p-4 lg:p-[120px] flex flex-col lg:flex-row gap-0 lg:gap-48 justify-center">
+    <div className="p-4 lg:p-[120px] flex flex-col xl:flex-row gap-0 lg:gap-20 justify-center">
       <motion.div>
         <motion.p
           initial={{ opacity: 0, y: 15 }}

@@ -7,40 +7,40 @@ import React from "react";
 function WhoSection() {
   return (
     <div className="pt-10 pb-6 lg:pb-[120px] px-6 lg:px-[120px] mx-auto bg-[#F8F9F4] lg:mt-8">
-      <div className="flex flex-col-reverse lg:flex-row lg:gap-[100px]">
+      <div className="flex flex-col xl:flex-row lg:gap-[100px]">
         {/* Image Grid Section */}
-        <div className="w-full lg:max-w-1/2 flex flex-col gap-4 lg:gap-6 mb-8 lg:mb-0 mt-4 lg:mt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row gap-4 lg:gap-6 lg:mr-8">
+        <div className="w-full xl:max-w-1/2 flex flex-col gap-4 lg:gap-6 mb-8 lg:mb-0 mt-4 lg:mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-row gap-4 xl:gap-6 xl:mr-8 ">
             {/* Top row */}
             <div className="">
               <Image
-                src={"/about/who-1.jpg"}
-                width={428}
-                height={196}
-                alt="Who we are image-1"
-                className="object-cover w-full lg:w-[428px] h-32 lg:h-[196px] rounded-lg"
+              src={"/about/who-1.jpg"}
+              width={428}
+              height={196}
+              alt="Who we are image-1"
+              className="object-cover w-full xl:w-[428px] h-32 xl:h-[196px] lg:h-[300px] rounded-lg"
               />
             </div>
             <div className="">
               <Image
-                src={"/about/who-2.jpg"}
-                width={312}
-                height={196}
-                alt="Who we are image-2"
-                className="object-cover w-full lg:w-[312px] h-32 lg:h-[196px] rounded-lg"
+              src={"/about/who-2.jpg"}
+              width={312}
+              height={196}
+              alt="Who we are image-2"
+              className="object-cover w-full xl:w-[312px] h-32 xl:h-[196px] lg:h-[300px] rounded-lg"
               />
             </div>
-          </div>
+            </div>
 
           {/* Bottom row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row gap-4 lg:gap-6 lg:mr-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:flex xl:flex-row gap-4 xl:gap-6 xl:mr-8 ">
             <div className="">
               <Image
                 src={"/about/who-3.jpg"}
                 width={252}
                 height={300}
                 alt="Who we are image-3"
-                className="object-cover w-full lg:w-[252px] h-32 lg:h-[300px] rounded-lg"
+                className="object-cover w-full xl:w-[252px] h-32 lg:h-[300px] rounded-lg"
               />
             </div>
             <div className="">
@@ -76,7 +76,7 @@ function WhoSection() {
           </div>
 
           {/* Feature Cards */}
-          <div className="flex flex-wrap lg:flex-row items-center gap-3 lg:gap-[54px]">
+          <div className="flex flex-wrap lg:flex-row items-center gap-3 lg:gap-6">
             {/* Innovation */}
             <div className="flex items-start gap-4">
               <WhoCard

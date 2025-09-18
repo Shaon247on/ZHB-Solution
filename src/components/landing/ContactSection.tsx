@@ -8,7 +8,7 @@ import CreativeStepSection from "../element/CreativeStepSection";
 function ContactSection({ bottom = true }: { bottom?: boolean }) {
   return (
     <section>
-      <div className="flex flex-col lg:flex-row px-4 lg:px-32 py-10 lg:py-20 bg-[#EBF1FC] gap-6 lg:gap-16">
+      <div className="flex flex-col lg:flex-row px-4 lg:px-14 py-10 lg:py-20 bg-[#EBF1FC] gap-6 lg:gap-16">
         <div className="flex flex-col items-start justify-between">
           <motion.div className=" ">
             <motion.p
