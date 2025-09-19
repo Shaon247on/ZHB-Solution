@@ -28,7 +28,7 @@ import FeatureCard from '../element/ChooseCard';
 
 function ChooseSection() {
   return (
-    <div className='flex flex-col pb-6 lg:pb-20 xl:flex-row items-center px-4 lg:px-10 lg:gap-12 '>
+    <div className='flex flex-col pb-6 lg:pb-20 xl:flex-row items-center px-4 lg:px-[300px] lg:gap-[175px]'>
         <TitleSection
         title='Why Choose Us'
         subtitle='Top industry leaders rely on us - heres why!'

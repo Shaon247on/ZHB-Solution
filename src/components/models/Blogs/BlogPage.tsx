@@ -13,6 +13,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Label } from "@/components/ui/label";
 import { Blog } from "@/data/BlogsDataMain";
+import BlogCard from "@/components/element/BlogCard";
+import CommentForm from "@/components/element/CommentForm";
 
 // Zod schemas
 const commentSchema = z.object({
@@ -37,6 +39,8 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
   const [activeSection, setActiveSection] = useState("");
   const [isSticky, setIsSticky] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  const relatedPost = blogs.filter((item) => item.id !== id);
 
   console.log("Blog id", id);
   console.log("Blogs data", blogs);
@@ -352,8 +356,30 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
                 </CardContent>
               </Card>
 
+              <div className="px-3 md:px-6 lg:px-8 xl:px-14">
+                <h2 className="text-2xl font-semibold mb-4">
+                  Need help with your project?
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                  {relatedPost.map((item, index) => (
+                    <div key={index}>
+                      <BlogCard
+                        id={item.id}
+                        image={`/blogs/blog${item.id}.jpg`}
+                        subtitle={item.content[0].points[1]}
+                        tag={item.tag}
+                        title={item.title}
+                        releaseDate={item.releaseDate}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Comment Section */}
-              <div className="w-full p-4 space-y-6">
+
+              <CommentForm/>
+              {/* <div className="w-full p-4 space-y-6">
                 <Card className="w-full" style={{ backgroundColor: "#F9F8F4" }}>
                   <CardHeader>
                     <CardTitle className="text-xl font-semibold text-gray-800">
@@ -437,49 +463,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
                     </div>
                   </CardContent>
                 </Card>
-
-                {/* Newsletter Subscription */}
-                <Card className="w-full bg-white">
-                  <CardContent>
-                    <div className="flex flex-col sm:flex-row items-center sm:items-end gap-4">
-                      <div className="flex-1 space-y-2">
-                        <Label
-                          htmlFor="newsletter-email"
-                          className="text-2xl font-semibold text-gray-800"
-                        >
-                          Get the latest posts in your inbox
-                        </Label>
-                        <p className="text-sm text-gray-600 mb-2">
-                          No spam, unsubscribe anytime
-                        </p>
-                      </div>
-                      <div className="flex flex-col md:flex-row items-center gap-4">
-                        <Input
-                          id="newsletter-email"
-                          type="email"
-                          {...newsletterForm.register("email")}
-                          className="lg:w-[575px] h-10 bg-white border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-lg"
-                          placeholder="your.email@example.com"
-                        />
-                        {newsletterForm.formState.errors.email && (
-                          <p className="text-sm text-red-600">
-                            {newsletterForm.formState.errors.email.message}
-                          </p>
-                        )}
-                        <Button
-                          onClick={onNewsletterSubmit}
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-6 rounded-full py-2 font-medium transition-colors duration-200 whitespace-nowrap"
-                          disabled={newsletterForm.formState.isSubmitting}
-                        >
-                          {newsletterForm.formState.isSubmitting
-                            ? "Subscribing..."
-                            : "Subscribe"}
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>

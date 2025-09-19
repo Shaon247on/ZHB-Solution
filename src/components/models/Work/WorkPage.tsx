@@ -456,7 +456,7 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                     {workData.screenGallery.map((screen, index) => (
                       <Card
                         key={index}
-                        className="bg-white overflow-hidden border border-gray-200"
+                        className="bg-white overflow-hidden border border-gray-200 py-0"
                       >
                         {screen.placeholder ? (
                           <div className="bg-gray-100 p-4 h-32 sm:h-40 lg:h-48 flex items-center justify-center">
@@ -474,18 +474,14 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                             <Image
                               src={screen.src!}
                               alt={screen.alt!}
-                              fill
-                              className="object-cover"
+                              width={360}
+                              height={240}
+                              className="object-cover absolute z-10 -top-4"
                             />
-                            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                              <div className="text-center text-white">
-                                <div className="text-xs sm:text-sm font-medium">
-                                  {screen.title}
-                                </div>
-                                <div className="text-xs opacity-80 mt-1">
-                                  {screen.subtitle}
-                                </div>
-                              </div>
+                            <div className="relative z-20 inset-0 bg-opacity-50 flex h-full items-end py-6 justify-center">
+                              <h4 className="text-center text-xs sm:text-sm font-medium text-white bg-[#2650A0] px-4 py-2 rounded-full">
+                                {screen.title}
+                              </h4>
                             </div>
                           </div>
                         )}
@@ -546,13 +542,11 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                     {workData.resultImpact.map((result, index) => (
                       <Card
                         key={index}
-                        className="bg-white text-center border border-gray-200"
+                        className="bg-transparent text-center border border-gray-200"
                       >
                         <CardContent className="p-4 sm:p-6">
                           <div
-                            className={`text-2xl sm:text-3xl font-bold mb-1 sm:mb-2 ${getColorClasses(
-                              result.color
-                            )}`}
+                            className={`text-2xl sm:text-3xl font-bold mb-1 sm:mb-2}`}
                           >
                             {result.value}
                           </div>

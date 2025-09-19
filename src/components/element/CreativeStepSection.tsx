@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { de } from "zod/v4/locales";
 import Link from "next/link";
+import { MoveRight } from "lucide-react";
 
 interface CreativeStepSectionProps {
   title?: string;
@@ -107,7 +108,7 @@ const CreativeStepSection: React.FC<CreativeStepSectionProps> = ({
                   onClick={handleButtonClick}
                   className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  {buttonText}
+                  {buttonText} <MoveRight size={30} className="size-6"/>
                 </Button>
               </Link>
             </motion.div>

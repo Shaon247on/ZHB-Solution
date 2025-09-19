@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import TitleSection from "@/components/element/TitleSection";
+import Link from "next/link";
 
 function HeroSection() {
   return (
@@ -31,7 +32,10 @@ function HeroSection() {
           <p className="text-xs font-medium text-[#959595] mt-4">
             13/08/2025 • Wednesday• 04:42 pm
           </p>
-          <Button className="mt-20">Learn More</Button>
+          <Link href="#all_blogs" scroll={true}>
+          
+           <Button className="mt-20">Learn More</Button>
+          </Link>
         </div>
         <div>
           <Image

@@ -45,7 +45,10 @@ const budgetRanges = [
 ];
 
 const formSchema = z.object({
-  fullName: z.string().min(1, "Full name is required"),
+   fullName: z
+    .string()
+    .min(1, "Full name is required")
+    .regex(/^[\p{L} ]+$/u, "Full name may contain only alphabetic characters and spaces"),
   companyName: z.string().optional(),
   email: z.string().email("Please enter a valid email address"),
   serviceRequired: z.enum(services as [string, ...string[]]),

@@ -69,7 +69,7 @@ const Footer: React.FC<FooterProps> = ({
     service: [
       {
         label: "Artificial-Intelligence",
-        href: "/services/artificial-intelligence",
+        href: "/services/Artificial-Intelligence",
       },
       { label: "Web Development", href: "/services/web-development" },
       {
@@ -77,7 +77,7 @@ const Footer: React.FC<FooterProps> = ({
         href: "/services/mobile-app-development",
       },
       { label: "UI/UX Design", href: "/services/ui-ux-design" },
-      { label: "Cloud Solution", href: "/services/cloud-solution" },
+      { label: "Cloud Solution", href: "/services/cloud-solutions" },
       { label: "Digital Marketing", href: "/services/digital-marketing" },
     ],
     quickLink1: [
@@ -87,25 +87,15 @@ const Footer: React.FC<FooterProps> = ({
       { label: "Career", href: "/career" },
       { label: "Blog", href: "/blogs" },
     ],
-    // quickLink2: [
-    //   { label: "FAQ", href: "#" },
-    //   { label: "About", href: "#" },
-    //   { label: "Service", href: "#" },
-    //   { label: "Career", href: "#" },
-    //   { label: "Blog", href: "#" },
-    // ],
-    // quickLink3: [
-    //   { label: "Work", href: "#" },
-    //   { label: "About", href: "#" },
-    //   { label: "Service", href: "#" },
-    //   { label: "Career", href: "#" },
-    //   { label: "Blog", href: "#" },
-    // ],
   };
 
   const socialIcons = [
     { Icon: Facebook, href: "#", label: "Facebook" },
-    { Icon: Linkedin, href: "#", label: "LinkedIn" },
+    {
+      Icon: Linkedin,
+      href: "https://www.linkedin.com/in/md-zahirul-bhuiyan-75948168?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
+      label: "LinkedIn",
+    },
     { Icon: Twitter, href: "#", label: "Twitter" },
     { Icon: Instagram, href: "#", label: "Instagram" },
     { Icon: Youtube, href: "#", label: "YouTube" },
@@ -146,15 +136,17 @@ const Footer: React.FC<FooterProps> = ({
             >
               {/* Logo */}
               <div className="col-span-4">
-                <div className="flex items-center mb-4">
-                  <Image
-                    src={logoUrl}
-                    alt={logoAlt}
-                    width={149}
-                    height={100}
-                    className="w-24 lg:w-[200px] h-16 lg:h-[120px]"
-                  />
-                </div>
+                <Link href={"/"}>
+                  <div className="flex items-center mb-4">
+                    <Image
+                      src={logoUrl}
+                      alt={logoAlt}
+                      width={149}
+                      height={100}
+                      className="w-24 lg:w-[200px] h-16 lg:h-[120px]"
+                    />
+                  </div>
+                </Link>
                 {/* Description */}
                 <p className="text-gray-300 text-base lg:text-xl font-medium leading-relaxed max-w-sm">
                   Shaping the future through smart, minimal, and human-driven
@@ -164,7 +156,8 @@ const Footer: React.FC<FooterProps> = ({
 
               {/* Newsletter Subscription */}
               <div>
-                <div className="space-y-3">
+                 {/* No backend so can't implement this feature. */}
+                {/* <div className="space-y-3">
                   <h3 className="text-white text-lg lg:text-2xl font-semibold">
                     Subscribe to our Blog!
                   </h3>
@@ -181,7 +174,7 @@ const Footer: React.FC<FooterProps> = ({
                       SUBSCRIBE
                     </Button>
                   </div>
-                </div>
+                </div> */}
                 {/* Social Icons */}
                 <div className="flex justify-center lg:justify-end space-x-3">
                   <FooterIcon>
@@ -198,6 +191,7 @@ const Footer: React.FC<FooterProps> = ({
                       />
                     </svg>
                   </FooterIcon>
+
                   <FooterIcon>
                     <svg
                       width="20"
@@ -271,23 +265,30 @@ const Footer: React.FC<FooterProps> = ({
                 <Link
                   href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
                   target="_blank"
-                  rel="noopener noreferrer"                  
+                  rel="noopener noreferrer"
                 >
                   <div className="flex items-center gap-2.5 cursor-pointer mb-3">
                     <Phone size={18} fill="white" stroke="white" />
                     <p>+1 (404) 936-3567</p>
                   </div>
                 </Link>
-                <Link href={"/contact"}>
-                <div className="flex items-center gap-2.5 cursor-pointer mb-3">
-                  <Mail size={18} stroke="white" />
-                  <p>services@zhbsolutions.com</p>
-                </div>
+                <Link
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=services@zhbsolutions.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  <div className="flex items-center gap-2.5 cursor-pointer mb-3">
+                    <Mail size={18} stroke="white" />
+                    <p>services@zhbsolutions.com</p>
+                  </div>
                 </Link>
-                <div className="flex items-center gap-2.5 cursor-pointer">
-                  <Globe size={18} stroke="white" />
-                  <p>www.zhbsolutions.com</p>
-                </div>
+                <Link href={"https://www.zhbsolutions.com/"}>
+                  <div className="flex items-center gap-2.5 cursor-pointer">
+                    <Globe size={18} stroke="white" />
+                    <p>www.zhbsolutions.com</p>
+                  </div>
+                </Link>
               </div>
             </motion.div>
 

@@ -1,6 +1,7 @@
 import { Arrow } from "@/components/svg/ContactSVG";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function MailSection() {
@@ -26,27 +27,44 @@ function MailSection() {
             <p className="mb-4 lg:mb-9 text-white lg:lg:text-xl font-medium">
               Projects collaborations and queries
             </p>
-            <div className="flex items-center gap-4">
-              <Button size={"icon"} className="rounded-full bg-white">
-                <Arrow />
-              </Button>
-              <h3 className="text-xl lg:text-4xl font-medium text-white">
-                hello@jhbsolutions.com
-              </h3>
-            </div>
+            <Link
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@zhbsolutions.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:underline"
+            >
+              <div className="flex items-center gap-4 cursor-pointer">
+                <Button
+                  size={"icon"}
+                  className="rounded-full bg-white cursor-pointer"
+                >
+                  <Arrow />
+                </Button>
+                <h3 className="text-xl lg:text-4xl font-medium text-white">
+                  hello@zhbsolutions.com
+                </h3>
+              </div>
+            </Link>
           </div>
           <div>
             <p className="mb-4 lg:mb-9 text-white lg:text-xl font-medium">
               Join our dynamic Team
             </p>
-            <div className="flex items-center gap-4">
-              <Button size={"icon"} className="rounded-full bg-white">
-                <Arrow />
-              </Button>
-              <h3 className="text-xl lg:text-4xl font-medium text-white">
-                career@jhbsolutions.com
-              </h3>
-            </div>
+            <Link
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=career@zhbsolutions.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:underline"
+            >
+              <div className="flex items-center gap-4">
+                <Button size={"icon"} className="rounded-full bg-white cursor-pointer">
+                  <Arrow />
+                </Button>
+                <h3 className="text-xl lg:text-4xl font-medium text-white">
+                  career@zhbsolutions.com
+                </h3>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

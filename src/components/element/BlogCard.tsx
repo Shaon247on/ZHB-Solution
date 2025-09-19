@@ -8,6 +8,7 @@ interface BlogCardProps {
   tag: string;
   title: string;
   subtitle: string;
+  releaseDate: string;
   bgColor?: string;
 }
 
@@ -17,6 +18,7 @@ export default function BlogCard({
   tag,
   title,
   subtitle,
+  releaseDate,
   bgColor = "#EBF1FC",
 }: BlogCardProps) {
   return (
@@ -43,14 +45,14 @@ export default function BlogCard({
           </h3>
           <p className="text-sm text-[#464646] font-medium">{subtitle}</p>
         </div>
-        <div className="flex flex-col-reverse lg:flex-row items-start lg:items-center gap-5 lg:gap-10">
+        <div className="flex flex-col-reverse lg:flex-row items-start lg:items-center justify-between gap-5 lg:gap-10">
           <Link href={`/blogs/${id}`}>
-          <Button size={"xl"} className="bg-[#172F5F] rounded-2xl">
-            Read More
-          </Button>
+            <Button size={"xl"} className="bg-[#172F5F] rounded-2xl">
+              Read More
+            </Button>
           </Link>
-          <p className="text-xs font-medium text-[#959595] ml-4 lg:ml-0">
-            13/08/2025 • Wednesday• 04:42 pm
+          <p className="text-[10px] font-medium text-[#959595] ml-4 lg:ml-0">
+            {releaseDate}
           </p>
         </div>
       </div>

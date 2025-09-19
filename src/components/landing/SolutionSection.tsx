@@ -55,7 +55,7 @@ function SolutionSection() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
-      <div className="relative px-3 py-8">
+      <div className="relative px-3 lg:px-16 xl:px-32 py-8">
         <h2 className="text-2xl lg:text-[56px] font-orbitron font-bold text-white">
           ZHB Software Solution
         </h2>

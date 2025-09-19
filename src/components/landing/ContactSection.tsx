@@ -8,7 +8,7 @@ import CreativeStepSection from "../element/CreativeStepSection";
 function ContactSection({ bottom = true }: { bottom?: boolean }) {
   return (
     <section>
-      <div className="flex flex-col lg:flex-row px-4 lg:px-14 py-10 lg:py-20 bg-[#EBF1FC] gap-6 lg:gap-16">
+      <div className="flex flex-col justify-between lg:flex-row px-4 lg:px-16 xl:px-32 py-10 lg:py-20 bg-[#EBF1FC] gap-6 lg:gap-16">
         <div className="flex flex-col items-start justify-between">
           <motion.div className=" ">
             <motion.p
@@ -27,12 +27,12 @@ function ContactSection({ bottom = true }: { bottom?: boolean }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className={`text-2xl lg:text-4xl font-orbitron font-bold lg:leading-12 mx-auto text-black`}
+              className={`text-2xl lg:text-3xl xl:text-4xl font-orbitron font-bold lg:leading-12 mx-auto text-black`}
             >
               Have a great idea? <br className="hidden lg:block" />
               Let’s build it together.
             </motion.p>
-            <h4 className="text-[#959595] mb-6 lg:mb-24 mt-6 lg:mt-8 max-w-[824px] mx-auto text-start lg:text-2xl font-semibold">
+            <h4 className="text-[#959595] mb-6 lg:mb-24 mt-6 lg:mt-8 max-w-[824px] mx-auto text-start lg:text-lg xl:text-2xl font-semibold">
               We take pride in delivering real results to businesses of all
               sizes. Here's what our clients have to say about working with us.
             </h4>

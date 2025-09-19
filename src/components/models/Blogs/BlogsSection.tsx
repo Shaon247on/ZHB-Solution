@@ -1,7 +1,6 @@
 "use client";
 import BlogCard from "@/components/element/BlogCard";
 import CreativeStepSection from "@/components/element/CreativeStepSection";
-import SubscribeSection from "@/components/element/SubscribeSection";
 import { blogs } from "@/data/BlogsDataMain";
 import { image } from "framer-motion/client";
 import { Dot, Search, FileText } from "lucide-react";
@@ -44,9 +43,13 @@ function BlogsSection() {
         <p className="text-gray-600 mb-6">
           {search ? (
             <>
-              No blogs match your search for "<span className="font-semibold">{search}</span>"
+              No blogs match your search for "
+              <span className="font-semibold">{search}</span>"
               {activeTag !== "All Posts" && (
-                <> in <span className="font-semibold">{activeTag}</span></>
+                <>
+                  {" "}
+                  in <span className="font-semibold">{activeTag}</span>
+                </>
               )}
             </>
           ) : (
@@ -70,13 +73,13 @@ function BlogsSection() {
   );
 
   return (
-    <section className="px-6 lg:px-[120px] py-10">
+    <section id="all_blogs" className="px-6 lg:px-[120px] py-10">
       <h2 className="text-center text-[#172F5F] text-4xl font-bold mb-6 mt-6 lg:mt-20">
         Explore the blog
       </h2>
 
       {/* Filter + Search */}
-      <div className="flex flex-col-reverse lg:flex-row items-center gap-6 mb-40 rounded-2xl bg-[#EBF1FC] justify-center py-4">
+      <div className="flex flex-col-reverse lg:flex-row items-center gap-6 mb-4 md:mb-6 lg:mb-10 xl:mb-24 rounded-2xl bg-[#EBF1FC] justify-center py-4">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-4 flex-wrap">
           {tags.map((tag, index) => (
             <React.Fragment key={tag}>
@@ -117,7 +120,6 @@ function BlogsSection() {
         ) : (
           <>
             {filteredCards.map((blog, idx) => {
-              // Insert SubscribeSection right after the 6th card
               if (idx === 5 && filteredCards.length >= 7) {
                 return (
                   <React.Fragment key={idx}>
@@ -128,10 +130,8 @@ function BlogsSection() {
                       bgColor="#EBF1FC"
                       image={`/blogs/blog${blog.id}.jpg`}
                       id={blog.id}
+                      releaseDate={blog.releaseDate}
                     />
-                    <div className="sm:col-span-1 md:col-span-2 lg:col-span-3">
-                      <SubscribeSection />
-                    </div>
                   </React.Fragment>
                 );
               }
@@ -144,16 +144,10 @@ function BlogsSection() {
                   title={blog.title}
                   bgColor="#EBF1FC"
                   image={`/blogs/blog${blog.id}.jpg`}
+                  releaseDate={blog.releaseDate}
                 />
               );
             })}
-
-            {/* If less than 7 cards → push SubscribeSection to bottom */}
-            {filteredCards.length > 0 && filteredCards.length < 7 && (
-              <div className="sm:col-span-1 md:col-span-2 lg:col-span-3">
-                <SubscribeSection />
-              </div>
-            )}
           </>
         )}
       </div>

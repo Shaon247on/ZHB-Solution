@@ -28,7 +28,7 @@ const SolutionCard: React.FC<SolutionCardProps> = ({
 }) => {
   return (
     <motion.div
-      className={`relative w-full overflow-hidden cursor-pointer group ${className} h-[300px] md:h-[520px] pt-6`}
+      className={`relative w-full overflow-hidden cursor-pointer group ${className} h-[300px] md:h-[520px] lg:h-[450px] xl:h-[520px] pt-6`}
       whileHover="hover"
       initial="initial"
     >

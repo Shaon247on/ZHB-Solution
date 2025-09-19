@@ -218,32 +218,44 @@ export const sampleWorkPageData: WorkPageData = {
     {
       title: "Dashboard",
       subtitle: "Desktop View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/dashboard-1.png",
+      alt: "dashboard Image"
     },
     {
       title: "Data List",
       subtitle: "Table View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/dashboard-2.png",
+      alt: "dashboard Image"
     },
     {
       title: "Analytics Charts",
       subtitle: "Charts View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/dashboard-3.png",
+      alt: "dashboard Image"
     },
     {
       title: "Mobile Directory",
       subtitle: "Mobile View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/dashboard-4.png",
+      alt: "dashboard Image"
     },
     {
       title: "Employee Profile",
       subtitle: "Mobile Profile",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/dashboard-5.png",
+      alt: "dashboard Image"
     },
     {
       title: "Settings",
       subtitle: "Settings View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/dashboard-6.png",
+      alt: "dashboard Image"
     },
   ],
   technologyStack: [

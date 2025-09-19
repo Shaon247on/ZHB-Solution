@@ -10,13 +10,14 @@ import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import TitleSection from "../element/TitleSection";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import {
   SymbolBlue,
   SymbolGreen,
   SymbolLightBlue,
   SymbolLightGreen,
 } from "../svg/LandingSVG";
+import { Button } from "../ui/button";
 
 const reviews = [
   {
@@ -26,7 +27,7 @@ const reviews = [
     avatar: "/carousel-1.jpg",
     borderColor: "border-[#2650A0]",
     bgColor: "bg-[#55B681]",
-    icon: <SymbolBlue/>,
+    icon: <SymbolBlue />,
     review:
       "“ZHB transformed our Shopify store from a basic setup to a conversion-optimized powerhouse. They understood our brand and delivered a seamless shopping experience that boosted our sales within weeks.”",
   },
@@ -37,7 +38,7 @@ const reviews = [
     avatar: "/carousel-2.jpg",
     borderColor: "border-[#1D7461]",
     bgColor: "bg-[#55B681]",
-    icon: <SymbolGreen/>,
+    icon: <SymbolGreen />,
 
     review:
       "“Their no-code automation setup saved us countless hours every week. We were amazed at how quickly ZHB understood our workflow and implemented solutions that worked instantly.”",
@@ -49,9 +50,10 @@ const reviews = [
     avatar: "/carousel-3.jpg",
     borderColor: "border-[#3671E2]",
     bgColor: "bg-[#1D7461]",
-    icon: <SymbolLightBlue/>,
+    icon: <SymbolLightBlue />,
 
-    review: "“ZHB helped us build a visual identity that truly represents who we are. From our logo to our digital brand assets, everything was beautifully designed and delivered on time.”",
+    review:
+      "“ZHB helped us build a visual identity that truly represents who we are. From our logo to our digital brand assets, everything was beautifully designed and delivered on time.”",
   },
   {
     id: 4,
@@ -60,16 +62,27 @@ const reviews = [
     avatar: "/carousel-4.jpg",
     borderColor: "border-[#55B681]",
     bgColor: "bg-[#3671E2]",
-    icon: <SymbolLightGreen/>,
+    icon: <SymbolLightGreen />,
 
-    review: "“Working with ZHB Solutions LLC was a game-changer for our digital presence. Their team built a sleek, high-performing website that helped us attract more clients and improve user engagement. Professional, responsive, and truly skilled!”",
+    review:
+      "“Working with ZHB Solutions LLC was a game-changer for our digital presence. Their team built a sleek, high-performing website that helped us attract more clients and improve user engagement. Professional, responsive, and truly skilled!”",
   },
 ];
-
 function TestimonialsSection() {
   const plugin = React.useRef(
     Autoplay({ delay: 4000, stopOnInteraction: true })
   );
+
+  const [api, setApi] = React.useState<any>();
+
+  const scrollPrev = React.useCallback(() => {
+    if (api) api.scrollPrev();
+  }, [api]);
+
+  const scrollNext = React.useCallback(() => {
+    if (api) api.scrollNext();
+  }, [api]);
+
   return (
     <div className="px-4 lg:px-0">
       <TitleSection
@@ -78,12 +91,32 @@ function TestimonialsSection() {
         width="w-[150px]"
         textColor="text-black"
       />
-      <h4 className="text-[#959595] mb-6 lg:mb-24 max-w-[824px] mx-auto text-center lg:text-2xl font-semibold">
+      <h4 className="text-[#959595] mb-6 lg:mb-16 max-w-[824px] mx-auto text-center lg:text-2xl font-semibold">
         We take pride in delivering real results to businesses of all sizes.
         Here's what our clients have to say about working with us.
       </h4>
+      {/* Navigation Buttons */}
+      <div className="top-0 right-0 flex justify-end gap-2 lg:gap-4 mb-4 md:mb-8 px-4 md:px-8 lg:px-20 xl:px-[120px]">
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={scrollPrev}
+          className="h-8 w-8 lg:h-12 lg:w-12 rounded-full border-2 border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 shadow-md"
+        >
+          <ChevronLeft className="h-4 w-4 lg:h-6 lg:w-6 text-gray-600" />
+        </Button>
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={scrollNext}
+          className="h-8 w-8 lg:h-12 lg:w-12 rounded-full border-2 border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 shadow-md"
+        >
+          <ChevronRight className="h-4 w-4 lg:h-6 lg:w-6 text-gray-600" />
+        </Button>
+      </div>
       <div className="relative">
         <Carousel
+          setApi={setApi}
           className="w-full cursor-grab active:cursor-grabbing lg:h-[468px]"
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
@@ -93,7 +126,7 @@ function TestimonialsSection() {
             loop: true,
           }}
         >
-          <CarouselContent className="-ml-2 w-full lg:w-[1577px] lg:h-[468px]">
+          <CarouselContent className="-ml-2 w-full xl:w-[1577px] lg:h-[468px]">
             {reviews.map((review) => (
               <CarouselItem
                 key={review.id}
@@ -102,13 +135,15 @@ function TestimonialsSection() {
                 <Card
                   className={`
                    ${review.bgColor} 
-                  ${review.id === 2 && "bg-[#041135]"} shadow-lg select-none h-[468px]`}
+                  ${
+                    review.id === 2 && "bg-[#041135]"
+                  } shadow-lg select-none h-[468px]`}
                 >
-                  <CardContent className="py-4 lg:py-32 px-4 lg:px-28 relative">
+                  <CardContent className="py-4 lg:py-32 px-4 lg:px-14 xl:px-28 relative">
                     {review.icon}
                     <div className="flex flex-col lg:flex-row items-start justify-between gap-2 lg:gap-12">
                       <Avatar
-                        className={`size-24 lg:size-[216px] border-8 lg:border-[12px]  
+                        className={`size-24 lg:size-40 xl::size-[216px] border-8 lg:border-[12px]  
                           ${review.id === 1 && "border-[#2650A0]"}
                           ${review.id === 2 && "border-[#1D7461]"}
                           ${review.id === 3 && "border-[#3671E2]"}
@@ -116,7 +151,10 @@ function TestimonialsSection() {
                           
                           `}
                       >
-                        <AvatarImage className="object-cover" src={review.avatar} />
+                        <AvatarImage
+                          className="object-cover"
+                          src={review.avatar}
+                        />
                         <AvatarFallback>CN</AvatarFallback>
                       </Avatar>
                       <div

@@ -1,6 +1,7 @@
 export type Blog = {
   id: number;
   title: string;
+  releaseDate: string;
   author: string;
   publishDate: string;
   readTime: string;
@@ -49,6 +50,7 @@ export const blogs: Blog[] = [
     id: 1,
     title: "Breakthrough Changes Through AI in IT: The Future Is Now",
     author: "ZHB Editorial Team",
+    releaseDate: "13/08/2025 • Wednesday• 04:42 pm",
     publishDate: "04 September 2025",
     readTime: "12 min read",
     tags: ["AI", "IT", "Automation", "Cybersecurity", "Software Development"],
@@ -92,12 +94,12 @@ export const blogs: Blog[] = [
     relatedPosts: [
       {
         title: "Why Businesses are Moving to the Cloud",
-        link: "/blog/2",
+        link: "/blogs/2",
         tags: ["Cloud Solution"]
       },
       {
         title: "Predictive Analytics for Better Decision Making",
-        link: "/blog/3",
+        link: "/blogs/3",
         tags: ["Mobile App Development"]
       },
     ],
@@ -252,6 +254,8 @@ export const blogs: Blog[] = [
   {
     id: 2,
     title: "SEO in the Age of AI: How to Optimize for Success in a Changing Digital Landscape",
+    releaseDate: "17/08/2025 • Sunday • 09:42 pm",
+
     author: "ZHB Editorial Team",
     publishDate: "04 September 2025",
     readTime: "10 min read",
@@ -292,12 +296,12 @@ export const blogs: Blog[] = [
     relatedPosts: [
       {
         title: "Predictive Analytics for Better Decision Making",
-        link: "/blog/1",
+        link: "/blogs/1",
         tags: ["Mobile App Development"]
       },
       {
         title: "Email Marketing Tactics That Still Work",
-        link: "/blog/3",
+        link: "/blogs/3",
         tags: ["Digital Marketing"]
       }
     ],
@@ -370,6 +374,8 @@ export const blogs: Blog[] = [
   {
     id: 3,
     title: "How Legacy IT Departments Can Be Optimized Quickly and Cost-Effectively to Increase Productivity",
+    releaseDate: "26/08/2025 • Tuesday • 02:23 pm",
+
     author: "ZHB Editorial Team",
     publishDate: "04 September 2025",
     readTime: "15 min read",
@@ -409,12 +415,12 @@ export const blogs: Blog[] = [
     relatedPosts: [
       {
         title: "Cloud Solutions for Legacy Systems",
-        link: "/blog/1",
+        link: "/blogs/1",
         tags: ["Cloud"]
       },
       {
         title: "Future of IT Operations with AI",
-        link: "/blog/2",
+        link: "/blogs/2",
         tags: ["AI", "Automation"]
       }
     ],
