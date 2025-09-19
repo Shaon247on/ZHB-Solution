@@ -120,10 +120,10 @@ export interface CallToAction {
 export const sampleWorkPageData: WorkPageData = {
   id: 1,
   tag: [
-      "Web Application Development",
-      "Enterprise Solutions",
-      "Custom Software Development",
-    ],
+    "Web Application Development",
+    "Enterprise Solutions",
+    "Custom Software Development",
+  ],
   heroSection: {
     backgroundImage: "/work/heroBg.jpg",
     title: "Admin Control Center Sites",
@@ -220,42 +220,42 @@ export const sampleWorkPageData: WorkPageData = {
       subtitle: "Desktop View",
       placeholder: false,
       src: "/work/dashboard-1.png",
-      alt: "dashboard Image"
+      alt: "dashboard Image",
     },
     {
       title: "Data List",
       subtitle: "Table View",
       placeholder: false,
       src: "/work/dashboard-2.png",
-      alt: "dashboard Image"
+      alt: "dashboard Image",
     },
     {
       title: "Analytics Charts",
       subtitle: "Charts View",
       placeholder: false,
       src: "/work/dashboard-3.png",
-      alt: "dashboard Image"
+      alt: "dashboard Image",
     },
     {
       title: "Mobile Directory",
       subtitle: "Mobile View",
       placeholder: false,
       src: "/work/dashboard-4.png",
-      alt: "dashboard Image"
+      alt: "dashboard Image",
     },
     {
       title: "Employee Profile",
       subtitle: "Mobile Profile",
       placeholder: false,
       src: "/work/dashboard-5.png",
-      alt: "dashboard Image"
+      alt: "dashboard Image",
     },
     {
       title: "Settings",
       subtitle: "Settings View",
       placeholder: false,
       src: "/work/dashboard-6.png",
-      alt: "dashboard Image"
+      alt: "dashboard Image",
     },
   ],
   technologyStack: [
@@ -344,10 +344,10 @@ export const sampleWorkPageData: WorkPageData = {
 export const ecommerceProjectData: WorkPageData = {
   id: 2,
   tag: [
-      "Web Application Development",
-      "Enterprise Solutions",
-      "Custom Software Development",
-    ],
+    "Web Application Development",
+    "Enterprise Solutions",
+    "Custom Software Development",
+  ],
   heroSection: {
     backgroundImage: "/work/heroBg.jpg",
     title: "E-commerce Platform Revolution",
@@ -443,32 +443,44 @@ export const ecommerceProjectData: WorkPageData = {
     {
       title: "Product Catalog",
       subtitle: "Desktop View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/ecommarce-1.png",
+      alt: "ecommarce photo",
     },
     {
-      title: "Shopping Cart",
+      title: "Setting",
       subtitle: "Checkout Process",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/ecommarce-2.png",
+      alt: "ecommarce photo",
     },
     {
       title: "Vendor Dashboard",
       subtitle: "Sales Analytics",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/ecommarce-3.png",
+      alt: "ecommarce photo",
     },
     {
       title: "Mobile Shopping",
       subtitle: "iOS App",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/ecommarce-4.png",
+      alt: "ecommarce photo",
     },
     {
       title: "Order Tracking",
       subtitle: "Mobile View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/ecommarce-5.png",
+      alt: "ecommarce photo",
     },
     {
       title: "Admin Panel",
       subtitle: "Management View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/ecommarce-6.png",
+      alt: "ecommarce photo",
     },
   ],
   technologyStack: [
@@ -559,10 +571,10 @@ export const ecommerceProjectData: WorkPageData = {
 export const socialMediaProjectData: WorkPageData = {
   id: 3,
   tag: [
-      "Web Application Development",
-      "Enterprise Solutions",
-      "Custom Software Development",
-    ],
+    "Web Application Development",
+    "Enterprise Solutions",
+    "Custom Software Development",
+  ],
   heroSection: {
     backgroundImage: "/work/heroBg.jpg",
     title: "Social Media Platform",
@@ -609,7 +621,7 @@ export const socialMediaProjectData: WorkPageData = {
   solutionArchitecture: {
     description:
       "A distributed architecture using microservices with a strong focus on scalability and real-time data processing.",
-   images: [
+    images: [
       {
         src: "/work/solution-1.png",
         alt: "System Architecture Diagram",
@@ -694,10 +706,10 @@ export const socialMediaProjectData: WorkPageData = {
 export const financialDashboardProjectData: WorkPageData = {
   id: 4,
   tag: [
-      "Web Application Development",
-      "Enterprise Solutions",
-      "Custom Software Development",
-    ],
+    "Web Application Development",
+    "Enterprise Solutions",
+    "Custom Software Development",
+  ],
   heroSection: {
     backgroundImage: "/work/heroBg.jpg",
     title: "Financial Dashboard",
@@ -770,12 +782,37 @@ export const financialDashboardProjectData: WorkPageData = {
     {
       title: "Dashboard Overview",
       subtitle: "Desktop View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/finance-1.png",
+      alt: "finance photo",
     },
     {
       title: "Investment Portfolio",
       subtitle: "Mobile View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/finance-2.png",
+      alt: "finance photo",
+    },
+    {
+      title: "Admin Analyst",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/finance-3.jpg",
+      alt: "finance photo",
+    },
+    {
+      title: "Investor Dashboard",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/finance-4.png",
+      alt: "finance photo",
+    },
+    {
+      title: "Investor Analyst",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/finance-5.png",
+      alt: "finance photo",
     },
   ],
   technologyStack: ["React", "Node.js", "MongoDB", "D3.js", "AWS"],
@@ -830,10 +867,10 @@ export const financialDashboardProjectData: WorkPageData = {
 export const learningPlatformProjectData: WorkPageData = {
   id: 5,
   tag: [
-      "Web Application Development",
-      "Enterprise Solutions",
-      "Custom Software Development",
-    ],
+    "Web Application Development",
+    "Enterprise Solutions",
+    "Custom Software Development",
+  ],
   heroSection: {
     backgroundImage: "/work/heroBg.jpg",
     title: "Online Learning Platform",
@@ -901,11 +938,40 @@ export const learningPlatformProjectData: WorkPageData = {
   ],
   screenGallery: [
     {
-      title: "Instructor Dashboard",
+      title: "Video Session",
       subtitle: "Desktop View",
-      placeholder: true,
+      placeholder: false,
+      src: "/work/learn-1.png",
+      alt: "learning Image",
     },
-    { title: "Student View", subtitle: "Mobile View", placeholder: true },
+    {
+      title: "Student View",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/learn-2.png",
+      alt: "learning Image",
+    },
+    {
+      title: "Student Progress",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/learn-3.jpg",
+      alt: "learning Image",
+    },
+    {
+      title: "Teacher Dashboard",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/learn-4.jpg",
+      alt: "learning Image",
+    },
+    {
+      title: "Feature Section",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/learn-5.png",
+      alt: "learning Image",
+    },
   ],
   technologyStack: ["React", "Node.js", "MongoDB", "WebRTC", "AWS"],
   securityCompliance: [
@@ -960,14 +1026,14 @@ export const learningPlatformProjectData: WorkPageData = {
 export const healthcareProjectData: WorkPageData = {
   id: 6,
   tag: [
-      "Web Application Development",
-      "Enterprise Solutions",
-      "Custom Software Development",
-    ],
+    "Web Application Development",
+    "Enterprise Solutions",
+    "Custom Software Development",
+  ],
   heroSection: {
     backgroundImage: "/work/heroBg.jpg",
     title: "Healthcare Management System",
-    
+
     description:
       "A comprehensive healthcare system designed to manage patient records, appointments, and medical histories with compliance to healthcare standards.",
     stats: [
@@ -1034,8 +1100,48 @@ export const healthcareProjectData: WorkPageData = {
     },
   ],
   screenGallery: [
-    { title: "Patient Dashboard", subtitle: "Desktop View", placeholder: true },
-    { title: "Medical History", subtitle: "Mobile View", placeholder: true },
+    {
+      title: "Patient Dashboard",
+      subtitle: "Desktop View",
+      placeholder: false,
+      src: "/work/health-1.png",
+      alt: "health care image",
+    },
+    {
+      title: "Medical History",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/health-2.png",
+      alt: "health care image",
+    },
+    {
+      title: "Medical Dashboard",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/health-3.png",
+      alt: "health care image",
+    },
+    {
+      title: "Medical Analyst",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/health-4.png",
+      alt: "health care image",
+    },
+    {
+      title: "Medical Bookings",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/health-5.png",
+      alt: "health care image",
+    },
+    {
+      title: "Admin Dashboard",
+      subtitle: "Mobile View",
+      placeholder: false,
+      src: "/work/health-6.png",
+      alt: "health care image",
+    },
   ],
   technologyStack: ["React", "Node.js", "MongoDB", "PostgreSQL", "AWS"],
   securityCompliance: [

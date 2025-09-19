@@ -156,7 +156,7 @@ const Footer: React.FC<FooterProps> = ({
 
               {/* Newsletter Subscription */}
               <div>
-                 {/* No backend so can't implement this feature. */}
+                {/* No backend so can't implement this feature. */}
                 {/* <div className="space-y-3">
                   <h3 className="text-white text-lg lg:text-2xl font-semibold">
                     Subscribe to our Blog!
@@ -176,6 +176,7 @@ const Footer: React.FC<FooterProps> = ({
                   </div>
                 </div> */}
                 {/* Social Icons */}
+                  <h1 className="text-2xl text-white font-semibold mb-2">Social Media Link</h1>
                 <div className="flex justify-center lg:justify-end space-x-3">
                   <FooterIcon>
                     <svg
@@ -192,7 +193,7 @@ const Footer: React.FC<FooterProps> = ({
                     </svg>
                   </FooterIcon>
 
-                  <FooterIcon>
+                  <FooterIcon href="https://www.linkedin.com/in/md-zahirul-bhuiyan-75948168/">
                     <svg
                       width="20"
                       height="19"
@@ -335,7 +336,7 @@ const Footer: React.FC<FooterProps> = ({
             variants={itemVariants}
           >
             <p className="text-gray-400 text-xs">
-              Copyright 2024 EB Solution LLC.
+              Copyright 2024 ZHB Solutions LLC.
             </p>
             <div className="flex flex-wrap gap-4 text-xs text-gray-400">
               <Link

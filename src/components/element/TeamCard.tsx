@@ -18,9 +18,10 @@ interface TeamCardProps {
   address: string;
   email: string;
   phone: string;
+  href: string;
 }
 
-function TeamCard({ id, country, address, email, phone }: TeamCardProps) {
+function TeamCard({ id, country, address, email, phone, href }: TeamCardProps) {
   const [bdTime, setBdTime] = useState("");
   const [usaTime, setUsaTime] = useState("");
   const [isDay, setIsDay] = useState(true);
@@ -71,7 +72,9 @@ function TeamCard({ id, country, address, email, phone }: TeamCardProps) {
               </h3>
               <h5 className="max-w-[350px]">{address}</h5>
             </div>
-            <Button className="bg-[#181818] rounded-2xl">Map Location</Button>
+            <a href={href} target="blank">
+              <Button className="bg-[#181818] rounded-2xl">Map Location</Button>
+            </a>
           </div>
           <div className="h-[2px] w-full bg-[#B7B7B7] my-4 hidden lg:block" />
           <Link
@@ -91,7 +94,9 @@ function TeamCard({ id, country, address, email, phone }: TeamCardProps) {
             <div>
               <Call />
             </div>
-            <p>{phone}</p>
+            <a target="black" href={`https://wa.me/14049363567`}>
+              <p>{phone}</p>
+            </a>
           </div>
         </div>
       </div>

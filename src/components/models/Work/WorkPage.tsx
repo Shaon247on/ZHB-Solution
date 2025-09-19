@@ -215,7 +215,7 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
       </div>
 
       {/* Main Content */}
-      <div className="px-4 sm:px-6 lg:px-10 xl:px-20 py-6 sm:py-8">
+      <div className="px-4 sm:px-6 lg:px-10 xl:px-14 py-6 sm:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-0">
           {/* Sidebar */}
           <div

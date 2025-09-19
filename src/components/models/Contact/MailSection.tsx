@@ -28,7 +28,7 @@ function MailSection() {
               Projects collaborations and queries
             </p>
             <Link
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@zhbsolutions.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=services@zhbsolutions.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:underline"
@@ -41,7 +41,7 @@ function MailSection() {
                   <Arrow />
                 </Button>
                 <h3 className="text-xl lg:text-4xl font-medium text-white">
-                  hello@zhbsolutions.com
+                  services@zhbsolutions.com
                 </h3>
               </div>
             </Link>
@@ -51,7 +51,7 @@ function MailSection() {
               Join our dynamic Team
             </p>
             <Link
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=career@zhbsolutions.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=zahirul.bhuiyan@zhbsolutions.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:underline"
@@ -61,7 +61,7 @@ function MailSection() {
                   <Arrow />
                 </Button>
                 <h3 className="text-xl lg:text-4xl font-medium text-white">
-                  career@zhbsolutions.com
+                  zahirul.bhuiyan@zhbsolutions.com
                 </h3>
               </div>
             </Link>

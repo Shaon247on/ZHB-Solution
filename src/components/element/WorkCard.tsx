@@ -33,7 +33,7 @@ export default function WorkCard({
       <div
         className={`relative ${
           id === 4 &&
-          "flex items-center pt-6 lg:pt-[63px] pb-4 lg:pb-[39px] justify-center"
+          "flex items-center justify-center"
         }`}
       >
         <Image
@@ -43,19 +43,10 @@ export default function WorkCard({
           height={735}
           objectFit="cover"
           className={`object-cover w-[544px] relative  left-1/2 -translate-x-1/2  ${
-            id === 4 && "relative z-10"
+            id === 4 && ""
           } ${imageWidth} ${imageHeight}`}
         />
-        {id === 4 && (
-          <Image
-            src={"/work/cardBg.jpg"}
-            alt={title}
-            width={1516}
-            height={735}
-            objectFit="cover"
-            className={`object-cover h-full w-full absolute z-0`}
-          />
-        )}
+        
       </div>
       <div className="">
         <div className={`flex flex-wrap gap-2 ${id === 4 ? "my-7" : "my-4"}`}>

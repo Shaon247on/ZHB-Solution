@@ -20,7 +20,7 @@ export default function FooterIcon({
   href=""
 }: FooterIconProps) {
   return (
-    <Link href={href}>
+    <Link target="blank" href={href}>
     <button
       className={clsx(
         "flex items-center justify-center rounded-lg transition-colors",
