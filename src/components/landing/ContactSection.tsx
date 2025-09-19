@@ -60,7 +60,7 @@ function ContactSection({ bottom = true }: { bottom?: boolean }) {
         <CreativeStepSection
           title="Take the first creative step toward success"
           // subtitle="Discover how we transform ideas into exceptional digital experiences through our proven methodology"
-          buttonText="Learn More"
+          buttonText="Schedule a call"
           onButtonClick={() => console.log("Custom button clicked")}
           className="mt-8"
         />
