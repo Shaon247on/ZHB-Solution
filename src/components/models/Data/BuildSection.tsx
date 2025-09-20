@@ -89,15 +89,13 @@ function BuildSection() {
             every AI solution delivers measurable value for your business.
           </p>
           <Link
-            href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
           >
             <Button
               size={"lg"}
               className="mt-4 lg:mt-8 text-[#F2F8FC] px-9 rounded-full"
             >
-              Start Your App Project
+              Contact Us
             </Button>
           </Link>
         </div>

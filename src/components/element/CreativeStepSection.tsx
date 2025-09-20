@@ -99,16 +99,14 @@ const CreativeStepSection: React.FC<CreativeStepSectionProps> = ({
             {/* Button */}
             <motion.div variants={itemVariants} className="pt-4">
               <Link
-                href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/contact"
               >
                 <Button
                   size="xl"
                   onClick={handleButtonClick}
                   className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  {buttonText} <MoveRight size={30} className="size-6"/>
+                  Contact Us <MoveRight size={30} className="size-6"/>
                 </Button>
               </Link>
             </motion.div>

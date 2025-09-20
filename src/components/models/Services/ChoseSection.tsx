@@ -29,7 +29,7 @@ const data = [
 
 function ChoseSection() {
   return (
-    <div className="px-6 xl:px-[187px] py-6 xl:py-[63px] flex flex-col-reverse xl:flex-row items-center gap-6 lg:gap-[101px]">
+    <div className="px-6 xl:px-[5%] py-6 xl:py-[63px] flex flex-col-reverse xl:flex-row items-center justify-between border-2 gap-6 xl:gap-10">
       <Image
         src={"/services/service-7.jpg"}
         width={726}

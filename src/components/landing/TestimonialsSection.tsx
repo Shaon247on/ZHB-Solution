@@ -126,11 +126,11 @@ function TestimonialsSection() {
             loop: true,
           }}
         >
-          <CarouselContent className="-ml-2 w-full xl:w-[1577px] lg:h-[468px]">
+          <CarouselContent className="-ml-2 w-full xl:w-[90%] lg:h-[488px]">
             {reviews.map((review) => (
               <CarouselItem
                 key={review.id}
-                className="pl-2 md:pl-4 basis-full w-full lg:w-[520px] lg:h-[468px]"
+                className="pl-2 md:pl-4 basis-full w-full lg:w-[520px] lg:h-[488px]"
               >
                 <Card
                   className={`

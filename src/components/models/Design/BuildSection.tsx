@@ -40,7 +40,7 @@ const data: cardDataType[] = [
 function BuildSection() {
   return (
     <div className="py-6 xl:py-20 px-6 xl:px-[120px] flex flex-col xl:flex-row items-start justify-start gap-12">
-      <div className="xl:max-w-[518px] lg:flex lg:flex-row lg:w-full lg:gap-4 xl:block">
+      <div className="w-full xl:max-w-[518px] lg:flex lg:flex-row lg:w-full lg:gap-4 xl:block">
         <div className="relative lg:w-[518px] lg:h-[345px]">
           <Image
             src={"/design/design-2.jpg"}
@@ -79,15 +79,13 @@ function BuildSection() {
             build brings tangible value to your organization.
           </p>
           <Link
-            href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
-            target="_blank"
-            rel="noopener noreferrer"
+          href={"/contact"}
           >
             <Button
               size={"lg"}
               className="mt-4 lg:mt-8 text-[#F2F8FC] px-9 rounded-full"
             >
-              Start Your App Project
+              Contact Us
             </Button>
           </Link>
         </div>

@@ -120,13 +120,13 @@ const Footer: React.FC<FooterProps> = ({
 
       {/* Content */}
       <motion.div
-        className="relative z-20 py-12 lg:py-[160px]"
+        className="relative z-20 py-12 lg:py-20 xl:py-[6%]"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="mx-6 lg:mx-20 xl:mx-[280px]">
+        <div className="max-w-[83%] xl:max-w-[77%] mx-auto">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-12 mb-8">
             {/* Logo and Description Section */}
@@ -177,7 +177,7 @@ const Footer: React.FC<FooterProps> = ({
                 </div> */}
                 {/* Social Icons */}
                   <h1 className="text-2xl text-white font-semibold mb-2">Social Media Link</h1>
-                <div className="flex justify-center lg:justify-end space-x-3">
+                <div className="flex justify-start lg:justify-end space-x-3">
                   <FooterIcon>
                     <svg
                       width="13"
@@ -255,7 +255,7 @@ const Footer: React.FC<FooterProps> = ({
 
             {/* Navigation Links */}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 lg:col-span-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 lg:col-span-3 gap-8">
             {/* Contact */}
             <motion.div variants={itemVariants}>
               <h3 className="text-white font-semibold text-sm mb-4">Contact</h3>

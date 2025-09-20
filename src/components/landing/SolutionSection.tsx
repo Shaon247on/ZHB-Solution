@@ -55,11 +55,11 @@ function SolutionSection() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
-      <div className="relative px-3 lg:px-16 xl:px-32 py-8">
-        <h2 className="text-2xl lg:text-[56px] font-orbitron font-bold text-white">
+      <div className="relative px-3 lg:px-0 xl:px-16 py-8">
+        <h2 className="text-2xl lg:text-[56px] lg:px-16 font-orbitron font-bold text-white">
           ZHB Software Solution
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:gap-15 lg:gap-4 md:gap-15 my-11">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:gap-15 lg:gap-4 md:gap-15 my-11 max-w-[90%] mx-auto">
           {statsData.map((stat, index) => (
             <SolutionCard
               key={index}
@@ -74,7 +74,7 @@ function SolutionSection() {
             />
           ))}
         </div>
-        <h2 className="text-2xl lg:text-[56px] font-orbitron font-bold text-white text-end">
+        <h2 className="text-2xl lg:text-[56px] lg:px-16 font-orbitron font-bold text-white text-end">
           at a Glance
         </h2>
       </div>

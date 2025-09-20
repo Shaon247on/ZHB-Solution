@@ -43,7 +43,7 @@ function ServiceSection() {
       <div className="w-fit px-4 rounded-full border-2 border-[#2650A0] mb-10 lg:mb-12">
         Service Overview
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:px-8 px-6 xl:px-[164px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12 lg:px-8 px-6 xl:px-16 max-w-[1550px] mx-auto">
         {data.map((item, index) => (
             <div key={index} className="py-6 lg:py-12 px-4 lg:px-6 flex flex-col items-center bg-[#EBF1FC] rounded-xl">
               <div className="inline-block w-fit bg-[#172F5F] p-2.5 rounded-full mb-6">

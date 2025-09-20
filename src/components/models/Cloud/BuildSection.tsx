@@ -38,20 +38,20 @@ const data: cardDataType[] = [
 
 function BuildSection() {
   return (
-    <div className="py-6 xl:py-20 px-6 xl:px-[120px] flex flex-col xl:flex-row items-start justify-start gap-12">
-      <div className="max-w-[518px] ">
-        <div className="relative xl:w-[518px] xl:h-[345px] lg:py-14 xl:py-0">
+    <div className="py-6 xl:py-20 px-6 xl:px-[120px] flex flex-col xl:flex-row items-start justify-start gap-0 xl:gap-12">
+      <div className="w-full xl:max-w-[518px] mx-auto flex xl:block items-center gap-6">
+        <div className="relative w-1/2 xl:w-[518px] xl:h-[345px] lg:py-14 xl:py-0">
           <Image
             src={"/cloud/cloud-1.jpg"}
             alt="cloud image"
             width={518}
             height={388}
             layout="responsive"
-            className="object-cover absolute z-0 lg:w-[518px] lg:h-[388px] rounded-tl-[80px] rounded-br-[80px]"
+            className="object-cover xl:absolute z-0 lg:w-[518px] lg:h-[388px] rounded-tl-[80px] rounded-br-[80px]"
           />
-          <div className="absolute z-10 bg-[#00000033] w-full h-full rounded-tl-[80px] rounded-br-[80px]" />
+          <div className="hidden xl:block xl:absolute z-10 bg-[#00000033] w-full h-full rounded-tl-[80px] rounded-br-[80px]" />
         </div>
-        <div className="lg:w-[518px] lg:h-full">
+        <div className="w-1/2 lg:w-[518px] lg:h-full">
           <Image
             src={"/cloud/cloud-2.png"}
             alt="cloud image"
@@ -80,15 +80,13 @@ function BuildSection() {
             build brings tangible value to your organization.
           </p>
           <Link
-            href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
-            target="_blank"
-            rel="noopener noreferrer"
+          href={"/contact"}
           >
             <Button
               size={"lg"}
               className="mt-4 lg:mt-8 text-[#F2F8FC] px-9 rounded-full"
             >
-              Start Your App Project
+              Contact Us
             </Button>
           </Link>
         </div>

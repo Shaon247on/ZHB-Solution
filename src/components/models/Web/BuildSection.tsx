@@ -82,15 +82,13 @@ function BuildSection() {
             to deliver exceptional digital experiences.
           </p>
           <Link
-            href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
-            target="_blank"
-            rel="noopener noreferrer"
+          href={'/contact'}
           >
             <Button
               size={"lg"}
               className="mt-4 lg:mt-8 text-[#F2F8FC] px-9 rounded-full"
             >
-              Get a Free Consultation
+              Contact Us
             </Button>
           </Link>
         </div>

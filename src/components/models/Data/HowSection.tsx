@@ -66,7 +66,7 @@ function HowSection() {
         <p className="font-medium text-[#B7B7B7] max-w-[888px] mt-2 mb-6 lg:mb-12">
          From discovery to ongoing optimization, our AI process ensures accuracy, reliability, and measurable business value at every stage.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 lg:gap-6 px-2 xl:px-[20%]">
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 lg:gap-6 px-2 xl:px-[15%]">
           {data.slice(0, 3).map((item, index) => (
             <div key={index} className="py-3 lg:py-6 px-2 lg:px-4 bg-[#F8F9F4]">
               <span className="inline-block w-fit rounded-full bg-[#B9D4CE] text-sm px-4 py-1 mb-3 lg:mb-6">
@@ -79,8 +79,21 @@ function HowSection() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 lg:gap-6 px-2 xl:px-[20%] mt-4 lg:mt-6">
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 lg:gap-6 px-2 xl:px-[15%] mt-4 lg:mt-6">
           {data.slice(3, 6).map((item, index) => (
+            <div key={index} className="py-3 lg:py-6 px-2 lg:px-4 bg-[#F8F9F4]">
+              <span className="inline-block w-fit rounded-full bg-[#B9D4CE] text-sm px-4 py-1 mb-3 lg:mb-6">
+                Step 0{item.step}
+              </span>
+              <h2 className="font-semibold text-2xl text-[#181818] mb-4">
+                {item.title}
+              </h2>
+              <p className="text-[#464646] mb-16">{item.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className="grid lg:hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center gap-4 lg:gap-6 px-2 xl:px-[15%] mt-4 lg:mt-6">
+          {data.map((item, index) => (
             <div key={index} className="py-3 lg:py-6 px-2 lg:px-4 bg-[#F8F9F4]">
               <span className="inline-block w-fit rounded-full bg-[#B9D4CE] text-sm px-4 py-1 mb-3 lg:mb-6">
                 Step 0{item.step}

@@ -1,11 +1,11 @@
 "use client";
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import emailjs from "@emailjs/browser";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import ReCAPTCHA from "react-google-recaptcha";
 import {
   Form,
   FormControl,
@@ -41,7 +41,10 @@ const commentFormSchema = z.object({
 type CommentFormData = z.infer<typeof commentFormSchema>;
 
 function CommentForm() {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const [recaptchaVerified, setRecaptchaVerified] = useState<boolean>(false);
+  const [recaptchaLoading, setRecaptchaLoading] = useState<boolean>(false);
   
   const form = useForm<CommentFormData>({
     resolver: zodResolver(commentFormSchema),
@@ -52,49 +55,83 @@ function CommentForm() {
     },
   });
 
-  const handleSubmit = async (data: CommentFormData) => {
-    if (!executeRecaptcha) {
-      toast.error("reCAPTCHA not available. Please refresh the page and try again.");
-      return;
-    }
-
+  const verifyRecaptchaToken = async (token: string) => {
+    setRecaptchaLoading(true);
     try {
-      // Execute reCAPTCHA v3 and get token
-      const recaptchaToken = await executeRecaptcha("comment_form_submit");
-      
-      if (!recaptchaToken) {
-        toast.error("reCAPTCHA verification failed. Please try again.");
-        return;
-      }
-
-      // Verify reCAPTCHA on the server side
-      const recaptchaResponse = await fetch('/api/verify-recaptcha-v3', {
+      const response = await fetch('/api/verify-recaptcha-v2', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
-          token: recaptchaToken,
-          action: 'comment_form_submit'
-        }),
+        body: JSON.stringify({ token }),
       });
 
-      const recaptchaResult = await recaptchaResponse.json();
-
-      if (!recaptchaResponse.ok || !recaptchaResult.success) {
-        toast.error("Security verification failed. Please try again.");
-        return;
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
 
-      console.log("reCAPTCHA score", recaptchaResult.score);
+      const responseText = await response.text();
+      if (!responseText) {
+        throw new Error('Empty response');
+      }
+
+      const result = JSON.parse(responseText);
       
-      // Check the score (optional - you can adjust the threshold)
-      if (recaptchaResult.score < 0.5) {
-        toast.error("Security check failed. Please contact us directly if you're having trouble.");
+      if (result.success) {
+        setRecaptchaVerified(true);
+        return true;
+      } else {
+        setRecaptchaVerified(false);
+        setRecaptchaToken(null);
+        recaptchaRef.current?.reset();
+        toast.error("reCAPTCHA verification failed. Please try again.");
+        return false;
+      }
+    } catch (error) {
+      console.error('reCAPTCHA verification error:', error);
+      setRecaptchaVerified(false);
+      setRecaptchaToken(null);
+      recaptchaRef.current?.reset();
+      toast.error("reCAPTCHA verification failed. Please try again.");
+      return false;
+    } finally {
+      setRecaptchaLoading(false);
+    }
+  };
+
+  const handleRecaptchaChange = async (token: string | null) => {
+    setRecaptchaToken(token);
+    setRecaptchaVerified(false);
+    
+    if (token) {
+      // Immediately verify the token on the server
+      await verifyRecaptchaToken(token);
+    }
+    
+    console.log("reCAPTCHA token:", token);
+  };
+
+  const handleRecaptchaExpired = () => {
+    setRecaptchaToken(null);
+    setRecaptchaVerified(false);
+    console.log("reCAPTCHA expired");
+  };
+
+  const handleRecaptchaError = () => {
+    setRecaptchaToken(null);
+    setRecaptchaVerified(false);
+    console.log("reCAPTCHA error");
+  };
+
+  const handleSubmit = async (data: CommentFormData) => {
+    try {
+      // Double-check verification status
+      if (!recaptchaVerified || !recaptchaToken) {
+        toast.error("Please complete the reCAPTCHA verification.");
         return;
       }
 
-      // Send email with EmailJS
+      // Send email with EmailJS (no need to verify again since we already did)
       const result = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Different template for comments
@@ -102,7 +139,6 @@ function CommentForm() {
           name: data.name,
           email: data.email,
           comment: data.comment,
-          recaptchaScore: recaptchaResult.score,
           timestamp: new Date().toISOString(),
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
@@ -111,6 +147,9 @@ function CommentForm() {
       console.log("Comment submitted successfully!", result.status, result.text);
       toast.success("Your comment has been submitted successfully!");
       form.reset();
+      setRecaptchaToken(null);
+      setRecaptchaVerified(false);
+      recaptchaRef.current?.reset();
     } catch (error) {
       console.error("Comment submission failed:", error);
       toast.error("Something went wrong. Please try again later.");
@@ -194,18 +233,45 @@ function CommentForm() {
                 )}
               />
 
+              {/* reCAPTCHA v2 */}
+              <div className="flex flex-col items-center space-y-2">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                  onChange={handleRecaptchaChange}
+                  onExpired={handleRecaptchaExpired}
+                  onError={handleRecaptchaError}
+                  theme="light"
+                  size="normal"
+                />
+                {recaptchaLoading && (
+                  <div className="text-sm text-gray-600 flex items-center space-x-2">
+                    <div className="animate-spin rounded-full h-4 w-4 border-2 border-blue-500 border-t-transparent"></div>
+                    <span>Verifying...</span>
+                  </div>
+                )}
+                {recaptchaToken && recaptchaVerified && (
+                  <div className="text-sm text-green-600 flex items-center space-x-1">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                    </svg>
+                    <span>Verification successful</span>
+                  </div>
+                )}
+              </div>
+
               {/* Submit Button */}
               <Button
                 type="submit"
-                disabled={form.formState.isSubmitting}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200"
+                disabled={form.formState.isSubmitting || !recaptchaVerified || recaptchaLoading}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
                 {form.formState.isSubmitting ? "Sending..." : "Send"}
               </Button>
             </form>
           </Form>
 
-          {/* reCAPTCHA v3 Badge Notice */}
+          {/* reCAPTCHA v2 Privacy Notice */}
           <div className="text-xs text-gray-500 text-center mt-4">
             This site is protected by reCAPTCHA and the Google{" "}
             <a href="https://policies.google.com/privacy" className="text-blue-500 hover:underline">

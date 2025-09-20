@@ -5,7 +5,7 @@ import React from 'react'
 
 function ServicesSection() {
   return (
-    <div className='bg-[#F8F9F4] px-6 xl:px-[120px] pt-0 lg:pt-10 pb-6 lg:pb-20'>
+    <div id='service_id' className='bg-[#F8F9F4] px-6 xl:px-[120px] pt-0 lg:pt-10 pb-6 lg:pb-20'>
       <TitleSection
       title='Service OverView'
       subtitle='Top Services'

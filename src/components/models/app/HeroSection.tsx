@@ -15,9 +15,9 @@ function HeroSection() {
       />
       <div className="w-full h-screen top-0 absolute z-10 bg-[#181818CC]" />
 
-      <div className="relative z-30 py-7 lg:py-20 px-6 lg:px-[300px] text-white text-center">
-        <h1 className="text-xl lg:text-[56px] font-semibold lg:font-bold font-orbitron">
-          Next-Gen Mobile Apps for iOS & <br className="hidden lg:block" />
+      <div className="relative z-30 py-7 lg:py-20 px-6 md:px-20 xl:px-[20%] text-white text-center">
+        <h1 className="text-3xl lg:text-[56px] font-semibold lg:font-bold font-orbitron">
+          Next-Gen Mobile Apps for iOS &
           Android
         </h1>
         <p className="text-sm lg:text-xl font-semibold text-[#B7B7B7] max-w-[830px] mx-auto mt-2 ">

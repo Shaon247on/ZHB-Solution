@@ -1,6 +1,7 @@
 import CareerImage from "@/components/element/CareerImage";
 import ServicesImage from "@/components/element/ServiceImage";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import React from "react";
 
 const image = [
@@ -59,8 +60,8 @@ function HeroSection() {
         controls={false}
         className="w-full min-h-full object-cover absolute z-0"
       />
-      <div className="w-full min-h-[100vh] absolute z-10 bg-[#181818CC]" />
-      <div className=" relative z-30 py-7 lg:py-20 px-6 lg:px-[300px] text-white text-center">
+      <div className="w-full min-h-[100%] absolute z-10 bg-[#181818CC]" />
+      <div className=" relative z-30 py-7 lg:py-20 px-6 xl:px-10 lg:max-w-[90%] xl:max-w-[80%] mx-auto text-white text-center">
         <h1 className="text-xl lg:text-[56px] font-semibold lg:font-bold font-orbitron">
           Service of <br className="hidden lg:block" />
           ZHB Software Solution
@@ -70,13 +71,15 @@ function HeroSection() {
           transformation , we deliver technology that drives growth, efficiency,
           and success.
         </p>
-        {/* <Button
+        <Link href="#service_id" scroll={true}>
+        <Button
           size={"xl"}
-          className="rounded-full mb-6 lg:mb-10 mt-6 lg:mt-12"
+          className="rounded-full mt-6 lg:mt-12"
         >
           Explore Our Service
-        </Button> */}
-        <div className="flex items-center justify-center py-2 lg:py-16 gap-1 lg:gap-6 relative mt-6 lg:mt-20">
+        </Button>
+        </Link>
+        <div className="flex items-center justify-center py-2 lg:py-16 gap-1 lg:gap-6 relative mt-6 lg:mt-10">
           {image.map((img, index) => (
             <ServicesImage
               key={index}
