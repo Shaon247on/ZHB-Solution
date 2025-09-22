@@ -1,0 +1,18 @@
+name: CI Production
+on:
+  push:
+    branches: [ "production" ]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Deploy to Server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: "206.162.244.169"
+        username: "root"
+        password: "UcPHFdxy3KTKGixLYmYR"
+        port: "22"
+        script: "cd /var/www/ZHB-Solution && ./.script/production.sh"
