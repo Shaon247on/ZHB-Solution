@@ -49,16 +49,16 @@ function VisionSection() {
           title="Our Vision"
           width="w-[120px]"
           textColor="text-white"
-          subtitle="Shaping the Future with Innovative & Trusted Software Solutions"
+          subtitle="Empowering Growth"
           textPosition="text-start"
         />
         <p className="text-[#959595] max-w-[660px]">
-          We envision a future where businesses, regardless of size, can harness
-          the full potential of cutting-edge technologies. At ZHB Solutions, our
-          vision is simple: to be the catalyst that drives digital
-          transformation and helps organizations thrive globally. By aligning
-          innovation with business goals, we aim to redefine success in the
-          digital economy.
+          We envision a future where businesses of every size harness technology
+          with confidence and clarity. Our mission is to simplify complexity,
+          delivering secure, scalable, and results-driven solutions. By aligning
+          innovation with business goals, we strive to empower organizations to
+          achieve sustainable growth, resilience, and leadership in the digital
+          era.
         </p>
         <div className="space-y-4 mt-12">
           <VisionCard
