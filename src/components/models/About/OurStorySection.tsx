@@ -16,23 +16,16 @@ export default function OurStoryCarousel() {
         <h2 className="text-white text-2xl xl:text-[56px] lg:text-5xl font-bold font-orbitron lg:w-[500px]">
           Our Story, <br className="hidden xl:block" /> Your Success
         </h2>
-        <div>
+        <div className="text-justify">
           <p className="xl:max-w-[500px] text-xs lg:text-base font-medium text-[#B7B7B7] mx-auto mb-6 lg:mb-10">
-            For over 14 years, our journey has been defined by a commitment to
-            excellence and client success. Guided by the leadership of Md.
-            Zahirul Bhuiyan, whose vision and expertise continue to inspire
-            innovation, ZHB Solutions has evolved into a trusted name across
-            industries. Every project we undertake is built on a foundation of
-            collaboration, innovation, and measurable impact—ensuring our
-            clients achieve sustainable growth.
+            ZHB Solutions LLC is founded by <strong>Md. Zahirul Bhuiyan</strong>, a seasoned technology leader and
+            Lead Java Developer at General Motors, our company was built on the
+            vision of making enterprise-grade solutions accessible to all
+            businesses. We specialize in Cybersecurity, AI, Cloud, and Digital
+            Transformation — empowering organizations to innovate, scale, and
+            thrive securely in today’s digital-first world.
           </p>
-          <Link
-            href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button className="lg:mx-auto lg:block">Dive Into Our Projects</Button>
-          </Link>
+          <Button>Dive Into Our Projects</Button>
         </div>
       </div>
       <Carousel
