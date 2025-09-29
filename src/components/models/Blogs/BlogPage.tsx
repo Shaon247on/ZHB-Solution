@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import { Blog } from "@/data/BlogsDataMain";
 import BlogCard from "@/components/element/BlogCard";
 import CommentForm from "@/components/element/CommentForm";
+import RelatedBlogsCard from "@/components/element/RelatedBlogsCard";
 
 // Zod schemas
 const commentSchema = z.object({
@@ -40,7 +41,13 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const relatedPost = blogs.filter((item) => item.id !== id);
+  const numberId = Number(id)
+
+  // const otherPosts = blogs.filter((item) => item.tag === );
+
+  
+  const relatedPost = blogs.filter((item) => item.id !== numberId);
+
 
   console.log("Blog id", id);
   console.log("Blogs data", blogs);
@@ -49,6 +56,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
   const blog = blogs.find((b) => b.id === idNumber);
   console.log("blog a details:", blog); // I'm getting undefined here
   // Comment form
+
   const commentForm = useForm<CommentFormData>({
     resolver: zodResolver(commentSchema),
     defaultValues: {
@@ -65,22 +73,6 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
       email: "",
     },
   });
-
-  const onCommentSubmit = () => {
-    commentForm.handleSubmit((data: CommentFormData) => {
-      console.log("Comment submitted:", data);
-      // Handle comment submission
-      commentForm.reset();
-    })();
-  };
-
-  const onNewsletterSubmit = () => {
-    newsletterForm.handleSubmit((data: NewsletterFormData) => {
-      console.log("Newsletter subscription:", data);
-      // Handle newsletter subscription
-      newsletterForm.reset();
-    })();
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -186,8 +178,8 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="px-4 sm:px-6 lg:px-28 py-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
+      <div className="px-4 sm:px-6 lg:px-10 xl:px-28 py-8">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-0 lg:gap-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -202,7 +194,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
               </Badge>
             </div>
 
-            <h1 className="text-xl md:text-3xl lg:text-5xl font-semibold max-w-[828px] font-orbitron text-gray-900 mb-6">
+            <h1 className="text-xl md:text-3xl font-semibold max-w-[828px] font-orbitron text-gray-900 mb-6">
               {blog.title}
             </h1>
 
@@ -222,27 +214,26 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
               </div>
               <span className="text-sm text-gray-500">•</span>
               <span className="text-sm text-gray-600">{blog.publishDate}</span>
-              <span className="text-sm text-gray-500">•</span>
-              <span className="text-sm text-gray-600">{blog.readTime}</span>
+              {/* <span className="text-sm text-gray-500">•</span>
+              <span className="text-sm text-gray-600">{blog.readTime}</span> */}
             </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative w-[360px] md:w-[804px] h-auto md:min-h-[528px] md:h-80 lg:h-96 mb-8 rounded-lg overflow-hidden"
+            className="relative w-full border-2 md:w-[804px] min-h-[258px] md:min-h-[528px] md:h-80 lg:h-96 mb-8 rounded-lg overflow-hidden"
           >
             <Image
               src={`/blogs/blog${blog.id}.jpg`}
               alt={blog.title}
-              width={804}
-              height={528}
+              fill
               className="object-cover"
             />
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 lx:grid-cols-5 lg:gap-6 xl:gap-12">
           {/* Sidebar */}
           <div
             className={`lg:col-span-1 order-1 items-center ${
@@ -278,7 +269,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
                   <CardTitle className="text-lg">Tags</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 cursor-default">
                     {blog.tags.map((tag, index) => (
                       <Badge key={index} variant="outline">
                         #{tag}
@@ -294,24 +285,27 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
                   <CardTitle className="text-lg">Related Posts</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
-                    {blog.relatedPosts.map((post, index) => (
-                      <div key={index}>
-                        <Link href={post.link}>
-                          <h4 className="font-medium text-gray-900 text-sm mb-1 hover:text-blue-600 cursor-pointer">
-                            {post.title}
-                          </h4>
-                        </Link>
-                        <div className="flex flex-wrap gap-1 mb-2">
-                          {post.tags.map((tag, tagIndex) => (
-                            <Badge
-                              key={tagIndex}
-                              variant="outline"
-                              className="text-xs"
-                            >
-                              {tag}
-                            </Badge>
-                          ))}
+                  <div className="space-y-4 lg:space-y-2 xl:space-y-4">
+                    {relatedPost.slice(0,4).map((post, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <p>{index + 1}</p>
+                        <div>
+                          <Link href={`/blogs/${post.id}`}>
+                            <h4 className="font-medium text-gray-600 text-sm lg:text-xs xl:text-sm mb-1 hover:text-blue-600 cursor-pointer">
+                              {post.title.slice(0, 25)}...
+                            </h4>
+                          </Link>
+                          <div className="flex flex-wrap gap-1 mb-2">
+                            {post.tags.slice(0, 2).map((tag, tagIndex) => (
+                              <Badge
+                                key={tagIndex}
+                                variant="outline"
+                                className="text-xs lg:text-[10px] xl:text-xs cursor-default"
+                              >
+                                {tag}
+                              </Badge>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -322,7 +316,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
           </div>
 
           {/* Main Content */}
-          <div className="lg:col-span-4 order-2 lg:order-1">
+          <div className="lg:col-span-3 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -358,12 +352,12 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
 
               <div className="px-3 md:px-6 lg:px-8 xl:px-14">
                 <h2 className="text-2xl font-semibold mb-4">
-                  Need help with your project?
+                  You might also like
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-                  {relatedPost.map((item, index) => (
+                  {relatedPost.slice(0,6).map((item, index) => (
                     <div key={index}>
-                      <BlogCard
+                      <RelatedBlogsCard
                         id={item.id}
                         image={`/blogs/blog${item.id}.jpg`}
                         subtitle={item.content[0].points[1]}
@@ -378,7 +372,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ id, blogs }) => {
 
               {/* Comment Section */}
 
-              <CommentForm/>
+              <CommentForm />
               {/* <div className="w-full p-4 space-y-6">
                 <Card className="w-full" style={{ backgroundColor: "#F9F8F4" }}>
                   <CardHeader>

@@ -13,12 +13,12 @@ function page() {
     <div>
       <HeroSection/>
       <BrandSection/>
-      <WhySection/>
+      {/* <WhySection/> */}
       <OpenPositionsSection/>
-      <LifeSection/>
+      {/* <LifeSection/>
       <LifeSolutionSectin/>
       <SolutionSection/>
-      <FaqSection/>
+      <FaqSection/> */}
     </div>
   )
 }

@@ -67,7 +67,7 @@ function TeamCard({ id, country, address, email, phone, href }: TeamCardProps) {
         <div>
           <div className="flex flex-col gap-2 lg:gap-0 lg:flex-row items-start lg:items-center justify-between mb-5 lg:mb-0">
             <div>
-              <h3 className="text-4xl lg:text-[56px] font-bold mb-2">
+              <h3 className="text-3xl font-bold mb-2">
                 {country}
               </h3>
               <h5 className="max-w-[350px]">{address}</h5>

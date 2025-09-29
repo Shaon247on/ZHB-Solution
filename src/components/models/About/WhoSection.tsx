@@ -1,8 +1,6 @@
 import WhoCard from "@/components/element/WhoCard";
-import { Chart } from "@/components/svg/DataSVG";
 import { GrowBlue } from "@/components/svg/ServicesSVG";
 import { Global, LightbulbIcon, Profile } from "@/components/svg/WhoSVG";
-import { Menu, Settings } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -64,12 +62,12 @@ function WhoSection() {
           </h2>
 
           <div className="lg:max-w-[570px] mb-4">
-            <p className="text-gray-600 lg:text-lg mb-2 lg:mb-8 leading-relaxed">
+            <p className="text-gray-600 text-justify lg:text-lg mb-2 lg:mb-8 leading-relaxed">
               ZHB Solutions is a forward-thinking technology partner dedicated
               to transforming ideas into scalable digital solutions. Founded on
               the principle of combining innovation with reliability.
             </p>
-            <p className="text-gray-600 lg:text-lg lg:mb-12 mt-4 lg:mt-4 leading-relaxed">
+            <p className="text-gray-600 text-justify lg:text-lg lg:mb-12 mt-4 lg:mt-4 leading-relaxed">
               Md. Zahirul Bhuiyan, Lead Java Developer at General Motors, is a
               seasoned technology leader with expertise in enterprise software,
               cloud solutions, and AI-driven innovation. With an MBA and over a

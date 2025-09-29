@@ -27,7 +27,7 @@ function BlogSection() {
                   <h2 className="text-xl lg:text-[2rem] max-w-[550px] font-semibold text-[#EBF1FC]">
                     {item.title}
                   </h2>
-                  <p className="mt-4 max-w-[531px] text-sm lg:text-base text-[#FDFDFD]">
+                  <p className="mt-4 max-w-[531px] text-justify text-sm lg:text-base text-[#FDFDFD]">
                     {item.content[0].points}
                   </p>
                   <Link href={`/blogs/${item.id}`}>
@@ -69,7 +69,7 @@ function BlogSection() {
                   <h2 className="text-xl max-w-[620px] lg:text-[2rem] font-semibold text-[#EBF1FC]">
                    {item.title}
                   </h2>
-                  <p className="mt-4 max-w-[531px] text-sm lg:text-base text-[#FDFDFD]">
+                  <p className="mt-4 max-w-[531px] text-justify text-sm lg:text-base text-[#FDFDFD]">
                     {item.content[0].points}
                   </p>
                   <Link href={`/blogs/${item.id}`}>

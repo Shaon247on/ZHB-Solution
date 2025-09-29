@@ -76,20 +76,21 @@ function OpenPositionsSection() {
   };
 
   return (
-    <div id="job_offers" className="py-4 lg:py-14 bg-[#EBF1FC] px-6 lg:px-[90px]">
+    <div id="job_offers" className="py-4 lg:py-14 bg-[#EBF1FC] px-6 lg:px-[90px] mt-12">
       <TitleSection
         title="Open Positions"
         subtitle="Your Next Role Awaits"
         width="w-[180px]"
         textColor="text-[#172F5F]"
       />
-      <p className="max-w-[977px] text-[#464646] mx-auto">
-        your ideas shape innovation and your work drives real change. We’re
-        seeking passionate, forward-thinking professionals who want to grow,
-        create, and define the future with us. Explore our open roles and
-        discover where your talents belong.
+      <p className="max-w-[977px] text-center text-[#464646] mx-auto">
+        ZHB Solutions has open positions. If you are interested, please submit your resume to <strong>info@zhbsolutions.com</strong>.
       </p>
-      <motion.div
+
+       {/* will be available when particular job offers will be available. */}
+
+
+      {/* <motion.div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
         variants={container}
         initial="hidden"
@@ -101,7 +102,7 @@ function OpenPositionsSection() {
             <OpenCard {...item} />
           </motion.div>
         ))}
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

@@ -21,7 +21,7 @@ function AboutSection() {
             We are leading experts <br />
             delivering results
           </h2>
-          <p className="mt-4 max-w-[531px] text-lg text-blue-50">
+          <p className="mt-4 max-w-[531px] text-lg text-blue-50 text-justify">
             Our team of creative experts id dedicated to delivering innovative
             solutions that drive measurable results. With a proven track record
             of success

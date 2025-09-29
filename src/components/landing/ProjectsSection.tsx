@@ -26,7 +26,7 @@ function ProjectsSection() {
                 <h2 className="text-xl lg:text-[1.75rem] font-bold">
                   {item.heroSection.title}
                 </h2>
-                <p className="mt-4 max-w-[531px] text-base lg:text-lg">
+                <p className="mt-4 max-w-[531px] text-base text-justify lg:text-lg">
                   {item.heroSection.description}
                 </p>
                 <Link href={`/work/${item.id}`}>

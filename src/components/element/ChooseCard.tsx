@@ -68,7 +68,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           <h3 className="text-xl lg:text-3xl font-bold font-Jakarta text-gray-900">
             {title}
           </h3>
-          <p className="text-[#535353A8]  font-Jakarta text-sm lg:text-base/6">
+          <p className="text-[#535353A8] text-justify font-Jakarta text-sm lg:text-base/6">
             {subtitle}
           </p>
         </div>

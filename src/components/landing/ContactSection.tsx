@@ -32,7 +32,7 @@ function ContactSection({ bottom = true }: { bottom?: boolean }) {
               Have a great idea? <br className="hidden lg:block" />
               Let’s build it together.
             </motion.p>
-            <h4 className="text-[#959595] mb-6 lg:mb-8 xl:mb-16 mt-6 lg:mt-8 max-w-[824px] mx-auto text-start xl:text-lg font-semibold">
+            <h4 className="text-[#959595] mb-6 lg:mb-8 xl:mb-16 mt-6 lg:mt-8 max-w-[824px] mx-auto xl:text-base text-justify font-semibold">
               We turn bold ideas into measurable results. At ZHB Solutions,
               we’re passionate about helping businesses of every size thrive.
               Led by Zahirul Bhuiyan - a veteran with 15+ years of experience

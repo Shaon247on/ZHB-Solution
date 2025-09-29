@@ -7,12 +7,12 @@ import Link from "next/link";
 function HeroSection() {
   return (
     <div className="bg-[#172134] ">
-      <div className="mb-20 text-2xl pt-6 lg:pt-14 px-6 lg:px-[120px] lg:text-[56px] font-orbitron font-bold text-white">
+      <div className="mb-4 text-2xl pt-6 lg:pt-14 px-6 lg:px-[120px] lg:text-4xl font-orbitron font-bold text-white">
         <h2>Insights, Ideas & Innovation <br className="hidden lg:block"/>The ZHB Solutions Blog.....</h2>
       </div>
-      <div className="lg:px-[120px] px-4 pb-16 sm:px-6 flex flex-col lg:flex-row items-center gap-14 lg:gap-[280px]">
+      <div className="lg:px-[120px] px-4 pb-4 md:pb-6 lg:pb-10 sm:px-6 flex flex-col lg:flex-row items-center gap-14 lg:gap-[280px]">
         <div>
-          <p className="mb-24 text-xs text-center text-white lg:text-base bg-[#104035] rounded-full py-1 font-medium w-40">
+          <p className="mb-4 md:mb-6 lg:mb-10 text-xs text-center text-white lg:text-base bg-[#104035] rounded-full py-1 font-medium w-40">
             Latest Blogs
           </p>
           <p
@@ -20,11 +20,11 @@ function HeroSection() {
           >
             Tech & Innovation
           </p>
-          <h2 className="text-[1.75rem] font-bold text-white">
-            Revolutionizing Business with AI: <br className="hidden lg:block" />
+          <h2 className="text-2xl font-bold text-white">
+            Revolutionizing Business with AI: 
             What You Need to Know
           </h2>
-          <p className="mt-4 max-w-[577px] text-lg text-[#E8E8E8]">
+          <p className="mt-4 max-w-[577px] text-justify text-lg text-[#E8E8E8]">
             Artificial-Intelligence (AI) is transforming the way businesses
             operate—automating tasks, enhancing decision-making, and unlocking
             new revenue streams.

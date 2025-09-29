@@ -42,7 +42,7 @@ function ChoseSection() {
           Why Choose Us
         </h3>
         <h2 className="text-2xl lg:text-4xl font-bold font-orbitron mb-6">
-          Top industry leaders rely on us <br className="hidden lg:block" />
+          Top industry leaders rely on us
           here’s why!
         </h2>
         <div className="space-y-4">

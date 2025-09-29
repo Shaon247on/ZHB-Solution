@@ -51,22 +51,22 @@ const image = [
 
 function HeroSection() {
   return (
-    <div className="relative lg:pb-32 overflow-hidden">
+    <div className="relative lg:pb-6 overflow-hidden">
       <video
         src="/design/design.mp4"
         autoPlay
         loop
         muted
         controls={false}
-        className="w-full h-screen object-cover absolute z-0"
+        className="w-full h-full object-cover absolute z-0"
       />
-      <div className="w-full h-screen -top-3 absolute z-10 bg-[#181818CC]" />
+      <div className="w-full h-full -top-3 absolute z-10 bg-[#181818CC]" />
       <div className="relative z-30 py-7 lg:py-20 px-6 xl:px-[300px] text-white text-center">
-        <h1 className="text-xl lg:text-5xl xl:text-[56px] font-semibold lg:font-bold font-orbitron">
+        <h1 className="text-xl lg:text-5xl font-semibold lg:font-bold font-orbitron">
           Designs That Delight and <br className="hidden lg:block" />
           Convert
         </h1>
-        <p className="text-sm lg:text-base xl:text-xl font-semibold text-[#B7B7B7] max-w-[830px] mx-auto mt-4 ">
+        <p className="text-sm lg:text-base font-semibold text-[#B7B7B7] max-w-[830px] mx-auto mt-4 ">
           User-centric UI/UX for websites, apps, and digital products.
         </p>
         <Link

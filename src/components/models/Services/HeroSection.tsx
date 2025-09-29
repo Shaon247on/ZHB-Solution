@@ -61,12 +61,12 @@ function HeroSection() {
         className="w-full min-h-full object-cover absolute z-0"
       />
       <div className="w-full min-h-[100%] absolute z-10 bg-[#181818CC]" />
-      <div className=" relative z-30 py-7 lg:py-20 px-6 xl:px-10 lg:max-w-[90%] xl:max-w-[80%] mx-auto text-white text-center">
-        <h1 className="text-xl lg:text-[56px] font-semibold lg:font-bold font-orbitron">
+      <div className=" relative z-30 py-7 lg:py-16 px-6 xl:px-10 lg:max-w-[90%] xl:max-w-[80%] mx-auto text-white text-center">
+        <h1 className="text-xl lg:text-5xl font-semibold lg:font-bold font-orbitron">
           Service of <br className="hidden lg:block" />
           ZHB Software Solution
         </h1>
-        <p className="text-sm lg:text-xl font-semibold text-[#B7B7B7] max-w-[830px] mx-auto mt-2 ">
+        <p className="text-sm lg:text-base font-semibold text-[#B7B7B7] max-w-[780px] mx-auto mt-2 ">
           We offer web and mobile app development to cloud, data, and digital
           transformation , we deliver technology that drives growth, efficiency,
           and success.
@@ -74,12 +74,12 @@ function HeroSection() {
         <Link href="#service_id" scroll={true}>
         <Button
           size={"xl"}
-          className="rounded-full mt-6 lg:mt-12"
+          className="rounded-full mt-6"
         >
           Explore Our Service
         </Button>
         </Link>
-        <div className="flex items-center justify-center py-2 lg:py-16 gap-1 lg:gap-6 relative mt-6 lg:mt-10">
+        <div className="flex items-center justify-center py-2 gap-1 lg:gap-6 relative mt-6 lg:mt-10">
           {image.map((img, index) => (
             <ServicesImage
               key={index}

@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { WorkPageData } from "@/data/WorkDataMain";
 import WorkCard from "@/components/element/WorkCard";
+import RelatedWorksCard from "@/components/element/RelatedWorksCard";
 
 // Zod schemas
 const commentSchema = z.object({
@@ -216,7 +217,7 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
 
       {/* Main Content */}
       <div className="px-4 sm:px-6 lg:px-10 xl:px-14 py-6 sm:py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
           {/* Sidebar */}
           <div
             className={`lg:col-span-1 order-2 lg:order-1 ${
@@ -498,12 +499,12 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
                     Technology Stack
                   </h2>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="space-x-3 space-y-3">
                     {workData.technologyStack.map((tech, index) => (
                       <Badge
                         key={index}
                         variant="outline"
-                        className="rounded-full px-4 py-2 w-28"
+                        className="rounded-full px-4 py-2 w-28 mb-4 inline-block"
                       >
                         {tech}
                       </Badge>
@@ -647,9 +648,9 @@ const WorkPage: React.FC<WorkPageProps> = ({ id, allProjects = [] }) => {
               <h2 className="text-xl md:text-3xl font-bold mb-6 sm:mb-8 ">
                 More projects
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 gap-4 mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 items-stretch gap-4 mt-6">
                 {relatedWorkData?.map((project, index) => (
-                  <WorkCard
+                  <RelatedWorksCard
                     key={index}
                     id={project.id}
                     title={project.heroSection.title}

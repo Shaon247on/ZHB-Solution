@@ -12,13 +12,13 @@ import Link from "next/link";
 export default function OurStoryCarousel() {
   return (
     <div className="bg-[#172134] py-6 lg:py-20 px-6">
-      <div className="flex flex-col xl:flex-row items-start justify-between xl:px-[363px]  gap-4 lg:gap-[130px] mb-16 lg:mb-[120px] ">
+      <div className="flex flex-col xl:flex-row items-start justify-between max-w-6xl mx-auto gap-4 lg:gap-[130px] mb-16 lg:mb-[120px] ">
         <h2 className="text-white text-2xl xl:text-[56px] lg:text-5xl font-bold font-orbitron lg:w-[500px]">
           Our Story, <br className="hidden xl:block" /> Your Success
         </h2>
         <div className="text-justify">
-          <p className="xl:max-w-[500px] text-xs lg:text-base font-medium text-[#B7B7B7] mx-auto mb-6 lg:mb-10">
-            ZHB Solutions LLC is founded by <strong>Md. Zahirul Bhuiyan</strong>, a seasoned technology leader and
+          <p className="xl:max-w-[500px] text-justify text-xs lg:text-base font-medium text-[#B7B7B7] mx-auto mb-6 lg:mb-10">
+            ZHB Solutions LLC is founded by <strong>Zahirul Bhuiyan</strong>, a seasoned technology leader and
             Lead Java Developer at General Motors, our company was built on the
             vision of making enterprise-grade solutions accessible to all
             businesses. We specialize in Cybersecurity, AI, Cloud, and Digital

@@ -19,13 +19,25 @@ const tags = [
 function BlogsSection() {
   const [activeTag, setActiveTag] = useState("All Posts");
   const [search, setSearch] = useState("");
+  const [appliedSearch, setAppliedSearch] = useState("");
+
+  const handleSearchClick = () => {
+    setAppliedSearch(search);
+  };
+
+  const handleSearchKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearchClick();
+    }
+  };
 
   const filteredCards = blogs.filter((blog) => {
     const matchesTag =
       activeTag === "All Posts" || blog.tag.includes(activeTag);
     const matchesSearch =
-      blog.title.toLowerCase().includes(search.toLowerCase()) ||
-      blog.tag.toLowerCase().includes(search.toLowerCase());
+      appliedSearch === "" ||
+      blog.title.toLowerCase().includes(appliedSearch.toLowerCase()) ||
+      blog.tag.toLowerCase().includes(appliedSearch.toLowerCase());
 
     return matchesTag && matchesSearch;
   });
@@ -41,10 +53,10 @@ function BlogsSection() {
           No blogs found
         </h3>
         <p className="text-gray-600 mb-6">
-          {search ? (
+          {appliedSearch ? (
             <>
               No blogs match your search for "
-              <span className="font-semibold">{search}</span>"
+              <span className="font-semibold">{appliedSearch}</span>"
               {activeTag !== "All Posts" && (
                 <>
                   {" "}
@@ -63,6 +75,7 @@ function BlogsSection() {
           onClick={() => {
             setActiveTag("All Posts");
             setSearch("");
+            setAppliedSearch("");
           }}
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors duration-200"
         >
@@ -79,7 +92,7 @@ function BlogsSection() {
       </h2>
 
       {/* Filter + Search */}
-      <div className="flex flex-col-reverse lg:flex-row items-center gap-6 mb-4 md:mb-6 lg:mb-10 xl:mb-24 rounded-2xl bg-[#EBF1FC] justify-center py-4">
+      <div className="flex flex-col-reverse lg:flex-row px-4 items-start gap-6 mb-4 md:mb-6 lg:mb-10 xl:mb-24 rounded-2xl bg-[#EBF1FC] justify-center py-4">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-4 flex-wrap">
           {tags.map((tag, index) => (
             <React.Fragment key={tag}>
@@ -102,12 +115,18 @@ function BlogsSection() {
 
         {/* Search Box */}
         <div className="relative">
-          <Search className="absolute left-2 top-2.5 h-4 w-4 text-gray-400" />
+          <button
+            onClick={handleSearchClick}
+            className="absolute left-2 top-2.5 h-4 w-4 text-gray-400 hover:text-blue-600 transition-colors duration-200 cursor-pointer z-10"
+          >
+            <Search className="h-4 w-4" />
+          </button>
           <input
             type="text"
             placeholder="Search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            onKeyPress={handleSearchKeyPress}
             className="pl-8 pr-4 py-2 border border-[#172F5F] max-w-[195px] rounded-md text-sm w-64"
           />
         </div>

@@ -17,6 +17,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import FooterIcon from "../element/FooterIcon";
 import Link from "next/link";
+import { CookieSettingsButton } from "../cookie-consent/cookie-banner";
 
 interface FooterProps {
   logoUrl?: string;
@@ -67,18 +68,21 @@ const Footer: React.FC<FooterProps> = ({
 
   const footerLinks = {
     service: [
-      {
-        label: "Artificial-Intelligence",
+      { label: "Artificial-Intelligence", 
         href: "/services/Artificial-Intelligence",
       },
-      { label: "Web Development", href: "/services/web-development" },
-      {
-        label: "Mobile App Development",
+      { label: "Web Development", 
+        href: "/services/web-development" },
+      { label: "Mobile App Development", 
+        
         href: "/services/mobile-app-development",
       },
-      { label: "UI/UX Design", href: "/services/ui-ux-design" },
-      { label: "Cloud Solution", href: "/services/cloud-solutions" },
-      { label: "Digital Marketing", href: "/services/digital-marketing" },
+      { label: "UI/UX Design", 
+        href: "/services/ui-ux-design" },
+      { label: "Cloud Solution", 
+        href: "/services/cloud-solutions" },
+      { label: "Digital Marketing", 
+        href: "/services/digital-marketing" },
     ],
     quickLink1: [
       { label: "Work", href: "/work" },
@@ -176,7 +180,9 @@ const Footer: React.FC<FooterProps> = ({
                   </div>
                 </div> */}
                 {/* Social Icons */}
-                  <h1 className="text-2xl text-white font-semibold mb-2">Social Media Link</h1>
+                <h1 className="text-2xl text-white font-semibold mb-2">
+                  Social Media Link
+                </h1>
                 <div className="flex justify-start lg:justify-end space-x-3">
                   <FooterIcon>
                     <svg
@@ -260,8 +266,8 @@ const Footer: React.FC<FooterProps> = ({
             <motion.div variants={itemVariants}>
               <h3 className="text-white font-semibold text-sm mb-4">Contact</h3>
               <div className="space-y-3 text-gray-300 text-sm">
-                <p>3651 Peachtree pkwy STE. E #116</p>
-                <p>Suwanee, GA 30024</p>
+                <p>3651 Peachtree PKWY STE.E 116,</p>
+                <p>Suwanee, GA 30024, USA</p>
 
                 <Link
                   href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
@@ -340,22 +346,20 @@ const Footer: React.FC<FooterProps> = ({
             </p>
             <div className="flex flex-wrap gap-4 text-xs text-gray-400">
               <Link
-                href="#"
+                href="/privacy-policy"
                 className="hover:text-white text-[0.70rem] lg:text-base transition-colors duration-200"
               >
-                Privacy Policy
+                <Button className="text-gray-400" variant={"link"}>
+                  Privacy Policy
+                </Button>
               </Link>
               <Link
-                href="#"
+                href="/cookie-policy"
                 className="hover:text-white text-[0.70rem] lg:text-base transition-colors duration-200"
               >
-                Terms & Conditions
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-white text-[0.70rem] lg:text-base transition-colors duration-200"
-              >
-                Code of Conduct
+                <Button className="text-gray-400" variant={"link"}>
+                  Cookie Policy
+                </Button>
               </Link>
             </div>
           </motion.div>

@@ -52,7 +52,7 @@ function VisionSection() {
           subtitle="Empowering Growth"
           textPosition="text-start"
         />
-        <p className="text-[#959595] max-w-[660px]">
+        <p className="text-[#959595] max-w-[660px] text-justify">
           We envision a future where businesses of every size harness technology
           with confidence and clarity. Our mission is to simplify complexity,
           delivering secure, scalable, and results-driven solutions. By aligning

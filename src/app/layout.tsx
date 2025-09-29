@@ -6,6 +6,8 @@ import Footer from "@/components/shared/Footer";
 import { Toaster } from "sonner";
 import { AppProvider } from "@/context/AppContext";
 import ReCaptchaProvider from "@/components/ReCaptcha/ReCaptchaProvider";
+import { CookieConsentProvider } from "@/components/cookie-consent/cookie-context";
+import { CookieBanner } from "@/components/cookie-consent/cookie-banner";
 
 const parkinsans = Parkinsans({
   variable: "--font-parkinsans",
@@ -40,12 +42,15 @@ export default function RootLayout({
         className={`${jakarta.variable} ${parkinsans.variable} ${orbitron.variable} font-parkinsans antialiased`}
       >
         <ReCaptchaProvider>
+          <CookieConsentProvider>
           <AppProvider>
             <Navbar />
             {children}
             <Toaster />
             <Footer />
           </AppProvider>
+          <CookieBanner/>
+          </CookieConsentProvider>
         </ReCaptchaProvider>
       </body>
     </html>
