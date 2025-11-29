@@ -90,6 +90,7 @@ const Footer: React.FC<FooterProps> = ({
       { label: "Services", href: "/services" },
       { label: "Career", href: "/career" },
       { label: "Blog", href: "/blogs" },
+      { label: "Team", href: "/team" },
     ],
   };
 
