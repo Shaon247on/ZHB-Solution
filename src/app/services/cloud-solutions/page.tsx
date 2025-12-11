@@ -5,6 +5,7 @@ import HeroSection from "@/components/models/Cloud/HeroSection"
 import HowSection from "@/components/models/Cloud/HowSection"
 import ServiceSection from "@/components/models/Cloud/ServiceSection"
 import TechnologySection from "@/components/models/Cloud/TechnologySection"
+import { buildPageMetadata } from '@/lib/seo'
 
 function page() {
   return (
@@ -24,3 +25,9 @@ function page() {
 }
 
 export default page
+
+export const metadata = buildPageMetadata({
+  title: 'Cloud Solutions',
+  description: 'Cloud migration, infrastructure, and managed cloud services to scale your product securely.',
+  path: '/services/cloud-solutions',
+});

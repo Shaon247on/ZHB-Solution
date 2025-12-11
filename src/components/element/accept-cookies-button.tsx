@@ -1,5 +1,3 @@
-// src/components/cookie-consent/accept-cookies-button.tsx
-
 'use client';
 
 import React from 'react';

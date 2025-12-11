@@ -5,6 +5,7 @@ import HeroSection from "@/components/models/app/HeroSection"
 import HowSection from "@/components/models/app/HowSection"
 import ServiceSection from "@/components/models/app/ServiceSection"
 import TechnologySection from "@/components/models/app/TechnologySection"
+import { buildPageMetadata } from '@/lib/seo'
 
 function page() {
   return (
@@ -24,3 +25,9 @@ function page() {
 }
 
 export default page
+
+export const metadata = buildPageMetadata({
+  title: 'Mobile App Development',
+  description: 'Build cross-platform and native mobile applications with great UX and performance.',
+  path: '/services/mobile-app-development',
+});

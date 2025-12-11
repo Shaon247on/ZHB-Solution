@@ -5,6 +5,7 @@ import HeroSection from "@/components/models/Marketing/HeroSection"
 import HowSection from "@/components/models/Marketing/HowSection"
 import ServiceSection from "@/components/models/Marketing/ServiceSection"
 import TechnologySection from "@/components/models/Marketing/TechnologySection"
+import { buildPageMetadata } from '@/lib/seo'
 
 function page() {
   return (
@@ -23,4 +24,9 @@ function page() {
   )
 }
 
+export const metadata = buildPageMetadata({
+  title: 'Digital Marketing',
+  description: 'Digital marketing services including SEO, content strategy, and paid media to grow your brand.',
+  path: '/services/digital-marketing',
+});
 export default page

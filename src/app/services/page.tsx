@@ -6,6 +6,7 @@ import HowSection from "@/components/models/Services/HowSection";
 import ServicesSection from "@/components/models/Services/ServicesSection";
 import WhatSection from "@/components/models/Services/WhatSection";
 import React from "react";
+import { buildPageMetadata } from '@/lib/seo';
 
 function page() {
   return (
@@ -25,3 +26,9 @@ function page() {
 }
 
 export default page;
+
+export const metadata = buildPageMetadata({
+  title: 'Services',
+  description: 'Explore ZHB Solutions services: web development, mobile apps, cloud solutions, AI, and UI/UX design.',
+  path: '/services',
+});

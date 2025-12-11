@@ -5,6 +5,7 @@ import HeroSection from "@/components/models/Data/HeroSection"
 import HowSection from "@/components/models/Data/HowSection"
 import ServiceSection from "@/components/models/Data/ServiceSection"
 import TechnologySection from "@/components/models/Data/TechnologySection"
+import { buildPageMetadata } from '@/lib/seo'
 
 function page() {
   return (
@@ -24,3 +25,9 @@ function page() {
 }
 
 export default page
+
+export const metadata = buildPageMetadata({
+  title: 'Artificial Intelligence',
+  description: 'AI solutions and services: custom models, automation, and intelligent product features.',
+  path: '/services/Artificial-Intelligence',
+});

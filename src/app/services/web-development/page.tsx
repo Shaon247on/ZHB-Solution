@@ -7,6 +7,8 @@ import ServiceSection from '@/components/models/Web/ServiceSection'
 import TechnologySection from '@/components/models/Web/TechnologySection'
 
 
+import { buildPageMetadata } from '@/lib/seo'
+
 function page() {
   return (
     <div>
@@ -25,3 +27,9 @@ function page() {
 }
 
 export default page
+
+export const metadata = buildPageMetadata({
+  title: 'Web Development',
+  description: 'Full-stack web development services: React, Next.js, APIs, and scalable architectures.',
+  path: '/services/web-development',
+});

@@ -1,14 +1,14 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { AcceptCookiesButton } from '../element/accept-cookies-button';
-import { toast } from 'sonner';
-import { CookieSettingsButton } from '../cookie-consent/cookie-banner';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { AcceptCookiesButton } from "../element/accept-cookies-button";
+import { toast } from "sonner";
+import { CookieSettingsButton } from "../cookie-consent/cookie-banner";
+import Link from "next/link";
 
 const PrivacyPolicySection = () => {
-
-  const handleToast = ()=>{
-    toast.success("Cookies Accepted")
-  }
+  const handleToast = () => {
+    toast.success("Cookies Accepted");
+  };
 
   return (
     <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
@@ -19,8 +19,8 @@ const PrivacyPolicySection = () => {
             Cookie Policy
           </h1>
           <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-            At ZHB Solutions, we value your privacy. This page explains how and why we use
-            cookies to improve your experience on our website.
+            At ZHB Solutions, we value your privacy. This page explains how and
+            why we use cookies to improve your experience on our website.
           </p>
         </div>
 
@@ -30,7 +30,10 @@ const PrivacyPolicySection = () => {
             What Are Cookies?
           </h2>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            Cookies are small text files stored on your device when you visit our website. They help us recognize your device, remember your preferences, and provide you with a faster and more personalized experience.
+            Cookies are small text files stored on your device when you visit
+            our website. They help us recognize your device, remember your
+            preferences, and provide you with a faster and more personalized
+            experience.
           </p>
         </section>
 
@@ -40,7 +43,9 @@ const PrivacyPolicySection = () => {
             How We Use Cookies
           </h2>
           <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="font-semibold text-gray-900 mb-4">We use cookies to:</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">
+              We use cookies to:
+            </h3>
             <ul className="space-y-2 text-gray-600 text-sm md:text-base">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
@@ -60,7 +65,9 @@ const PrivacyPolicySection = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
-                <span>Deliver relevant ads and measure campaign performance</span>
+                <span>
+                  Deliver relevant ads and measure campaign performance
+                </span>
               </li>
             </ul>
           </div>
@@ -74,24 +81,47 @@ const PrivacyPolicySection = () => {
           <ol className="space-y-3 text-gray-600 text-sm md:text-base ">
             <li className="flex items-start">
               <span className="font-semibold mr-2 text-gray-900">1.</span>
-              <span><span className="font-semibold text-gray-900">Essential Cookies</span> - Required for core features like login and navigation.</span>
+              <span>
+                <span className="font-semibold text-gray-900">
+                  Essential Cookies
+                </span>{" "}
+                - Required for core features like login and navigation.
+              </span>
             </li>
             <li className="flex items-start">
               <span className="font-semibold mr-2 text-gray-900">2.</span>
-              <span><span className="font-semibold text-gray-900">Performance Cookies</span> - Track website traffic and improve functionality.</span>
+              <span>
+                <span className="font-semibold text-gray-900">
+                  Performance Cookies
+                </span>{" "}
+                - Track website traffic and improve functionality.
+              </span>
             </li>
             <li className="flex items-start">
               <span className="font-semibold mr-2 text-gray-900">3.</span>
-              <span><span className="font-semibold text-gray-900">Functional Cookies</span> - Store your preferences (e.g., language, theme).</span>
+              <span>
+                <span className="font-semibold text-gray-900">
+                  Functional Cookies
+                </span>{" "}
+                - Store your preferences (e.g., language, theme).
+              </span>
             </li>
             <li className="flex items-start">
               <span className="font-semibold mr-2 text-gray-900">4.</span>
-              <span><span className="font-semibold text-gray-900">Advertising Cookies</span> - Show tailored promotions and ads that matter to you.</span>
+              <span>
+                <span className="font-semibold text-gray-900">
+                  Advertising Cookies
+                </span>{" "}
+                - Show tailored promotions and ads that matter to you.
+              </span>
             </li>
           </ol>
           <p className="text-blue-600 text-sm mt-4 flex items-start">
             <span className="mr-2">👉</span>
-            <span>You can manage or disable cookies anytime through your browser settings.</span>
+            <span>
+              You can manage or disable cookies anytime through your browser
+              settings.
+            </span>
           </p>
         </section>
 
@@ -101,7 +131,9 @@ const PrivacyPolicySection = () => {
             Your Cookie Choices
           </h2>
           <div className="bg-gray-50 rounded-lg p-6">
-            <h3 className="font-semibold text-gray-900 mb-4">You are in control. You can:</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">
+              You are in control. You can:
+            </h3>
             <ul className="space-y-2 text-gray-600 text-sm md:text-base mb-6">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
@@ -113,12 +145,15 @@ const PrivacyPolicySection = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
-                <span>Disable cookies in your browser (note: some features may not work correctly)</span>
+                <span>
+                  Disable cookies in your browser (note: some features may not
+                  work correctly)
+                </span>
               </li>
             </ul>
             <div className="flex flex-col sm:flex-row gap-3">
-              <AcceptCookiesButton className='rounded-full' size={"xl"}/>
-              <CookieSettingsButton/>
+              <AcceptCookiesButton className="rounded-full" size={"xl"} />
+              <CookieSettingsButton />
             </div>
           </div>
         </section>
@@ -153,28 +188,48 @@ const PrivacyPolicySection = () => {
             Updates to This Policy
           </h2>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-            We may update this Cookies Policy from time to time. Any changes will be posted here with the "Last Updated" date.
+            We may update this Cookies Policy from time to time. Any changes
+            will be posted here with the "Last Updated" date.
           </p>
         </section>
 
         {/* Contact Us */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Contact Us
-          </h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
           <p className="text-gray-600 text-sm md:text-base mb-4">
-            If you have any questions about this Privacy Policy or how your data is handled, contact us:
+            If you have any questions about this Privacy Policy or how your data
+            is handled, contact us:
           </p>
           <div className="space-y-2 text-sm md:text-base">
-            <p className="text-gray-600">
-              <span className="font-semibold text-gray-900">Email:</span>{' '}
-              <a href="mailto:privacy@zhbsolutions.com" className="text-blue-600 hover:underline">
-                privacy@zhbsolutions.com
-              </a>
-            </p>
-            <p className="text-gray-600">
-              <span className="font-semibold text-gray-900">Phone:</span> +1 (XXX) XXX-XXXX
-            </p>
+            <div className="mb-2">
+              <div className="flex items-center gap-2">
+                <span className="font-semibold">Email:</span>
+
+                <Link
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=services@zhbsolutions.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  <span className="flex items-center gap-2 cursor-pointer underline">
+                    services@zhbsolutions.com
+                  </span>
+                </Link>
+              </div>
+            </div>
+
+            <div className="mb-3">
+              <Link
+                href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex items-center gap-2.5 cursor-pointer">
+                  <span className="font-semibold">Phone:</span>
+                  <span className="underline">+1 (404) 936-3567</span>
+                </div>
+              </Link>
+            </div>
           </div>
         </section>
       </div>

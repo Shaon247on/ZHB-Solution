@@ -9,6 +9,7 @@ import ProjectsSection from "@/components/landing/ProjectsSection";
 import ServiceSection from "@/components/landing/ServiceSection";
 import SolutionSection from "@/components/landing/SolutionSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
+import { buildPageMetadata } from '@/lib/seo';
 
 export default function Home() {
   return (
@@ -27,3 +28,9 @@ export default function Home() {
     </div>
   );
 }
+
+export const metadata = buildPageMetadata({
+  title: 'Home',
+  description: 'ZHB Solutions builds scalable web, mobile, and cloud products. Partner with us to design, build and operate modern digital experiences.',
+  path: '/',
+});

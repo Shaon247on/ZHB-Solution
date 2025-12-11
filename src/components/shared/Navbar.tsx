@@ -46,6 +46,19 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
+  };
+
+  const handleNavClick = (href: string, name: string) => {
+    setNavTitle(name);
+    route.push(href);
+    setTimeout(() => {
+      closeMobileMenu();
+    }, 500);
+  };
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
@@ -69,6 +82,7 @@ const Navbar = () => {
       ],
     },
     { name: "Work", href: "/work" },
+    { name: "Team", href: "/team" },
     { name: "Blog", href: "/blogs" },
     { name: "Career", href: "/career" },
   ];
@@ -322,101 +336,106 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            variants={mobileMenuVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            className="fixed top-16 right-0 bottom-0 w-full sm:w-80 bg-[#172F5F] z-40 lg:hidden"
-          >
-            <div className="px-6 py-6 space-y-1 h-full overflow-y-auto">
-              <motion.div
-                variants={staggerContainer}
-                initial="hidden"
-                animate="visible"
-                className="space-y-1"
-              >
-                {navItems.map((item) => (
-                  <motion.div key={item.name} variants={itemVariants}>
-                    {item.hasDropdown ? (
-                      <div>
-                        <button
-                          onClick={() =>
-                            setIsMobileServicesOpen(!isMobileServicesOpen)
-                          }
-                          className="flex items-center justify-between w-full text-[#FDFDFD] hover:text-[#3671E2] py-3 text-left font-medium transition-colors duration-200"
-                        >
-                          <span>{item.name}</span>
-                          <motion.div
-                            variants={arrowVariants}
-                            animate={isMobileServicesOpen ? "open" : "closed"}
-                            transition={{ duration: 0.2 }}
+          <>
+            <motion.div
+              variants={mobileMenuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="fixed top-16 right-0 bottom-0 w-full sm:w-80 bg-[#172F5F] z-40 lg:hidden overflow-y-auto"
+            >
+              <div className="px-6 py-6 space-y-1">
+                <motion.div
+                  variants={staggerContainer}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {navItems.map((item) => (
+                    <motion.div key={item.name} variants={itemVariants}>
+                      {item.hasDropdown ? (
+                        <div>
+                          <button
+                            onClick={() =>
+                              setIsMobileServicesOpen(!isMobileServicesOpen)
+                            }
+                            className="flex w-full justify-between items-center text-[#FDFDFD] hover:text-[#3671E2] py-3 font-medium"
                           >
-                            <ChevronDown className="w-4 h-4" />
-                          </motion.div>
-                        </button>
-
-                        <AnimatePresence>
-                          {isMobileServicesOpen && (
+                            {item.name}
                             <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="overflow-hidden"
+                              variants={arrowVariants}
+                              animate={isMobileServicesOpen ? "open" : "closed"}
                             >
-                              <div className="pl-4 space-y-2 py-2">
-                                {item.dropdownItems?.map(
-                                  (dropdownItem, index) => (
-                                    <motion.a
-                                      key={index}
-                                      initial={{ opacity: 0, x: -10 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      transition={{ delay: index * 0.1 }}
+                              <ChevronDown className="w-4 h-4" />
+                            </motion.div>
+                          </button>
+
+                          <AnimatePresence>
+                            {isMobileServicesOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="overflow-hidden"
+                              >
+                                <div className="pl-6 space-y-2 py-2">
+                                  {item.dropdownItems?.map((dropdownItem) => (
+                                    <Link
+                                      key={dropdownItem.name}
                                       href={dropdownItem.href}
-                                      className={`block text-[#FDFDFD] hover:text-[#3671E2] py-2 transition-colors duration-200 ${
+                                      onClick={() =>
+                                        handleNavClick(
+                                          dropdownItem.href,
+                                          dropdownItem.name
+                                        )
+                                      }
+                                      className={`block py-2 text-[#FDFDFD] hover:text-[#3671E2] transition ${
                                         pathname === dropdownItem.href &&
-                                        " bg-gray-200"
-                                      } rounded-2xl mx-2`}
+                                        "font-bold text-blue-500"
+                                      }`}
                                     >
                                       {dropdownItem.name}
-                                    </motion.a>
-                                  )
-                                )}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    ) : (
-                      <a
-                        href={item.href}
-                        className={`block text-[#FDFDFD] hover:text-[#3671E2] py-3 font-medium transition-colors duration-200 ${
-                          pathname === item.href && "bg-gray-200"
-                        }`}
-                      >
-                        {item.name}
-                      </a>
-                    )}
-                  </motion.div>
-                ))}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          onClick={() => handleNavClick(item.href, item.name)}
+                          className={`block py-3 text-[#FDFDFD] hover:text-[#3671E2] transition ${
+                            pathname === item.href && "font-bold text-blue-500"
+                          }`}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
+                    </motion.div>
+                  ))}
 
-                <motion.div variants={itemVariants} className="pt-4">
-                  <motion.button
-                    onClick={() => {
-                      route.push("/contact");
-                      setNavTitle("Contact");
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full cursor-pointer bg-[#3671E2] hover:bg-[#00B596] text-white px-6 py-3 rounded-full font-semibold transition-colors duration-200"
-                  >
-                    Contact Us
-                  </motion.button>
+                  <motion.div variants={itemVariants} className="pt-6">
+                    <Button
+                      onClick={() => handleNavClick("/contact", "Contact")}
+                      className="w-full bg-[#3671E2] hover:bg-[#00B596] text-white font-semibold py-3 rounded-full"
+                    >
+                      Contact Us
+                    </Button>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeMobileMenu}
+              className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+            />
+          </>
         )}
       </AnimatePresence>
 

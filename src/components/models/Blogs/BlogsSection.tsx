@@ -1,10 +1,19 @@
 "use client";
+
+import React, { useState } from "react";
+import { Search, FileText, ChevronDown } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 import BlogCard from "@/components/element/BlogCard";
 import CreativeStepSection from "@/components/element/CreativeStepSection";
 import { blogs } from "@/data/BlogsDataMain";
-import { image } from "framer-motion/client";
-import { Dot, Search, FileText } from "lucide-react";
-import React, { useState } from "react";
+import { Dot } from "lucide-react";
 
 const tags = [
   "All Posts",
@@ -26,7 +35,7 @@ function BlogsSection() {
   };
 
   const handleSearchKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSearchClick();
     }
   };
@@ -42,13 +51,10 @@ function BlogsSection() {
     return matchesTag && matchesSearch;
   });
 
-  // No Results Card Component
   const NoResultsCard = () => (
     <div className="sm:col-span-1 md:col-span-2 lg:col-span-3 flex justify-center items-center py-20">
       <div className="bg-[#EBF1FC] rounded-2xl p-12 text-center max-w-md mx-auto border border-gray-200">
-        <div className="mb-6">
-          <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-        </div>
+        <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-[#172F5F] mb-4">
           No blogs found
         </h3>
@@ -59,8 +65,7 @@ function BlogsSection() {
               <span className="font-semibold">{appliedSearch}</span>"
               {activeTag !== "All Posts" && (
                 <>
-                  {" "}
-                  in <span className="font-semibold">{activeTag}</span>
+                  {" "}in <span className="font-semibold">{activeTag}</span>
                 </>
               )}
             </>
@@ -77,7 +82,7 @@ function BlogsSection() {
             setSearch("");
             setAppliedSearch("");
           }}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors duration-200"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition"
         >
           View All Posts
         </button>
@@ -92,82 +97,81 @@ function BlogsSection() {
       </h2>
 
       {/* Filter + Search */}
-      <div className="flex flex-col-reverse lg:flex-row px-4 items-start gap-6 mb-4 md:mb-6 lg:mb-10 xl:mb-24 rounded-2xl bg-[#EBF1FC] justify-center py-4">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 flex-wrap">
+      <div className="flex items-center flex-col-reverse md:flex-row px-4 lg:items-start gap-6 mb-10 xl:mb-24 rounded-2xl bg-[#EBF1FC] justify-center py-6">
+        
+        {/* Desktop: Horizontal Tags */}
+        <div className="hidden lg:flex flex-row items-center justify-center gap-4 flex-wrap lg:text-xs">
           {tags.map((tag, index) => (
             <React.Fragment key={tag}>
               <button
                 onClick={() => setActiveTag(tag)}
-                className={`px-3 py-1 rounded-full text-sm font-medium ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeTag === tag
-                    ? "bg-blue-600 text-white"
-                    : "bg-[#EBF1FC] text-[#172F5F] hover:bg-gray-200"
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "bg-white text-[#172F5F] hover:bg-gray-100"
                 }`}
               >
                 {tag}
               </button>
               {index < tags.length - 1 && (
-                <Dot className="w-4 h-4 text-[#172F5F] pointer-events-none" />
+                <Dot className="w-5 h-5 text-[#172F5F]" />
               )}
             </React.Fragment>
           ))}
         </div>
 
+        {/* Mobile: Dropdown Filter */}
+        <div className="lg:hidden w-full max-w-xs mx-auto">
+          <Select value={activeTag} onValueChange={setActiveTag}>
+            <SelectTrigger className="w-full h-12 bg-white border-gray-300 rounded-xl">
+              <SelectValue placeholder="Filter by category" />
+            </SelectTrigger>
+            <SelectContent>
+              {tags.map((tag) => (
+                <SelectItem key={tag} value={tag}>
+                  {tag}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
         {/* Search Box */}
-        <div className="relative">
+        <div className="relative w-full max-w-sm mx-auto lg:mx-0">
           <button
             onClick={handleSearchClick}
-            className="absolute left-2 top-2.5 h-4 w-4 text-gray-400 hover:text-blue-600 transition-colors duration-200 cursor-pointer z-10"
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-blue-600 z-10"
           >
-            <Search className="h-4 w-4" />
+            <Search className="h-5 w-5" />
           </button>
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Search by name or email..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             onKeyPress={handleSearchKeyPress}
-            className="pl-8 pr-4 py-2 border border-[#172F5F] max-w-[195px] rounded-md text-sm w-64"
+            className="w-full pl-12 pr-4 py-3 border border-[#172F5F] rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
       </div>
 
       {/* Grid */}
-      <div className="grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {filteredCards.length === 0 ? (
           <NoResultsCard />
         ) : (
-          <>
-            {filteredCards.map((blog, idx) => {
-              if (idx === 5 && filteredCards.length >= 7) {
-                return (
-                  <React.Fragment key={idx}>
-                    <BlogCard
-                      subtitle={blog.content[0].points[0] || ""}
-                      tag={blog.tag}
-                      title={blog.title}
-                      bgColor="#EBF1FC"
-                      image={`/blogs/blog${blog.id}.jpg`}
-                      id={blog.id}
-                      releaseDate={blog.releaseDate}
-                    />
-                  </React.Fragment>
-                );
-              }
-              return (
-                <BlogCard
-                  id={blog.id}
-                  key={idx}
-                  subtitle={blog.content[0].points[0] || ""}
-                  tag={blog.tag}
-                  title={blog.title}
-                  bgColor="#EBF1FC"
-                  image={`/blogs/blog${blog.id}.jpg`}
-                  releaseDate={blog.releaseDate}
-                />
-              );
-            })}
-          </>
+          filteredCards.map((blog, idx) => (
+            <BlogCard
+              key={blog.id}
+              id={blog.id}
+              subtitle={blog.content[0].points[0] || ""}
+              tag={blog.tag}
+              title={blog.title}
+              bgColor="#EBF1FC"
+              image={`/blogs/blog${blog.id}.jpg`}
+              releaseDate={blog.releaseDate}
+            />
+          ))
         )}
       </div>
 

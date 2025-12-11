@@ -249,33 +249,35 @@ const Privacy = () => {
             is handled, contact us:
           </p>
           <div className="text-gray-700 text-sm md:text-base">
-            <p className="mb-2">
+            <div className="mb-2">
               <div className="flex items-center gap-4">
                 <span className="font-semibold">Email:</span>
+
                 <Link
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=services@zhbsolutions.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"
                 >
-                  <div className="flex items-center gap-2.5 cursor-pointer">
-                    <p>services@zhbsolutions.com</p>
-                  </div>
+                  <span className="flex items-center gap-2.5 cursor-pointer">
+                    services@zhbsolutions.com
+                  </span>
                 </Link>
               </div>
-            </p>
-            <p>
+            </div>
+
+            <div className="mb-3">
               <Link
                 href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="flex items-center gap-2.5 cursor-pointer mb-3">
-                  <span className="font-semibold">Phone:</span>{" "}
-                  <p className="hover:underline">+1 (404) 936-3567</p>
+                <div className="flex items-center gap-2.5 cursor-pointer">
+                  <span className="font-semibold">Phone:</span>
+                  <span className="hover:underline">+1 (404) 936-3567</span>
                 </div>
               </Link>
-            </p>
+            </div>
           </div>
         </section>
       </div>
