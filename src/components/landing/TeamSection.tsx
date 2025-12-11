@@ -6,6 +6,7 @@ import { Target, Eye, Compass, Users } from "lucide-react";
 import TitleSection from "../element/TitleSection";
 
 interface TeamMember {
+  id: number;
   name: string;
   role: string;
   image: string;
@@ -357,69 +358,87 @@ const TeamSection = () => {
   }, []);
 
   const teamMembers: TeamMember[] = [
-    {
-      name: "Zahirul Bhuiyan",
-      role: "CTO",
-      image: "/CTO.jpg",
-      bio: "Visionary leader with 15+ years of experience in driving digital transformation and business growth.",
-    },
-    {
-      name: "Mohammad Saiful Islam",
-      role: "TECHNOLOGY OFFICER",
-      image:
-        "/team/formal-5.jpg",
-      bio: "Technology expert specializing in cutting-edge solutions and innovation strategies.",
-    },
-    {
-      name: "Abdullah Al Hossain",
-      role: "PRINCIPAL AI ARCHITECT",
-      image:
-        "/team/formal-8.jpg",
-      bio: "AI specialist with deep expertise in machine learning and intelligent system design.",
-    },
-    {
-      name: "Rashedul Karim Anik",
-      role: "SOFTWARE ENGINEERING",
-      image:
-        "/team/formal-6.jpg",
-      bio: "Experienced engineering leader passionate about building scalable and robust software solutions.",
-    },
-    {
-      name: "Tanvir Ahmed Rohan",
-      role: "CONSULTANT APP DEVELOPMENT & SUPPORT",
-      image:
-        "/team/formal-4.jpg",
-      bio: "Expert consultant specializing in mobile and web application development with exceptional support.",
-    },
-    {
-      name: "Nusrat Jahan Tania",
-      role: "CLOUD ARCHITECT",
-      image:
-        "/team/formal-1.jpg",
-      bio: "Cloud infrastructure expert focused on designing secure and scalable cloud solutions.",
-    },
-    {
-      name: "Mahmudul Hasan Shuvo",
-      role: "LEAD CONSULTANT APP DEVELOPMENT & SUPPORT",
-      image:
-        "/team/formal-3.jpg",
-      bio: "Dedicated professional ensuring seamless app development lifecycle and customer satisfaction.",
-    },
-    {
-      name: "Suman Chandra Das",
-      role: "PRINCIPAL SOLUTION ARCHITECT – DIGITAL PLATFORMS & INTEGRATIONS",
-      image:
-        "/team/formal-7.jpg",
-      bio: "Dedicated professional ensuring seamless app development lifecycle and customer satisfaction.",
-    },
-    {
-      name: "Maruf Hossain Sayem",
-      role: "SENIOR TECHNICAL PROGRAM MANAGER – PRODUCT DELIVERY & OPERATIONS",
-      image:
-        "/team/formal-2.jpg",
-      bio: "Results-driven consultant with expertise in delivering innovative application solutions.",
-    },
-  ];
+  {
+    id: 1,
+    name: "Zahirul Bhuiyan",
+    role: "CEO",
+    image: "/team/CEO.png",
+    bio: "Visionary leader with 15+ years of experience in driving digital transformation and business growth.",
+  },
+  {
+    id: 2,
+    name: "Mohammad Saiful Islam",
+    role: "TECHNOLOGY OFFICER",
+    image: "/team/formal-5.jpg",
+    bio: "Technology expert specializing in cutting-edge solutions and innovation strategies.",
+  },
+  {
+    id: 3,
+    name: "Abdullah Al Hossain",
+    role: "PRINCIPAL AI ARCHITECT",
+    image: "/team/formal-8.jpg",
+    bio: "AI specialist with deep expertise in machine learning and intelligent system design.",
+  },
+  {
+    id: 4,
+    name: "Rashedul Karim Anik",
+    role: "SOFTWARE ENGINEERING",
+    image: "/team/formal-6.jpg",
+    bio: "Experienced engineering leader passionate about building scalable and robust software solutions.",
+  },
+  {
+    id: 5,
+    name: "Tanvir Ahmed Rohan",
+    role: "CONSULTANT APP DEVELOPMENT & SUPPORT",
+    image: "/team/formal-4.jpg",
+    bio: "Expert consultant specializing in mobile and web application development with exceptional support.",
+  },
+  {
+    id: 6,
+    name: "Fahim Abdullah",
+    role: "SENIOR FULL-STACK ENGINEER – PRODUCT DEVELOPMENT",
+    image: "/team/formal-9.jpg",
+    bio: "Seasoned full-stack engineer specializing in scalable system architecture, API design, and high-performance application delivery.",
+  },
+  {
+    id: 7,
+    name: "Nusrat Jahan Tania",
+    role: "CLOUD ARCHITECT",
+    image: "/team/formal-1.jpg",
+    bio: "Cloud infrastructure expert focused on designing secure and scalable cloud solutions.",
+  },
+  {
+    id: 8,
+    name: "Rakibul Islam Shiku",
+    role: "CTO",
+    image: "/team/CTO.jpg",
+    bio: "Visionary leader with 15+ years of experience in driving digital transformation and business growth.",
+  },
+  
+  {
+    id: 9,
+    name: "S.M.F Karim",
+    role: "PRINCIPAL SOLUTION ARCHITECT – DIGITAL PLATFORMS & INTEGRATIONS",
+    image: "/team/formal-7.jpg",
+    bio: "Dedicated professional ensuring seamless app development lifecycle and customer satisfaction.",
+  },
+  {
+    id: 10,
+    name: "Md. Ekramul Haque",
+    role: "lead QA Engineer - PRODUCT DELIVERY & OPERATIONS",
+    image: "/team/formal-2.jpg",
+    bio: "Results-driven consultant with expertise in delivering innovative application solutions.",
+  },
+  {
+    id: 11,
+    name: "Juned Ahmed Chowdhury",
+    role: "LEAD CONSULTANT APP DEVELOPMENT & SUPPORT",
+    image: "/team/formal-3.jpg",
+    bio: "Dedicated professional ensuring seamless app development lifecycle and customer satisfaction.",
+  },
+  
+];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -472,8 +491,8 @@ const TeamSection = () => {
           </motion.div>
 
           {/* Second Level - 5 positions */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto lg:ml-[15%]">
-            {teamMembers.slice(6, 9).map((member, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 max-w-4xl mx-auto lg:ml-[15%]">
+            {teamMembers.slice(7, 11).map((member, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <TeamMemberCard member={member} />
               </motion.div>
@@ -481,8 +500,8 @@ const TeamSection = () => {
           </div>
 
           {/* Third Level - 2 people reporting to Software Engineering Manager */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-            {teamMembers.slice(1, 6).map((member, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            {teamMembers.slice(1, 7).map((member, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <TeamMemberCard member={member} />
               </motion.div>
