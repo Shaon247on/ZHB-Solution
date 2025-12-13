@@ -48,7 +48,7 @@ function ContactSection({ bottom = true }: { bottom?: boolean }) {
           <div>
             <div className="w-[240px] h-[240px] overflow-hidden">
               <Image
-                src={"/CTO.jpg"}
+                src={"/CEO.png"}
                 width={240}
                 height={240}
                 layout="responsive"
