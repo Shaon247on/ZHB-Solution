@@ -9,18 +9,18 @@ const data = [
     id:2,
     country: "U.S.A",
     address:
-      "3651 Peachtree PKWY STE.E 116, Suwanee, GA 30024, USA",
+      "732 Holcomb Bridge Rd, Norcross, GA 30071",
     email: "info@zhbsolutions.com",
-    phone: "+1 (404) 936-3567",
-    href: "https://www.google.com/maps/place/3651+Peachtree+Pkwy+e+116,+Suwanee,+GA+30024,+USA/@34.0694326,-84.1711537,17z/data=!3m1!4b1!4m9!1m2!2m1!1sZHB+Solution+LLC+3651+Peachtree+Pkwy+STE.+E+%23116,+Suwanee,+GA+30024+Georgia+United+States!3m5!1s0x88f599f80e75f227:0x6b2e253e3cc12ce7!8m2!3d34.0694283!4d-84.1662828!15sCllaSEIgU29sdXRpb24gTExDIDM2NTEgUGVhY2h0cmVlIFBrd3kgU1RFLiBFICMxMTYsIFN1d2FuZWUsIEdBIDMwMDI0IEdlb3JnaWEgVW5pdGVkIFN0YXRlc5IBEGNvbXBvdW5kX3NlY3Rpb27gAQA?entry=ttu&g_ep=EgoyMDI1MDkxNi4wIKXMDSoASAFQAw%3D%3D"
+    phone: "(404) 786-8166",
+    href: "https://www.google.com/maps/place/732+Holcomb+Bridge+Rd,+Norcross,+GA+30071,+USA/@33.9459106,-84.2270995,17z/data=!3m1!4b1!4m6!3m5!1s0x88f5a121320d85c3:0xbbf1c0f91b0ae42c!8m2!3d33.9459062!4d-84.2245246!16s%2Fg%2F11pzklfy87!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D"
   },
   {
     id:1,
     country: "Bangladesh",
-    address: "Kaderia Tower, JA-28, Mohakhali Gulshan Road, Dhaka-1212 (Opposite BRAC Center)",
+    address: "House # 4 (5th Floor), Road # 20, Nikunja - 2, Dhaka, Bangladesh",
     email: "services@zhbsolutions.com",
     phone: "+880 1332-840871",
-    href: "https://www.google.com/maps/place/Kaderia+Tower/@23.7805486,90.407771,17z/data=!3m2!4b1!5s0x3755c7767f3f1cbd:0x1d50d00029739798!4m6!3m5!1s0x3755c70656402a31:0xc98d276e49087864!8m2!3d23.7805437!4d90.4103459!16s%2Fg%2F11j136683k?entry=ttu&g_ep=EgoyMDI1MDkxNi4wIKXMDSoASAFQAw%3D%3D"
+    href: "https://www.google.com/maps/place/RCP9%2B63R,+Dhaka+1229/@23.8355202,90.4175518,21z/data=!4m6!3m5!1s0x3755c66737ccfb9d:0x5dc8522bd1e3ad1f!8m2!3d23.8356602!4d90.417682!16s%2Fg%2F11gdw15w9p!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D"
   },
   
 ];

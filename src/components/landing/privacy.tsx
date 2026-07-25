@@ -268,13 +268,25 @@ const Privacy = () => {
 
             <div className="mb-3">
               <Link
-                href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+                href="https://wa.me/14047868166?text=Hello%20I%20am%20interested%20in%20your%20services"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div className="flex items-center gap-2.5 cursor-pointer">
                   <span className="font-semibold">Phone:</span>
-                  <span className="hover:underline">+1 (404) 936-3567</span>
+                  <span className="hover:underline">(404) 786-8166</span>
+                </div>
+              </Link>
+            </div>
+            <div className="mb-3">
+              <Link
+                href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex items-center gap-2.5 cursor-pointer">
+                  <span className="font-semibold">Cell:</span>
+                  <span className="hover:underline">(404) 936-3567</span>
                 </div>
               </Link>
             </div>

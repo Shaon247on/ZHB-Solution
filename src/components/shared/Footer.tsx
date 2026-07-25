@@ -12,6 +12,7 @@ import {
   Phone,
   Mail,
   Globe,
+  PhoneCall,
 } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -68,21 +69,19 @@ const Footer: React.FC<FooterProps> = ({
 
   const footerLinks = {
     service: [
-      { label: "Artificial-Intelligence", 
+      {
+        label: "Artificial-Intelligence",
         href: "/services/Artificial-Intelligence",
       },
-      { label: "Web Development", 
-        href: "/services/web-development" },
-      { label: "Mobile App Development", 
-        
+      { label: "Web Development", href: "/services/web-development" },
+      {
+        label: "Mobile App Development",
+
         href: "/services/mobile-app-development",
       },
-      { label: "UI/UX Design", 
-        href: "/services/ui-ux-design" },
-      { label: "Cloud Solution", 
-        href: "/services/cloud-solutions" },
-      { label: "Digital Marketing", 
-        href: "/services/digital-marketing" },
+      { label: "UI/UX Design", href: "/services/ui-ux-design" },
+      { label: "Cloud Solution", href: "/services/cloud-solutions" },
+      { label: "Digital Marketing", href: "/services/digital-marketing" },
     ],
     quickLink1: [
       { label: "Work", href: "/work" },
@@ -267,17 +266,27 @@ const Footer: React.FC<FooterProps> = ({
             <motion.div variants={itemVariants}>
               <h3 className="text-white font-semibold text-sm mb-4">Contact</h3>
               <div className="space-y-3 text-gray-300 text-sm">
-                <p>3651 Peachtree PKWY STE.E 116,</p>
-                <p>Suwanee, GA 30024, USA</p>
+                <p>732 Holcomb Bridge Rd, Norcross, GA 30071,</p>
+                {/* <p>Suwanee, GA 30024, USA</p> */}
 
+                <Link
+                  href="https://wa.me/14047868166?text=Hello%20I%20am%20interested%20in%20your%20services"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="flex items-center gap-2.5 cursor-pointer mb-3">
+                    <Phone size={18} fill="white" stroke="white" />
+                    <p>(404) 786-8166</p>
+                  </div>
+                </Link>
                 <Link
                   href="https://wa.me/14049363567?text=Hello%20I%20am%20interested%20in%20your%20services"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <div className="flex items-center gap-2.5 cursor-pointer mb-3">
-                    <Phone size={18} fill="white" stroke="white" />
-                    <p>+1 (404) 936-3567</p>
+                    <PhoneCall size={18} fill="white" stroke="white" />
+                    <p>(404) 936-3567</p>
                   </div>
                 </Link>
                 <Link
