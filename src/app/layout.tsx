@@ -11,8 +11,9 @@ import { CookieBanner } from "@/components/cookie-consent/cookie-banner";
 import { SITE_METADATA } from "@/lib/seo";
 
 const parkinsans = Parkinsans({
-  variable: "--font-parkinsans",
   subsets: ["latin"],
+  variable: "--font-parkinsans",
+  display: "swap",
 });
 
 const orbitron = Orbitron({
@@ -34,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jakarta.variable} ${parkinsans.variable} ${orbitron.variable} font-parkinsans antialiased`}
+        className={`${jakarta.variable} ${parkinsans.variable} ${orbitron.variable} antialiased`}
       >
         <ReCaptchaProvider>
           <CookieConsentProvider>
